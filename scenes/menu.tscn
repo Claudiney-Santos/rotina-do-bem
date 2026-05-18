@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cxogb5q241xjc"]
+
+[ext_resource type="Texture2D" uid="uid://ika4vgfugeu0" path="res://images/menu_background.png" id="1_yqeox"]
+[ext_resource type="FontFile" uid="uid://ccelsgdd0ynwf" path="res://fonts/Bevan/Bevan-Regular.ttf" id="2_vjb58"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_con2f"]
+font = ExtResource("2_vjb58")
+font_size = 64
+font_color = Color(0.05490196, 0.20392157, 0.38431373, 1)
+
+[node name="Menu" type="Control" unique_id=2086134230]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="." unique_id=1731304671]
+self_modulate = Color(1, 1, 1, 0.9372549)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -825.0
+offset_top = -384.0
+offset_right = 825.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yqeox")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="." unique_id=499870590]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -617.5
+offset_top = -197.0
+offset_right = 617.5
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ROTINA DO BEM"
+label_settings = SubResource("LabelSettings_con2f")
+horizontal_alignment = 1
+
+[node name="MainButtonsBoxContainer" type="BoxContainer" parent="." unique_id=1851280352]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -33.0
+offset_right = 48.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+vertical = true
+
+[node name="PlayButton" type="Button" parent="MainButtonsBoxContainer" unique_id=357949121]
+layout_mode = 2
+text = "JOGAR"
+
+[node name="ReportButton" type="Button" parent="MainButtonsBoxContainer" unique_id=2047960723]
+layout_mode = 2
+text = "RELATÓRIO"
+
+[node name="QuitButton" type="Button" parent="." unique_id=824025195]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "SAIR"
+
+[node name="ConfigButtonsHBoxContainer" type="HBoxContainer" parent="." unique_id=600520893]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VolumeCheckButton" type="CheckButton" parent="ConfigButtonsHBoxContainer" unique_id=419240198]
+layout_mode = 2
+text = "Volume"
+
+[node name="MusicCheckBox" type="CheckBox" parent="ConfigButtonsHBoxContainer" unique_id=1945627903]
+layout_mode = 2
+text = "Music"
