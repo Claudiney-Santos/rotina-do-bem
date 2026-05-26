@@ -19,6 +19,12 @@ run/main_scene="uid://6f2f7f50vlgx"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1440
+window/size/viewport_height=1027
+window/size/borderless=true
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
