@@ -23,7 +23,7 @@ func _ready() -> void:
 	down_and_drag = node.get_meta("down_and_drag") and draggable
 
 func _input(event: InputEvent) -> void:
-	if draggable and event is InputEventMouse:
+	if draggable and _is_hovering and event is InputEventMouse:
 		var was_holding = _is_holding
 		is_holding(event)
 		
@@ -61,19 +61,24 @@ func is_holding(event: InputEventMouse) -> bool:
 	var was_up: bool = _mouse_status&was_up_mask != 0
 	if down_and_drag:
 		if is_mouse_down and not is_down:
-			_is_holding = true
-			_mouse_status ^= is_down_mask
+			if _is_hovering:
+				_is_holding = true
+			_mouse_status |= is_down_mask
 		elif not is_mouse_down and is_down:
 			_is_holding = false
-			_mouse_status ^= is_down_mask
+			_mouse_status &= ~is_down_mask
 	else:
 		if not is_down and not was_up and is_mouse_down:
-			_mouse_status ^= is_down_mask
+			_mouse_status |= is_down_mask
 		elif is_down and not was_up and not is_mouse_down:
-			_mouse_status ^= is_down_mask | was_up_mask
-			_is_holding = true
+			if _is_hovering:
+				_mouse_status &= ~is_down_mask
+				_mouse_status |= was_up_mask
+				_is_holding = true
+			else:
+				_mouse_status = 0
 		elif not is_down and was_up and is_mouse_down:
-			_mouse_status ^= is_down_mask
+			_mouse_status |= is_down_mask
 		elif is_down and was_up and not is_mouse_down:
 			_mouse_status = 0
 			_is_holding = false
@@ -82,3 +87,14 @@ func is_holding(event: InputEventMouse) -> bool:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	node.scale = Vector2(_scale, _scale)
+
+
+func _on_mouse_entered() -> void:
+	print("entrou")
+	_is_hovering = true
+
+
+func _on_mouse_exited() -> void:
+	print("saiu")
+	if not _is_holding:
+		_is_hovering = false

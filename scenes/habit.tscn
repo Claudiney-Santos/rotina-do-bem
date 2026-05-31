@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ddyrpi670ifn"]
+[gd_scene format=3 uid="uid://do3k4hd84jjsg"]
 
 [ext_resource type="Script" uid="uid://c7jw16a7bf68y" path="res://scenes/habit.gd" id="1_14rkp"]
 [ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="3_3d5kg"]
@@ -28,7 +28,6 @@ grow_vertical = 2
 shortcut_context = NodePath(".")
 script = ExtResource("1_14rkp")
 metadata/description = ""
-metadata/image = null
 metadata/typing = false
 metadata/down_and_drag = true
 
@@ -66,3 +65,6 @@ layout_mode = 2
 text = "Descrição"
 label_settings = SubResource("LabelSettings_w6cxf")
 horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Panel" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="." method="_on_mouse_exited"]
