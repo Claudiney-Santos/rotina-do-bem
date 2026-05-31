@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://cbqwpqr3do7v"]
+
+[ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="1_lrl3v"]
+
+[resource]
+font = ExtResource("1_lrl3v")
+font_size = 30
+font_color = Color(0, 0, 0, 1)

@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://ci2h1qrrm3dcn"]
+
+[ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="1_otswf"]
+
+[resource]
+font = ExtResource("1_otswf")
+font_size = 50
