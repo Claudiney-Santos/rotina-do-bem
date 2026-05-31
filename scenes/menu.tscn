@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cxogb5q241xjc"]
 
+[ext_resource type="Script" uid="uid://baiyvjssuvgpq" path="res://scenes/menu.gd" id="1_con2f"]
 [ext_resource type="Texture2D" uid="uid://ika4vgfugeu0" path="res://images/menu_background.png" id="1_yqeox"]
 [ext_resource type="FontFile" uid="uid://ccelsgdd0ynwf" path="res://fonts/Bevan/Bevan-Regular.ttf" id="2_vjb58"]
 
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_con2f")
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="." unique_id=1731304671]
 self_modulate = Color(1, 1, 1, 0.9372549)
@@ -95,3 +97,7 @@ text = "Volume"
 [node name="MusicCheckBox" type="CheckBox" parent="ConfigButtonsHBoxContainer" unique_id=1945627903]
 layout_mode = 2
 text = "Music"
+
+[connection signal="pressed" from="MainButtonsBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainButtonsBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
