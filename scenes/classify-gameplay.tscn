@@ -1,17 +1,18 @@
-[gd_scene format=3 uid="uid://c1on02cur1bnv"]
+[gd_scene format=3 uid="uid://b1erft0a4mjao"]
 
+[ext_resource type="Script" uid="uid://d3ffjg6o8flop" path="res://scenes/classify_gameplay.gd" id="1_nex32"]
 [ext_resource type="Texture2D" uid="uid://dljj3tnqobuls" path="res://images/Desktop - 5.svg" id="1_pbp6x"]
 [ext_resource type="LabelSettings" uid="uid://ci2h1qrrm3dcn" path="res://styles/labels/habit_panel_label.tres" id="2_5unp7"]
-[ext_resource type="PackedScene" uid="uid://ddyrpi670ifn" path="res://scenes/habit.tscn" id="2_hgc32"]
+[ext_resource type="PackedScene" path="res://scenes/habit.tscn" id="2_hgc32"]
 [ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="3_34xd2"]
 [ext_resource type="Texture2D" uid="uid://cwqt8do7favhp" path="res://images/running.png" id="5_34xd2"]
 
-[sub_resource type="Gradient" id="Gradient_hgc32"]
+[sub_resource type="Gradient" id="Gradient_34xd2"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0.8627451, 0.95686275, 0.99215686, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_5unp7"]
-gradient = SubResource("Gradient_hgc32")
+gradient = SubResource("Gradient_34xd2")
 
 [sub_resource type="Theme" id="Theme_34xd2"]
 
@@ -36,6 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nex32")
 
 [node name="Background" type="TextureRect" parent="." unique_id=600018443]
 layout_mode = 1
@@ -103,7 +105,7 @@ text = "POSITIVO"
 label_settings = ExtResource("2_5unp7")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=2134271276]
+[node name="BackButton" type="Button" parent="." unique_id=2134271276]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
@@ -127,3 +129,5 @@ offset_right = 304.0
 size_flags_vertical = 2
 metadata/description = "Correr"
 metadata/image = ExtResource("5_34xd2")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
