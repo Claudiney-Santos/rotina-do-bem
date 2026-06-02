@@ -4,6 +4,7 @@
 [ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="1_ansty"]
 [ext_resource type="Script" uid="uid://cjcpxrvv403h1" path="res://scenes/type_gameplay.gd" id="1_jok07"]
 [ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="2_7j3yl"]
+[ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="5_40v1b"]
 
 [sub_resource type="Gradient" id="Gradient_qkwfc"]
 offsets = PackedFloat32Array(0)
@@ -23,6 +24,16 @@ corner_radius_bottom_left = 12
 
 [sub_resource type="Theme" id="Theme_ansty"]
 default_font = ExtResource("2_7j3yl")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grsx4"]
+bg_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bleh"]
+bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40v1b"]
 bg_color = Color(1, 0.98039216, 0.91764706, 1)
@@ -125,13 +136,27 @@ emoji_menu_enabled = false
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_grsx4")
 text = "ENVIAR"
 
-[node name="BackButton" type="Button" parent="." unique_id=1767098949]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "VOLTAR"
+[node name="Button" type="Button" parent="." unique_id=1767098949]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.072000004
+anchor_top = 0.065000005
+anchor_right = 0.072000004
+anchor_bottom = 0.080000006
+offset_left = -34.680008
+offset_top = -15.755005
+offset_right = 35.319992
+offset_bottom = -0.16000366
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_2bleh")
+text = " VOLTAR "
+icon = ExtResource("5_40v1b")
 
 [node name="CorrectPanelContainer" type="PanelContainer" parent="." unique_id=1032788104]
 visible = false
