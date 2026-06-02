@@ -3,11 +3,50 @@
 [ext_resource type="Script" uid="uid://baiyvjssuvgpq" path="res://scenes/menu.gd" id="1_con2f"]
 [ext_resource type="Texture2D" uid="uid://ika4vgfugeu0" path="res://images/menu_background.png" id="1_yqeox"]
 [ext_resource type="FontFile" uid="uid://ccelsgdd0ynwf" path="res://fonts/Bevan/Bevan-Regular.ttf" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://ci3dgwn3fqyli" path="res://images/Vector.png" id="3_con2f"]
+[ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="4_g3eks"]
+[ext_resource type="Texture2D" uid="uid://dh4fmwexpajd6" path="res://images/Volume.png" id="5_v86rl"]
+[ext_resource type="Texture2D" uid="uid://dfhtyyi47ynf" path="res://images/Music.png" id="6_13sgg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_con2f"]
 font = ExtResource("2_vjb58")
-font_size = 64
+font_size = 93
 font_color = Color(0.05490196, 0.20392157, 0.38431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
+bg_color = Color(0.05490196, 0.20392157, 0.38431373, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i5f"]
+bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]
+bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufwb2"]
+bg_color = Color(0.18431373, 0.25490198, 0.3372549, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cdou"]
+bg_color = Color(0.18431373, 0.25490198, 0.3372549, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="Menu" type="Control" unique_id=2086134230]
 layout_mode = 3
@@ -19,7 +58,7 @@ grow_vertical = 2
 script = ExtResource("1_con2f")
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="." unique_id=1731304671]
-self_modulate = Color(1, 1, 1, 0.9372549)
+modulate = Color(1, 1, 1, 0.74509805)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,9 +77,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -617.5
-offset_top = -300.5
+offset_top = -372.5
 offset_right = 617.5
-offset_bottom = -197.5
+offset_bottom = -222.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "ROTINA DO BEM"
@@ -55,28 +94,40 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -33.0
-offset_right = 48.0
-offset_bottom = 33.0
+offset_left = -200.0
+offset_top = -98.0
+offset_right = 200.0
+offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
 alignment = 1
 vertical = true
 
 [node name="PlayButton" type="Button" parent="MainButtonsBoxContainer" unique_id=357949121]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_i6lef")
 text = "JOGAR"
+icon = ExtResource("3_con2f")
+autowrap_trim_flags = 0
+icon_alignment = 2
 
 [node name="ReportButton" type="Button" parent="MainButtonsBoxContainer" unique_id=2047960723]
 layout_mode = 2
-text = "RELATÓRIO"
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_70i5f")
+text = "   RELATÓRIO   "
 
 [node name="QuitButton" type="Button" parent="." unique_id=824025195]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "SAIR"
+layout_mode = 1
+offset_top = 33.0
+offset_right = 182.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_mj5lg")
+text = "  SAIR  "
+icon = ExtResource("4_g3eks")
 
 [node name="ConfigButtonsHBoxContainer" type="HBoxContainer" parent="." unique_id=600520893]
 layout_mode = 1
@@ -92,11 +143,14 @@ grow_vertical = 0
 
 [node name="VolumeCheckButton" type="CheckButton" parent="ConfigButtonsHBoxContainer" unique_id=419240198]
 layout_mode = 2
-text = "Volume"
+theme_override_styles/normal = SubResource("StyleBoxFlat_ufwb2")
+icon = ExtResource("5_v86rl")
+icon_alignment = 1
 
 [node name="MusicCheckBox" type="CheckBox" parent="ConfigButtonsHBoxContainer" unique_id=1945627903]
 layout_mode = 2
-text = "Music"
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cdou")
+icon = ExtResource("6_13sgg")
 
 [connection signal="pressed" from="MainButtonsBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainButtonsBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
