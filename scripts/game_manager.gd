@@ -8,6 +8,7 @@ var selected_habits: Array = []
 var current_round: int = 0
 
 func load_game(difficulty: Difficulty) -> void:
+	current_round = 0
 	selected_difficulty = difficulty
 	var qnt_half_habits: int = 0
 	var diff: String = ""
