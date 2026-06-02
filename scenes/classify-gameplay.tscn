@@ -106,6 +106,7 @@ size_flags_vertical = 4
 
 [node name="HabitPanel" type="PanelContainer" parent="NegativePanel/NegativeVBoxContainer" unique_id=2017134655]
 visible = false
+clip_children = 2
 clip_contents = true
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
@@ -113,8 +114,10 @@ size_flags_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5unp7")
 
 [node name="TextureRect" type="TextureRect" parent="NegativePanel/NegativeVBoxContainer/HabitPanel" unique_id=624744920]
+clip_contents = true
 layout_mode = 2
 expand_mode = 2
+stretch_mode = 6
 
 [node name="PositivePanel" type="PanelContainer" parent="." unique_id=1520024019]
 custom_minimum_size = Vector2(300, 600)

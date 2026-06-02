@@ -6,18 +6,18 @@
 				"image": "running.png",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "comer vegetais",
+				"image": "vegetables.png",
 			},
 		],
 		"unhealthy": [
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "comer muito doce",
+				"image": "candy.jpg",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "usar celular até tarde",
+				"image": "smartphone.jpg",
 			},
 		],
 	},
@@ -28,8 +28,8 @@
 				"image": "running.png",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "comer vegetais",
+				"image": "vegetables.png",
 			},
 			{
 				"description": "correr",
@@ -38,16 +38,16 @@
 		],
 		"unhealthy": [
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "comer muito doce",
+				"image": "candy.jpg",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "usar celular até tarde",
+				"image": "smartphone.jpg",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "comer muito doce",
+				"image": "candy.jpg",
 			},
 		],
 	},
@@ -58,34 +58,34 @@
 				"image": "running.png",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "comer vegetais",
+				"image": "vegetables.png",
 			},
 			{
 				"description": "correr",
 				"image": "running.png",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "comer vegetais",
+				"image": "vegetables.png",
 			},
 		],
 		"unhealthy": [
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "comer muito doce",
+				"image": "candy.jpg",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "usar celular até tarde",
+				"image": "smartphone.jpg",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "comer muito doce",
+				"image": "candy.jpg",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "usar celular até tarde",
+				"image": "smartphone.jpg",
 			},
 		],
 	},
