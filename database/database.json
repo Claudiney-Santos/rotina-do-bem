@@ -1,0 +1,92 @@
+{
+	"easy": {
+		"healthy": [
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+		],
+		"unhealthy": [
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+		],
+	},
+	"medium": {
+		"healthy": [
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+		],
+		"unhealthy": [
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+		],
+	},
+	"hard": {
+		"healthy": [
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+		],
+		"unhealthy": [
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+			{
+				"description": "correr",
+				"image": "running.png",
+			},
+		],
+	},
+}

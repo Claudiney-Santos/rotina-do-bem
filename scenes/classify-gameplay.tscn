@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://b1erft0a4mjao"]
 
 [ext_resource type="Script" uid="uid://d3ffjg6o8flop" path="res://scenes/classify_gameplay.gd" id="1_nex32"]
-[ext_resource type="Texture2D" uid="uid://dljj3tnqobuls" path="res://images/Desktop - 5.svg" id="1_pbp6x"]
 [ext_resource type="LabelSettings" uid="uid://ci2h1qrrm3dcn" path="res://styles/labels/habit_panel_label.tres" id="2_5unp7"]
 [ext_resource type="PackedScene" uid="uid://do3k4hd84jjsg" path="res://scenes/habit.tscn" id="2_hgc32"]
 [ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="3_34xd2"]
-[ext_resource type="Texture2D" uid="uid://cwqt8do7favhp" path="res://images/running.png" id="5_34xd2"]
 
 [sub_resource type="Gradient" id="Gradient_34xd2"]
 offsets = PackedFloat32Array(0)
@@ -23,12 +21,43 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5unp7"]
+bg_color = Color(1, 0.98039216, 0.91764706, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6muk"]
 bg_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34xd2"]
+bg_color = Color(1, 0.98039216, 0.91764706, 1)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.94509804, 0.41568628, 0.41568628, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17o8i"]
+bg_color = Color(1, 0.98039216, 0.91764706, 1)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="ClassifyGameplay" type="Control" unique_id=1481593187]
 layout_mode = 3
@@ -47,15 +76,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_5unp7")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=703736491]
-visible = false
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("1_pbp6x")
-expand_mode = 2
-stretch_mode = 4
 
 [node name="NegativePanel" type="PanelContainer" parent="." unique_id=108399180]
 custom_minimum_size = Vector2(300, 600)
@@ -78,8 +98,23 @@ text = "NEGATIVO"
 label_settings = ExtResource("2_5unp7")
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NegativePanel" unique_id=1720848599]
+[node name="NegativeVBoxContainer" type="VBoxContainer" parent="NegativePanel" unique_id=1720848599]
+custom_minimum_size = Vector2(270, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HabitPanel" type="PanelContainer" parent="NegativePanel/NegativeVBoxContainer" unique_id=2017134655]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5unp7")
+
+[node name="TextureRect" type="TextureRect" parent="NegativePanel/NegativeVBoxContainer/HabitPanel" unique_id=624744920]
+layout_mode = 2
+expand_mode = 2
 
 [node name="PositivePanel" type="PanelContainer" parent="." unique_id=1520024019]
 custom_minimum_size = Vector2(300, 600)
@@ -105,6 +140,12 @@ text = "POSITIVO"
 label_settings = ExtResource("2_5unp7")
 horizontal_alignment = 1
 
+[node name="PositiveVBoxContainer" type="VBoxContainer" parent="PositivePanel" unique_id=612474930]
+custom_minimum_size = Vector2(270, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
 [node name="BackButton" type="Button" parent="." unique_id=2134271276]
 layout_mode = 0
 offset_right = 8.0
@@ -127,7 +168,75 @@ layout_mode = 1
 offset_left = -304.0
 offset_right = 304.0
 size_flags_vertical = 2
-metadata/description = "Correr"
-metadata/image = ExtResource("5_34xd2")
 
+[node name="WrongPanelContainer" type="PanelContainer" parent="." unique_id=1183711126]
+visible = false
+custom_minimum_size = Vector2(600, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_34xd2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WrongPanelContainer" unique_id=681794379]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WrongPanelContainer/VBoxContainer" unique_id=1836920497]
+layout_mode = 2
+size_flags_vertical = 0
+text = "RESPOSTA INCORRETA.
+VAMOS TENTAR NOVAMENTE?"
+label_settings = ExtResource("3_34xd2")
+horizontal_alignment = 1
+
+[node name="TryAgainButton" type="Button" parent="WrongPanelContainer/VBoxContainer" unique_id=1284239034]
+layout_mode = 2
+size_flags_vertical = 6
+text = "SIM"
+
+[node name="CorrectPanelContainer" type="PanelContainer" parent="." unique_id=1996392363]
+visible = false
+custom_minimum_size = Vector2(600, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_17o8i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CorrectPanelContainer" unique_id=1642718920]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CorrectPanelContainer/VBoxContainer" unique_id=2038112814]
+layout_mode = 2
+size_flags_vertical = 0
+text = "PARABÉNS! VOCÊ ACERTOU!"
+label_settings = ExtResource("3_34xd2")
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="CorrectPanelContainer/VBoxContainer" unique_id=731324568]
+layout_mode = 2
+size_flags_vertical = 6
+text = "CONTINUAR"
+
+[connection signal="player_choose_right" from="." to="." method="_on_player_choose_right"]
+[connection signal="player_choose_wrong" from="." to="." method="_on_player_choose_wrong"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="put_down" from="Habit" to="." method="_on_habit_put_down"]
+[connection signal="pressed" from="WrongPanelContainer/VBoxContainer/TryAgainButton" to="." method="_on_try_again_button_pressed"]
+[connection signal="pressed" from="CorrectPanelContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

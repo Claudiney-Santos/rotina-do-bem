@@ -121,7 +121,7 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_q0d2u")
 text = "FÁCIL"
 
-[node name="NormalButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1362505371]
+[node name="MediumButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1362505371]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
@@ -137,5 +137,5 @@ text = "DIFÍCIL"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/EasyButton" to="." method="_on_easy_button_pressed"]
-[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/NormalButton" to="." method="_on_normal_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/MediumButton" to="." method="_on_medium_button_pressed"]
 [connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/HardButton" to="." method="_on_hard_button_pressed"]
