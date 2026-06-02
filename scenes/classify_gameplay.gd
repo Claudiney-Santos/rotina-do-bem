@@ -4,9 +4,9 @@ signal player_choose_right
 signal player_choose_wrong
 
 @onready var habit_node: Habit = $Habit
-@onready var negative_vbox = $NegativePanel/NegativeVBoxContainer
-@onready var positive_vbox = $PositivePanel/PositiveVBoxContainer
-@onready var habit_panel = $NegativePanel/NegativeVBoxContainer/HabitPanel
+@onready var negative_vbox = $NegativePanel/VBoxContainer/NegativeVBoxContainer
+@onready var positive_vbox = $PositivePanel/VBoxContainer/PositiveVBoxContainer
+@onready var habit_panel = $NegativePanel/VBoxContainer/NegativeVBoxContainer/HabitPanel
 @onready var wrong_panel = $WrongPanelContainer
 @onready var correct_panel = $CorrectPanelContainer
 
