@@ -5,3 +5,5 @@
 [node name="Node" type="Node" unique_id=2079613725]
 
 [node name="Menu" parent="." unique_id=2086134230 instance=ExtResource("1_o5qli")]
+offset_left = 2.0
+offset_right = 2.0
