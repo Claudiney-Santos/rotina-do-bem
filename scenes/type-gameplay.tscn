@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://lq1dt8bsrf76"]
+[gd_scene format=3 uid="uid://dgxmgulkelw3c"]
 
-[ext_resource type="PackedScene" uid="uid://ddyrpi670ifn" path="res://scenes/habit.tscn" id="1_66mvn"]
+[ext_resource type="PackedScene" uid="uid://do3k4hd84jjsg" path="res://scenes/habit.tscn" id="1_66mvn"]
 [ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="1_ansty"]
+[ext_resource type="Script" uid="uid://cjcpxrvv403h1" path="res://scenes/type_gameplay.gd" id="1_jok07"]
 [ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="2_7j3yl"]
-[ext_resource type="Texture2D" uid="uid://cwqt8do7favhp" path="res://images/running.png" id="3_jok07"]
 
 [sub_resource type="Gradient" id="Gradient_qkwfc"]
 offsets = PackedFloat32Array(0)
@@ -24,6 +24,25 @@ corner_radius_bottom_left = 12
 [sub_resource type="Theme" id="Theme_ansty"]
 default_font = ExtResource("2_7j3yl")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40v1b"]
+bg_color = Color(1, 0.98039216, 0.91764706, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jok07"]
+bg_color = Color(1, 0.98039216, 0.91764706, 1)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
 [node name="TypeGameplay" type="Control" unique_id=1069345654]
 layout_mode = 3
 anchors_preset = 15
@@ -31,6 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jok07")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1098199071]
 layout_mode = 1
@@ -67,30 +87,85 @@ horizontal_alignment = 1
 [node name="Habit" parent="VBoxContainer" unique_id=1512986 instance=ExtResource("1_66mvn")]
 layout_mode = 2
 size_flags_vertical = 6
-metadata/description = "CORRER"
-metadata/image = ExtResource("3_jok07")
 metadata/typing = true
+metadata/down_and_drag = false
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1130880282]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 10
 theme = SubResource("Theme_7j3yl")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ansty")
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/PanelContainer" unique_id=486907294]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/PanelContainer" unique_id=1133222673]
+visible = false
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_7j3yl")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Descrição"
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/PanelContainer" unique_id=486907294]
+custom_minimum_size = Vector2(590, 0)
+layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource("Theme_ansty")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_40v1b")
+alignment = 1
 context_menu_enabled = false
 emoji_menu_enabled = false
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=1655405984]
+visible = false
 layout_mode = 2
 size_flags_vertical = 8
 text = "ENVIAR"
 
-[node name="Button" type="Button" parent="." unique_id=1767098949]
+[node name="BackButton" type="Button" parent="." unique_id=1767098949]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 text = "VOLTAR"
+
+[node name="CorrectPanelContainer" type="PanelContainer" parent="." unique_id=1032788104]
+visible = false
+custom_minimum_size = Vector2(600, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jok07")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CorrectPanelContainer" unique_id=1465707439]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CorrectPanelContainer/VBoxContainer" unique_id=2008148855]
+layout_mode = 2
+size_flags_vertical = 0
+text = "PARABÉNS! VOCÊ ACERTOU!"
+label_settings = ExtResource("1_ansty")
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="CorrectPanelContainer/VBoxContainer" unique_id=390400575]
+layout_mode = 2
+size_flags_vertical = 6
+text = "CONTINUAR"
+
+[connection signal="finished_answer" from="." to="." method="_on_finished_answer"]
+[connection signal="text_changed" from="VBoxContainer/PanelContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CorrectPanelContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

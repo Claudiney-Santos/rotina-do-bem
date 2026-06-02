@@ -1,11 +1,22 @@
+class_name Habit
+
 extends Control
+
+signal put_up
+signal put_down
 
 @onready var node = $"."
 @onready var description_label = $Panel/VBoxContainer/Label
+@onready var description_rich_label = $Panel/VBoxContainer/RichTextLabel
 @onready var image_texturerect = $Panel/VBoxContainer/ScrollContainer/TextureRect
+
+var neutral_stylebox: StyleBoxFlat = preload("res://styles/style-boxes/neutral_box_habit.tres")
+var positive_stylebox: StyleBoxFlat = preload("res://styles/style-boxes/positive_box_habit.tres")
+var negative_stylebox: StyleBoxFlat = preload("res://styles/style-boxes/negative_box_habit.tres")
 
 var draggable = false
 var down_and_drag = false
+var is_healthy = false
 
 var _mouse_down_position: Vector2
 var _node_down_position: Vector2
@@ -15,12 +26,54 @@ var _is_holding: bool = false
 var _is_hovering: bool = false
 var _scale: float = 1
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	description_label.text = node.get_meta("description")
+func update_correct_typing(len: int) -> void:
+	var description: String = get_meta("description")
+	var correct: String = description.substr(0, len)
+	description_rich_label.clear()
+	description_rich_label.push_color(Color("92d291"))
+	description_rich_label.append_text(correct)
+	description_rich_label.pop()
+	description_rich_label.append_text(description.substr(len))
+
+func load() -> void:
 	image_texturerect.texture = node.get_meta("image")
 	draggable = not node.get_meta("typing")
 	down_and_drag = node.get_meta("down_and_drag") and draggable
+	is_healthy = node.get_meta("is_healthy")
+	description_rich_label.clear()
+	description_rich_label.append_text(node.get_meta("description"))
+	#if draggable:
+	#	description_label.text = node.get_meta("description")
+	#else:
+	#	description_label.text = ""
+
+func set_habit(habit: Dictionary, typing: bool = false) -> void:
+	var teste: String = ""
+	set_meta("description", habit.description.to_upper())
+	set_meta("image", habit.image_resource)
+	set_meta("is_healthy", habit.is_healthy)
+	set_meta("typing", typing)
+	if typing:
+		node.mouse_default_cursor_shape = CURSOR_ARROW
+	else:
+		node.mouse_default_cursor_shape = CURSOR_POINTING_HAND
+	self.load()
+
+func set_hovering_positive() -> void:
+	$Panel.remove_theme_stylebox_override("panel")
+	$Panel.add_theme_stylebox_override("panel", positive_stylebox)
+
+func set_hovering_negative() -> void:
+	$Panel.remove_theme_stylebox_override("panel")
+	$Panel.add_theme_stylebox_override("panel", negative_stylebox)
+
+func set_hovering_reset() -> void:
+	$Panel.remove_theme_stylebox_override("panel")
+	$Panel.add_theme_stylebox_override("panel", neutral_stylebox)
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	self.load()
 
 func _input(event: InputEvent) -> void:
 	if draggable and _is_hovering and event is InputEventMouse:
@@ -34,22 +87,20 @@ func _input(event: InputEvent) -> void:
 				print("Clica e solta, então arrasta")
 		
 		if was_holding and not _is_holding:
-			print("soltou")
+			emit_signal("put_down")
 		if not was_holding and _is_holding:
-			print("segurou")
+			emit_signal("put_up")
 		
 		if not was_holding and _is_holding:
 			_mouse_down_position = event.position
 			_node_down_position = node.position
 			_node_anchor_position = event.position
-			_scale = 1.2
 			node.set_position(_node_down_position*_scale + _node_anchor_position*(1-_scale))
 		elif _is_holding:
 			var delta: Vector2 = (event.position - _mouse_down_position)
 			node.set_position(_node_down_position*_scale + _node_anchor_position*(1-_scale) + delta)
 		elif was_holding and not _is_holding:
 			node.set_position(_node_down_position)
-			_scale = 1
 
 func is_holding(event: InputEventMouse) -> bool:
 	if not draggable:
@@ -88,6 +139,8 @@ func is_holding(event: InputEventMouse) -> bool:
 func _process(delta: float) -> void:
 	node.scale = Vector2(_scale, _scale)
 
+func is_over_panel(panel: PanelContainer) -> bool:
+	return $Panel.get_global_rect().intersects(panel.get_global_rect(), true)
 
 func _on_mouse_entered() -> void:
 	print("entrou")
@@ -98,3 +151,14 @@ func _on_mouse_exited() -> void:
 	print("saiu")
 	if not _is_holding:
 		_is_hovering = false
+
+
+func _on_put_down() -> void:
+	_scale = 1
+	var pos: Vector2 = get_global_mouse_position()
+	print("soltou em (%d, %d)" % [pos[0], pos[1]])
+
+
+func _on_put_up() -> void:
+	_scale = 1.2
+	print("segurou")

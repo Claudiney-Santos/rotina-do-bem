@@ -77,7 +77,7 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "FÁCIL"
 
-[node name="NormalButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1362505371]
+[node name="MediumButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1362505371]
 layout_mode = 2
 text = "MÉDIO"
 
@@ -87,5 +87,5 @@ text = "DIFÍCIL"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/EasyButton" to="." method="_on_easy_button_pressed"]
-[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/NormalButton" to="." method="_on_normal_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/MediumButton" to="." method="_on_medium_button_pressed"]
 [connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/HardButton" to="." method="_on_hard_button_pressed"]
