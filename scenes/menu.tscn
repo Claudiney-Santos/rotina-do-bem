@@ -20,8 +20,36 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13sgg"]
+bg_color = Color(0.19593345, 0.30175465, 0.42325306, 0.99607843)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v86rl"]
+bg_color = Color(0.33122367, 0.4772944, 0.64757174, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i5f"]
 bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i42df"]
+bg_color = Color(0.30977008, 0.5057403, 0.59718114, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jp70"]
+bg_color = Color(0.4846474, 0.696355, 0.79767364, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -34,19 +62,61 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxgkd"]
+bg_color = Color(0.31471744, 0.51227224, 0.60449827, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6gyw"]
+bg_color = Color(0.4732852, 0.68656915, 0.7884357, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufwb2"]
 bg_color = Color(0.18431373, 0.25490198, 0.3372549, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dmrc"]
+bg_color = Color(0.19426739, 0.30117008, 0.425196, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81l6r"]
+bg_color = Color(0.29190135, 0.42999467, 0.5906755, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cdou"]
 bg_color = Color(0.18431373, 0.25490198, 0.3372549, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rsfmq"]
+bg_color = Color(0.19208947, 0.29816768, 0.42123142, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oi1it"]
+bg_color = Color(0.29696342, 0.43626326, 0.59838283, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Menu" type="Control" unique_id=2086134230]
 layout_mode = 3
@@ -110,6 +180,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_i6lef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_13sgg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v86rl")
 text = "JOGAR"
 icon = ExtResource("3_con2f")
 autowrap_trim_flags = 0
@@ -120,20 +192,26 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_70i5f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i42df")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7jp70")
 text = "   RELATÓRIO   "
 
 [node name="QuitButton" type="Button" parent="." unique_id=824025195]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.032
-anchor_right = 0.126
+anchor_left = 0.028
+anchor_top = 0.034
+anchor_right = 0.157
 anchor_bottom = 0.093
-offset_top = 0.13599777
-offset_right = 0.55999756
-offset_bottom = -0.5110016
+offset_left = 0.6800003
+offset_top = 0.08199692
+offset_right = -0.08000183
+offset_bottom = 1.4889984
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_mj5lg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mxgkd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g6gyw")
 text = "  SAIR  "
 icon = ExtResource("4_g3eks")
 
@@ -144,10 +222,10 @@ anchor_left = 0.93700004
 anchor_top = 0.92100006
 anchor_right = 0.93700004
 anchor_bottom = 0.92100006
-offset_left = -98.28003
-offset_top = -31.867065
-offset_right = 72.71997
-offset_bottom = 32.132935
+offset_left = -130.28003
+offset_top = -44.867065
+offset_right = 69.71997
+offset_bottom = 35.132935
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/separation = 30
@@ -155,12 +233,16 @@ theme_override_constants/separation = 30
 [node name="VolumeCheckButton" type="Button" parent="ConfigButtonsHBoxContainer" unique_id=103856671]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_ufwb2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3dmrc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_81l6r")
 icon = ExtResource("5_v86rl")
 icon_alignment = 1
 
 [node name="MusicCheckBox" type="Button" parent="ConfigButtonsHBoxContainer" unique_id=1527725343]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_6cdou")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rsfmq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oi1it")
 icon = ExtResource("6_13sgg")
 
 [connection signal="pressed" from="MainButtonsBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

@@ -18,6 +18,20 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyg2l"]
+bg_color = Color(0.3222329, 0.5220842, 0.6154551, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3povj"]
+bg_color = Color(0.4924193, 0.702862, 0.80371624, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="Theme" id="Theme_q5e74"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwrfu"]
@@ -34,6 +48,20 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_100ey"]
+bg_color = Color(0.20744371, 0.31924596, 0.44899178, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8aph"]
+bg_color = Color(0.2944259, 0.43312773, 0.5945329, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5e74"]
 bg_color = Color(0.23529412, 0.35686275, 0.49803922, 1)
 corner_radius_top_left = 16
@@ -41,8 +69,36 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xu2wo"]
+bg_color = Color(0.20784314, 0.31764707, 0.44705883, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ei0xv"]
+bg_color = Color(0.29411766, 0.43137255, 0.59607846, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_we5c5"]
 bg_color = Color(0.23529412, 0.35686275, 0.49803922, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ae4la"]
+bg_color = Color(0.20784314, 0.31764707, 0.44705883, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vi71m"]
+bg_color = Color(0.29411766, 0.43137255, 0.59607846, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -80,6 +136,8 @@ offset_bottom = 29.974998
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_oinrr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hyg2l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3povj")
 text = " VOLTAR "
 icon = ExtResource("2_q5e74")
 
@@ -119,6 +177,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_q0d2u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_100ey")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h8aph")
 text = "FÁCIL"
 
 [node name="MediumButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1362505371]
@@ -126,6 +186,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_q5e74")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xu2wo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ei0xv")
 text = "MÉDIO"
 
 [node name="HardButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1557915204]
@@ -133,6 +195,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_we5c5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ae4la")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vi71m")
 text = "DIFÍCIL"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
