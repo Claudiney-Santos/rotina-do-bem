@@ -25,6 +25,13 @@ corner_radius_bottom_left = 12
 [sub_resource type="Theme" id="Theme_ansty"]
 default_font = ExtResource("2_7j3yl")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40v1b"]
+bg_color = Color(1, 0.98039216, 0.91764706, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grsx4"]
 bg_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
 
@@ -35,12 +42,19 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40v1b"]
-bg_color = Color(1, 0.98039216, 0.91764706, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utwc7"]
+bg_color = Color(0.31720936, 0.5155412, 0.60815305, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvr0p"]
+bg_color = Color(0.48082095, 0.6930963, 0.79461706, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jok07"]
 bg_color = Color(1, 0.98039216, 0.91764706, 1)
@@ -155,6 +169,8 @@ offset_bottom = -0.16000366
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_2bleh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_utwc7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lvr0p")
 text = " VOLTAR "
 icon = ExtResource("5_40v1b")
 
@@ -192,5 +208,4 @@ text = "CONTINUAR"
 
 [connection signal="finished_answer" from="." to="." method="_on_finished_answer"]
 [connection signal="text_changed" from="VBoxContainer/PanelContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CorrectPanelContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
