@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://b1erft0a4mjao"]
+
+[ext_resource type="Script" uid="uid://d3ffjg6o8flop" path="res://scenes/classify_gameplay.gd" id="1_nex32"]
+[ext_resource type="Texture2D" uid="uid://dljj3tnqobuls" path="res://images/Desktop - 5.svg" id="1_pbp6x"]
+[ext_resource type="LabelSettings" uid="uid://ci2h1qrrm3dcn" path="res://styles/labels/habit_panel_label.tres" id="2_5unp7"]
+[ext_resource type="PackedScene" uid="uid://do3k4hd84jjsg" path="res://scenes/habit.tscn" id="2_hgc32"]
+[ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="3_34xd2"]
+[ext_resource type="Texture2D" uid="uid://cwqt8do7favhp" path="res://images/running.png" id="5_34xd2"]
+
+[sub_resource type="Gradient" id="Gradient_34xd2"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.8627451, 0.95686275, 0.99215686, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5unp7"]
+gradient = SubResource("Gradient_34xd2")
+
+[sub_resource type="Theme" id="Theme_34xd2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nex32"]
+bg_color = Color(0.94509804, 0.41568628, 0.41568628, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6muk"]
+bg_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="ClassifyGameplay" type="Control" unique_id=1481593187]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nex32")
+
+[node name="Background" type="TextureRect" parent="." unique_id=600018443]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_5unp7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=703736491]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_pbp6x")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="NegativePanel" type="PanelContainer" parent="." unique_id=108399180]
+custom_minimum_size = Vector2(300, 600)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -300.0
+offset_right = 320.0
+offset_bottom = 300.0
+grow_vertical = 2
+theme = SubResource("Theme_34xd2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nex32")
+
+[node name="Label" type="Label" parent="NegativePanel" unique_id=752907424]
+layout_mode = 2
+size_flags_vertical = 0
+text = "NEGATIVO"
+label_settings = ExtResource("2_5unp7")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NegativePanel" unique_id=1720848599]
+layout_mode = 2
+
+[node name="PositivePanel" type="PanelContainer" parent="." unique_id=1520024019]
+custom_minimum_size = Vector2(300, 600)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -300.0
+offset_right = -20.0
+offset_bottom = 300.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_34xd2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_m6muk")
+
+[node name="Label" type="Label" parent="PositivePanel" unique_id=672191951]
+layout_mode = 2
+size_flags_vertical = 0
+text = "POSITIVO"
+label_settings = ExtResource("2_5unp7")
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="." unique_id=2134271276]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "VOLTAR"
+
+[node name="Label" type="Label" parent="." unique_id=1607890936]
+layout_mode = 0
+offset_left = 393.5
+offset_top = 113.5
+offset_right = 1046.5
+offset_bottom = 156.5
+size_flags_vertical = 2
+text = "ARRASTE A IMAGEM A COLUNA CORRESPONDENTE"
+label_settings = ExtResource("3_34xd2")
+horizontal_alignment = 1
+
+[node name="Habit" parent="." unique_id=1512986 instance=ExtResource("2_hgc32")]
+layout_mode = 1
+offset_left = -304.0
+offset_right = 304.0
+size_flags_vertical = 2
+metadata/description = "Correr"
+metadata/image = ExtResource("5_34xd2")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
