@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://lq1dt8bsrf76"]
 
-[ext_resource type="PackedScene" uid="uid://ddyrpi670ifn" path="res://scenes/habit.tscn" id="1_66mvn"]
+[ext_resource type="PackedScene" uid="uid://do3k4hd84jjsg" path="res://scenes/habit.tscn" id="1_66mvn"]
 [ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="1_ansty"]
 [ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="2_7j3yl"]
 [ext_resource type="Texture2D" uid="uid://cwqt8do7favhp" path="res://images/running.png" id="3_jok07"]
+[ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="5_40v1b"]
 
 [sub_resource type="Gradient" id="Gradient_qkwfc"]
 offsets = PackedFloat32Array(0)
@@ -23,6 +24,16 @@ corner_radius_bottom_left = 12
 
 [sub_resource type="Theme" id="Theme_ansty"]
 default_font = ExtResource("2_7j3yl")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grsx4"]
+bg_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bleh"]
+bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="TypeGameplay" type="Control" unique_id=1069345654]
 layout_mode = 3
@@ -68,8 +79,8 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 6
 metadata/description = "CORRER"
-metadata/image = ExtResource("3_jok07")
 metadata/typing = true
+metadata/image = ExtResource("3_jok07")
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1130880282]
 layout_mode = 2
@@ -87,10 +98,24 @@ emoji_menu_enabled = false
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=1655405984]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_grsx4")
 text = "ENVIAR"
 
 [node name="Button" type="Button" parent="." unique_id=1767098949]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "VOLTAR"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.072000004
+anchor_top = 0.065000005
+anchor_right = 0.072000004
+anchor_bottom = 0.080000006
+offset_left = -34.680008
+offset_top = -15.755005
+offset_right = 35.319992
+offset_bottom = -0.16000366
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_2bleh")
+text = " VOLTAR "
+icon = ExtResource("5_40v1b")

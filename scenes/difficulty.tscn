@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bkrwbkklnb3t8" path="res://scenes/difficulty.gd" id="1_ebcsn"]
 [ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="2_q0d2u"]
+[ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="2_q5e74"]
 
 [sub_resource type="Gradient" id="Gradient_hgc32"]
 offsets = PackedFloat32Array(0)
@@ -9,6 +10,13 @@ colors = PackedColorArray(0.8627451, 0.95686275, 0.99215686, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_suej7"]
 gradient = SubResource("Gradient_hgc32")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oinrr"]
+bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="Theme" id="Theme_q5e74"]
 
@@ -18,6 +26,27 @@ corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0d2u"]
+bg_color = Color(0.23529412, 0.35686275, 0.49803922, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5e74"]
+bg_color = Color(0.23529412, 0.35686275, 0.49803922, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_we5c5"]
+bg_color = Color(0.23529412, 0.35686275, 0.49803922, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Difficulty" type="Control" unique_id=982272829]
 layout_mode = 3
@@ -38,10 +67,21 @@ grow_vertical = 2
 texture = SubResource("GradientTexture1D_suej7")
 
 [node name="BackButton" type="Button" parent="." unique_id=788572655]
-layout_mode = 0
-offset_right = 70.0
-offset_bottom = 31.0
-text = "VOLTAR"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.075
+anchor_right = 0.1
+anchor_bottom = 0.075
+offset_left = -75.0
+offset_top = -30.025002
+offset_right = 75.0
+offset_bottom = 29.974998
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_oinrr")
+text = " VOLTAR "
+icon = ExtResource("2_q5e74")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=538764591]
 custom_minimum_size = Vector2(700, 600)
@@ -68,21 +108,31 @@ label_settings = ExtResource("2_q0d2u")
 horizontal_alignment = 1
 
 [node name="ButtonsVBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=2126600827]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 30
 
 [node name="EasyButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=625673925]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0d2u")
 text = "FÁCIL"
 
 [node name="NormalButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1362505371]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5e74")
 text = "MÉDIO"
 
 [node name="HardButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1557915204]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_we5c5")
 text = "DIFÍCIL"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
