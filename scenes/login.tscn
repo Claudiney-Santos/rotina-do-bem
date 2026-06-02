@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://bgq4sq1hkc674"]
+
+[ext_resource type="Script" uid="uid://dma6ufr7xgshh" path="res://scenes/login.gd" id="1_bw5rt"]
+[ext_resource type="Texture2D" uid="uid://ika4vgfugeu0" path="res://images/menu_background.png" id="2_31byv"]
+[ext_resource type="FontFile" uid="uid://ccelsgdd0ynwf" path="res://fonts/Bevan/Bevan-Regular.ttf" id="3_1u3ka"]
+[ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="4_31byv"]
+[ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="5_tbijj"]
+[ext_resource type="Texture2D" uid="uid://dh4fmwexpajd6" path="res://images/Volume.png" id="6_47vyr"]
+[ext_resource type="Texture2D" uid="uid://dfhtyyi47ynf" path="res://images/Music.png" id="7_ngwtj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_con2f"]
+font = ExtResource("3_1u3ka")
+font_size = 123
+font_color = Color(0.05490196, 0.20392157, 0.38431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1u3ka"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
+bg_color = Color(0.21568628, 0.34117648, 0.4862745, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i5f"]
+bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]
+bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufwb2"]
+bg_color = Color(0.18431373, 0.25490198, 0.3372549, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cdou"]
+bg_color = Color(0.18431373, 0.25490198, 0.3372549, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Login" type="Control" unique_id=2086134230]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bw5rt")
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="." unique_id=1731304671]
+modulate = Color(1, 1, 1, 0.74509805)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_31byv")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="." unique_id=499870590]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -621.0
+offset_top = -345.5
+offset_right = 614.0
+offset_bottom = -146.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "ROTINA DO BEM"
+label_settings = SubResource("LabelSettings_con2f")
+horizontal_alignment = 1
+
+[node name="MainButtonsBoxContainer" type="BoxContainer" parent="." unique_id=1851280352]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.57600003
+anchor_right = 0.5
+anchor_bottom = 0.57600003
+offset_left = -198.0
+offset_top = -97.55206
+offset_right = 202.0
+offset_bottom = 98.44794
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+vertical = true
+
+[node name="LineEdit" type="LineEdit" parent="MainButtonsBoxContainer" unique_id=1709189265]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_1u3ka")
+placeholder_text = "Código"
+alignment = 1
+
+[node name="LoginButton" type="Button" parent="MainButtonsBoxContainer" unique_id=357949121]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_31byv")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_i6lef")
+text = "ENTRAR"
+autowrap_trim_flags = 0
+icon_alignment = 2
+
+[node name="TeacherButton" type="Button" parent="MainButtonsBoxContainer" unique_id=2047960723]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_31byv")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_70i5f")
+text = "PROFESSOR"
+
+[node name="QuitButton" type="Button" parent="." unique_id=824025195]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.032
+anchor_right = 0.126
+anchor_bottom = 0.093
+offset_top = 0.13599777
+offset_right = 0.55999756
+offset_bottom = -0.5110016
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_mj5lg")
+text = "  SAIR  "
+icon = ExtResource("5_tbijj")
+
+[node name="ConfigButtonsHBoxContainer" type="HBoxContainer" parent="." unique_id=600520893]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.93700004
+anchor_top = 0.92100006
+anchor_right = 0.93700004
+anchor_bottom = 0.92100006
+offset_left = -98.28003
+offset_top = -31.867065
+offset_right = 72.71997
+offset_bottom = 32.132935
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="VolumeCheckButton" type="Button" parent="ConfigButtonsHBoxContainer" unique_id=103856671]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ufwb2")
+icon = ExtResource("6_47vyr")
+icon_alignment = 1
+
+[node name="MusicCheckBox" type="Button" parent="ConfigButtonsHBoxContainer" unique_id=1527725343]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cdou")
+icon = ExtResource("7_ngwtj")
+
+[connection signal="pressed" from="MainButtonsBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="MainButtonsBoxContainer/TeacherButton" to="." method="_on_report_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
