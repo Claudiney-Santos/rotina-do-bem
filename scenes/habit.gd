@@ -6,7 +6,6 @@ signal put_up
 signal put_down
 
 @onready var node = $"."
-@onready var description_label = $Panel/VBoxContainer/Label
 @onready var description_rich_label = $Panel/VBoxContainer/RichTextLabel
 @onready var image_texturerect = $Panel/VBoxContainer/ScrollContainer/TextureRect
 
@@ -29,23 +28,15 @@ var _scale: float = 1
 func update_correct_typing(len: int) -> void:
 	var description: String = get_meta("description")
 	var correct: String = description.substr(0, len)
-	description_rich_label.clear()
-	description_rich_label.push_color(Color("92d291"))
-	description_rich_label.append_text(correct)
-	description_rich_label.pop()
-	description_rich_label.append_text(description.substr(len))
+	var rest: String = description.substr(len)
+	description_rich_label.text = "[color=#92d291]%s[/color]%s" % [correct, rest]
 
 func load() -> void:
 	image_texturerect.texture = node.get_meta("image")
 	draggable = not node.get_meta("typing")
 	down_and_drag = node.get_meta("down_and_drag") and draggable
 	is_healthy = node.get_meta("is_healthy")
-	description_rich_label.clear()
-	description_rich_label.append_text(node.get_meta("description"))
-	#if draggable:
-	#	description_label.text = node.get_meta("description")
-	#else:
-	#	description_label.text = ""
+	description_rich_label.text = node.get_meta("description")
 
 func set_habit(habit: Dictionary, typing: bool = false) -> void:
 	var teste: String = ""

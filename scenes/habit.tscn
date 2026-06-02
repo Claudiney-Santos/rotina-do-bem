@@ -6,10 +6,6 @@
 
 [sub_resource type="Theme" id="Theme_14rkp"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_w6cxf"]
-font = ExtResource("3_3d5kg")
-font_size = 30
-
 [node name="Habit" type="Control" unique_id=1512986 node_paths=PackedStringArray("shortcut_context")]
 layout_mode = 3
 anchors_preset = 8
@@ -54,13 +50,10 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/ScrollContainer" unique_id=862345154]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1686524548]
-visible = false
-layout_mode = 2
-text = "Descrição"
-label_settings = SubResource("LabelSettings_w6cxf")
-horizontal_alignment = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_mode = 2
+stretch_mode = 6
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1548300077]
 layout_mode = 2
