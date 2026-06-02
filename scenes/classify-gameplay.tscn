@@ -78,33 +78,35 @@ grow_vertical = 2
 texture = SubResource("GradientTexture1D_5unp7")
 
 [node name="NegativePanel" type="PanelContainer" parent="." unique_id=108399180]
-custom_minimum_size = Vector2(300, 600)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 20.0
-offset_top = -300.0
+offset_top = -350.0
 offset_right = 320.0
-offset_bottom = 300.0
+offset_bottom = 350.0
 grow_vertical = 2
 theme = SubResource("Theme_34xd2")
 theme_override_styles/panel = SubResource("StyleBoxFlat_nex32")
 
-[node name="Label" type="Label" parent="NegativePanel" unique_id=752907424]
+[node name="VBoxContainer" type="VBoxContainer" parent="NegativePanel" unique_id=286328823]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NegativePanel/VBoxContainer" unique_id=752907424]
 layout_mode = 2
 size_flags_vertical = 0
 text = "NEGATIVO"
 label_settings = ExtResource("2_5unp7")
 horizontal_alignment = 1
 
-[node name="NegativeVBoxContainer" type="VBoxContainer" parent="NegativePanel" unique_id=1720848599]
+[node name="NegativeVBoxContainer" type="VBoxContainer" parent="NegativePanel/VBoxContainer" unique_id=1720848599]
 custom_minimum_size = Vector2(270, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
 
-[node name="HabitPanel" type="PanelContainer" parent="NegativePanel/NegativeVBoxContainer" unique_id=2017134655]
+[node name="HabitPanel" type="PanelContainer" parent="NegativePanel/VBoxContainer/NegativeVBoxContainer" unique_id=2017134655]
 visible = false
 clip_children = 2
 clip_contents = true
@@ -113,14 +115,14 @@ layout_mode = 2
 size_flags_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5unp7")
 
-[node name="TextureRect" type="TextureRect" parent="NegativePanel/NegativeVBoxContainer/HabitPanel" unique_id=624744920]
+[node name="TextureRect" type="TextureRect" parent="NegativePanel/VBoxContainer/NegativeVBoxContainer/HabitPanel" unique_id=624744920]
 clip_contents = true
 layout_mode = 2
 expand_mode = 2
 stretch_mode = 6
 
 [node name="PositivePanel" type="PanelContainer" parent="." unique_id=1520024019]
-custom_minimum_size = Vector2(300, 600)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -128,22 +130,25 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -320.0
-offset_top = -300.0
+offset_top = -350.0
 offset_right = -20.0
-offset_bottom = 300.0
+offset_bottom = 350.0
 grow_horizontal = 0
 grow_vertical = 2
 theme = SubResource("Theme_34xd2")
 theme_override_styles/panel = SubResource("StyleBoxFlat_m6muk")
 
-[node name="Label" type="Label" parent="PositivePanel" unique_id=672191951]
+[node name="VBoxContainer" type="VBoxContainer" parent="PositivePanel" unique_id=1132075462]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PositivePanel/VBoxContainer" unique_id=672191951]
 layout_mode = 2
 size_flags_vertical = 0
 text = "POSITIVO"
 label_settings = ExtResource("2_5unp7")
 horizontal_alignment = 1
 
-[node name="PositiveVBoxContainer" type="VBoxContainer" parent="PositivePanel" unique_id=612474930]
+[node name="PositiveVBoxContainer" type="VBoxContainer" parent="PositivePanel/VBoxContainer" unique_id=612474930]
 custom_minimum_size = Vector2(270, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -181,10 +186,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -300.0
+offset_top = -175.0
+offset_right = 300.0
+offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_34xd2")
