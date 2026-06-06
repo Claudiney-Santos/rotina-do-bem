@@ -177,6 +177,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="BackButton" type="Button" parent="." unique_id=2134271276]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.11400001
