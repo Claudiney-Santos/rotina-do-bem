@@ -205,6 +205,7 @@ horizontal_alignment = 1
 [node name="ContinueButton" type="Button" parent="CorrectPanelContainer/VBoxContainer" unique_id=390400575]
 layout_mode = 2
 size_flags_vertical = 6
+mouse_default_cursor_shape = 2
 text = "CONTINUAR"
 
 [connection signal="finished_answer" from="." to="." method="_on_finished_answer"]

@@ -73,6 +73,8 @@ func _on_habit_put_down() -> void:
 		emit_signal("player_choose_right")
 	elif choose_negative || choose_positive:
 		emit_signal("player_choose_wrong")
+	else:
+		habit_node.make_movable()
 
 
 func _on_player_choose_right() -> void:
@@ -87,6 +89,7 @@ func _on_player_choose_wrong() -> void:
 
 func _on_try_again_button_pressed() -> void:
 	wrong_panel.hide()
+	habit_node.make_movable()
 
 
 func _on_continue_button_pressed() -> void:

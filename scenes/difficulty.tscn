@@ -133,6 +133,7 @@ offset_left = -75.0
 offset_top = -30.025002
 offset_right = 75.0
 offset_bottom = 29.974998
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_oinrr")
@@ -174,6 +175,7 @@ theme_override_constants/separation = 30
 
 [node name="EasyButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=625673925]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_q0d2u")
@@ -183,6 +185,7 @@ text = "FÁCIL"
 
 [node name="MediumButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1362505371]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_q5e74")
@@ -192,6 +195,7 @@ text = "MÉDIO"
 
 [node name="HardButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1557915204]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_we5c5")

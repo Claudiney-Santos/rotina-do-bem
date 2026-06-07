@@ -177,6 +177,7 @@ vertical = true
 
 [node name="PlayButton" type="Button" parent="MainButtonsBoxContainer" unique_id=357949121]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_i6lef")
@@ -189,6 +190,7 @@ icon_alignment = 2
 
 [node name="ReportButton" type="Button" parent="MainButtonsBoxContainer" unique_id=2047960723]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_70i5f")
@@ -207,6 +209,7 @@ offset_left = 0.6800003
 offset_top = 0.08199692
 offset_right = -0.08000183
 offset_bottom = 1.4889984
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_mj5lg")
@@ -232,6 +235,7 @@ theme_override_constants/separation = 30
 
 [node name="VolumeCheckButton" type="Button" parent="ConfigButtonsHBoxContainer" unique_id=103856671]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_ufwb2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3dmrc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_81l6r")
@@ -240,6 +244,7 @@ icon_alignment = 1
 
 [node name="MusicCheckBox" type="Button" parent="ConfigButtonsHBoxContainer" unique_id=1527725343]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_6cdou")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rsfmq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_oi1it")
