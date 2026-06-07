@@ -6,8 +6,20 @@
 				"image": "running.png",
 			},
 			{
-				"description": "comer vegetais",
-				"image": "vegetables.png",
+				"description": "caminhar",
+				"image": "Fácil/Caminhar.jpg",
+			},
+			{
+				"description": "leitura",
+				"image": "Fácil/Leitura.jpg",
+			},
+			{
+				"description": "estudar",
+				"image": "Fácil/Estudar.webp",
+			},
+			{
+				"description": "descansar",
+				"image": "Fácil/Relaxar.webp",
 			},
 		],
 		"unhealthy": [
@@ -24,16 +36,20 @@
 	"medium": {
 		"healthy": [
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "se exercitar",
+				"image": "Médio/Se exercitar.webp",
 			},
 			{
 				"description": "comer vegetais",
-				"image": "vegetables.png",
+				"image": "Médio/Comer Vegetais.webp",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "comer frutas",
+				"image": "Médio/Comer Fruta.jpg",
+			},
+			{
+				"description": "tomar banho",
+				"image": "Médio/Tomar Banho.jpg",
 			},
 		],
 		"unhealthy": [
@@ -54,19 +70,35 @@
 	"hard": {
 		"healthy": [
 			{
-				"description": "correr",
+				"description": "dormir 8 horas",
 				"image": "running.png",
 			},
 			{
-				"description": "comer vegetais",
+				"description": "sair com amigos",
 				"image": "vegetables.png",
 			},
 			{
-				"description": "correr",
+				"description": "escovar os dentes",
 				"image": "running.png",
 			},
 			{
-				"description": "comer vegetais",
+				"description": "atividade fisica",
+				"image": "vegetables.png",
+			},
+			{
+				"description": "pensamentos positivos",
+				"image": "vegetables.png",
+			},
+			{
+				"description": "andar no parque",
+				"image": "vegetables.png",
+			},
+			{
+				"description": "ir para escola",
+				"image": "vegetables.png",
+			},
+			{
+				"description": "beber água",
 				"image": "vegetables.png",
 			},
 		],
