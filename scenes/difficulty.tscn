@@ -83,6 +83,13 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf3r8"]
+bg_color = Color(0.568, 0.6342666, 0.71, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_we5c5"]
 bg_color = Color(0.23529412, 0.35686275, 0.49803922, 1)
 corner_radius_top_left = 16
@@ -99,6 +106,13 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vi71m"]
 bg_color = Color(0.29411766, 0.43137255, 0.59607846, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyl6w"]
+bg_color = Color(0.568, 0.6342666, 0.71, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -191,6 +205,8 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_q5e74")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xu2wo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ei0xv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rf3r8")
+disabled = true
 text = "MÉDIO"
 
 [node name="HardButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1557915204]
@@ -201,6 +217,8 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_we5c5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ae4la")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vi71m")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qyl6w")
+disabled = true
 text = "DIFÍCIL"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

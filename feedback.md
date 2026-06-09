@@ -6,4 +6,4 @@ Feedback:
 [ ] analisar os botões de som e música
 [ ] talvez o formato dos cards de hábito gerem confusão aos alunos (repensar em algo mais intuitivo)
 [ ] adicionar uma tela Sobre (descrevendo que o software foi desenvolvido para a disciplina, quem foram os desenvolvedores, etc)
-[ ] considerar um sistema de progresso (somente avançar de dificuldade quando concluir a anterior)
+[X] considerar um sistema de progresso (somente avançar de dificuldade quando concluir a anterior)
