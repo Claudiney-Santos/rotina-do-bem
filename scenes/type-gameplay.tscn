@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cjcpxrvv403h1" path="res://scenes/type_gameplay.gd" id="1_jok07"]
 [ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="2_7j3yl"]
 [ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="5_40v1b"]
+[ext_resource type="Texture2D" uid="uid://dr5y66758xe74" path="res://images/continue.svg" id="6_grsx4"]
 
 [sub_resource type="Gradient" id="Gradient_qkwfc"]
 offsets = PackedFloat32Array(0)
@@ -67,6 +68,27 @@ corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86hi3"]
+bg_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gj4d"]
+bg_color = Color(0.36795977, 0.58897984, 0.36746898, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjt6g"]
+bg_color = Color(0.62532574, 0.8652726, 0.6205774, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="TypeGameplay" type="Control" unique_id=1069345654]
 layout_mode = 3
@@ -202,11 +224,22 @@ text = "PARABÉNS! VOCÊ ACERTOU!"
 label_settings = ExtResource("1_ansty")
 horizontal_alignment = 1
 
-[node name="ContinueButton" type="Button" parent="CorrectPanelContainer/VBoxContainer" unique_id=390400575]
+[node name="ContinueButton" type="Button" parent="CorrectPanelContainer/VBoxContainer" unique_id=718253073]
+custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
+mouse_filter = 1
 mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_7j3yl")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_86hi3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8gj4d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cjt6g")
 text = "CONTINUAR"
+icon = ExtResource("6_grsx4")
+icon_alignment = 2
 
 [connection signal="finished_answer" from="." to="." method="_on_finished_answer"]
 [connection signal="text_changed" from="VBoxContainer/PanelContainer/LineEdit" to="." method="_on_line_edit_text_changed"]

@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://do3k4hd84jjsg" path="res://scenes/habit.tscn" id="2_hgc32"]
 [ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="3_34xd2"]
 [ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="3_nex32"]
+[ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="6_17o8i"]
+[ext_resource type="Texture2D" uid="uid://pxieypd6nj74" path="res://images/stash_arrow-retry-duotone.svg" id="6_nex32"]
+[ext_resource type="Texture2D" uid="uid://dr5y66758xe74" path="res://images/continue.svg" id="7_m6muk"]
 
 [sub_resource type="Gradient" id="Gradient_34xd2"]
 offsets = PackedFloat32Array(0)
@@ -69,6 +72,27 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fafcm"]
+bg_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnpex"]
+bg_color = Color(0.36795977, 0.58897984, 0.36746898, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2ycc"]
+bg_color = Color(0.62532574, 0.8652726, 0.6205774, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17o8i"]
 bg_color = Color(1, 0.98039216, 0.91764706, 1)
 border_width_left = 30
@@ -80,6 +104,27 @@ corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nl3c"]
+bg_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfrv1"]
+bg_color = Color(0.36795977, 0.58897984, 0.36746898, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gn2v2"]
+bg_color = Color(0.62532574, 0.8652726, 0.6205774, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="ClassifyGameplay" type="Control" unique_id=1481593187]
 layout_mode = 3
@@ -222,7 +267,7 @@ size_flags_vertical = 2
 
 [node name="WrongPanelContainer" type="PanelContainer" parent="." unique_id=1183711126]
 visible = false
-custom_minimum_size = Vector2(600, 350)
+custom_minimum_size = Vector2(700, 350)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -249,15 +294,26 @@ label_settings = ExtResource("3_34xd2")
 horizontal_alignment = 1
 
 [node name="TryAgainButton" type="Button" parent="WrongPanelContainer/VBoxContainer" unique_id=1284239034]
+custom_minimum_size = Vector2(600, 100)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 mouse_filter = 1
 mouse_default_cursor_shape = 2
-text = "SIM"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_17o8i")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_fafcm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qnpex")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a2ycc")
+text = "TENTAR NOVAMENTE"
+icon = ExtResource("6_nex32")
+icon_alignment = 2
+expand_icon = true
 
 [node name="CorrectPanelContainer" type="PanelContainer" parent="." unique_id=1996392363]
 visible = false
-custom_minimum_size = Vector2(600, 350)
+custom_minimum_size = Vector2(700, 350)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -283,11 +339,21 @@ label_settings = ExtResource("3_34xd2")
 horizontal_alignment = 1
 
 [node name="ContinueButton" type="Button" parent="CorrectPanelContainer/VBoxContainer" unique_id=731324568]
+custom_minimum_size = Vector2(600, 100)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 mouse_filter = 1
 mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_17o8i")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5nl3c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hfrv1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gn2v2")
 text = "CONTINUAR"
+icon = ExtResource("7_m6muk")
+icon_alignment = 2
 
 [connection signal="player_choose_right" from="." to="." method="_on_player_choose_right"]
 [connection signal="player_choose_wrong" from="." to="." method="_on_player_choose_wrong"]
