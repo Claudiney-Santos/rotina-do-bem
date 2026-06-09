@@ -10,10 +10,6 @@
 				"image": "Fácil/Caminhar.jpg",
 			},
 			{
-				"description": "leitura",
-				"image": "Fácil/Leitura.jpg",
-			},
-			{
 				"description": "estudar",
 				"image": "Fácil/Estudar.webp",
 			},
@@ -24,12 +20,20 @@
 		],
 		"unhealthy": [
 			{
-				"description": "comer muito doce",
-				"image": "candy.jpg",
+				"description": "sedentarismo",
+				"image": "Fácil/Sedentarismo.webp",
 			},
 			{
-				"description": "usar celular até tarde",
-				"image": "smartphone.jpg",
+				"description": "procastinar",
+				"image": "Fácil/Procastinar.jpeg",
+			},
+			{
+				"description": "fofocar",
+				"image": "Fácil/Fofocar.jpg",
+			},
+			{
+				"description": "reclamar",
+				"image": "Fácil/Reclamar.webp",
 			},
 		],
 	},
@@ -51,19 +55,39 @@
 				"description": "tomar banho",
 				"image": "Médio/Tomar Banho.jpg",
 			},
+			{
+				"description": "arrumar cama",
+				"image": "Médio/Arrumar Cama.webp",
+			},
+			{
+				"description": "ler livros",
+				"image": "Médio/Ler Livros.jpg",
+			},
 		],
 		"unhealthy": [
 			{
-				"description": "comer muito doce",
-				"image": "candy.jpg",
+				"description": "dormir tarde",
+				"image": "Médio/Dormir Tarde.avif",
 			},
 			{
-				"description": "usar celular até tarde",
-				"image": "smartphone.jpg",
+				"description": "comer demais",
+				"image": "Médio/Comer demais.jpg",
 			},
 			{
-				"description": "comer muito doce",
-				"image": "candy.jpg",
+				"description": "beber refrigerante",
+				"image": "Médio/Beber Refrigerante.jpeg",
+			},
+			{
+				"description": "roer unhas",
+				"image": "Médio/Roer Unha.jpg",
+			},
+			{
+				"description": "ignorar sintomas",
+				"image": "Médio/Ignorar Sintomas.png",
+			},
+			{
+				"description": "isolamento social",
+				"image": "Médio/Isolamento Social.webp",
 			},
 		],
 	},
@@ -71,53 +95,65 @@
 		"healthy": [
 			{
 				"description": "dormir 8 horas",
-				"image": "running.png",
+				"image": "Difícil/Dormir 8 horas.webp",
 			},
 			{
 				"description": "sair com amigos",
-				"image": "vegetables.png",
+				"image": "Difícil/Sair com amigos.jpg",
 			},
 			{
 				"description": "escovar os dentes",
-				"image": "running.png",
-			},
-			{
-				"description": "atividade fisica",
-				"image": "vegetables.png",
-			},
-			{
-				"description": "pensamentos positivos",
-				"image": "vegetables.png",
-			},
-			{
-				"description": "andar no parque",
-				"image": "vegetables.png",
-			},
-			{
-				"description": "ir para escola",
-				"image": "vegetables.png",
+				"image": "Difícil/Escovar os Dentes.webp",
 			},
 			{
 				"description": "beber água",
-				"image": "vegetables.png",
+				"image": "Difícil/Tomar Água.jpg",
+			},
+			{
+				"description": "passear no parque",
+				"image": "Difícil/Passear no Parque.jpg",
+			},
+			{
+				"description": "ir para escola",
+				"image": "Difícil/Ir a Escola.jpg",
+			},
+			{
+				"description": "limpar a casa",
+				"image": "Difícil/Limpar a casa.webp",
 			},
 		],
 		"unhealthy": [
 			{
-				"description": "comer muito doce",
-				"image": "candy.jpg",
-			},
-			{
-				"description": "usar celular até tarde",
-				"image": "smartphone.jpg",
+				"description": "assistir muita tv",
+				"image": "Difícil/Assistir Muita TV.jpg",
 			},
 			{
 				"description": "comer muito doce",
-				"image": "candy.jpg",
+				"image": "Difícil/Comer muito doce.jpg",
 			},
 			{
-				"description": "usar celular até tarde",
-				"image": "smartphone.jpg",
+				"description": "beber pouca água",
+				"image": "Difícil/Beber Pouca Água.avif",
+			},
+			{
+				"description": "comer muito rápido",
+				"image": "Difícil/Comer Muito Rápido.webp",
+			},
+			{
+				"description": "gastar muito dinheiro",
+				"image": "Difícil/Gastar Muito Dinheiro.webp",
+			},
+			{
+				"description": "má alimentação",
+				"image": "Difícil/Má Alimentação.webp",
+			},
+			{
+				"description": "má postura",
+				"image": "Difícil/Má Postura.jpg",
+			},
+			{
+				"description": "estresse Contínuo",
+				"image": "Difícil/Estresse Contínuo.jpg",
 			},
 		],
 	},
