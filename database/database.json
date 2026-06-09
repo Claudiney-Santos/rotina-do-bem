@@ -67,7 +67,7 @@
 		"unhealthy": [
 			{
 				"description": "dormir tarde",
-				"image": "Médio/Dormir Tarde.avif",
+				"image": "Médio/Dormir Tarde.png",
 			},
 			{
 				"description": "comer demais",
@@ -153,7 +153,7 @@
 			},
 			{
 				"description": "estresse Contínuo",
-				"image": "Difícil/Estresse Contínuo.jpg",
+				"image": "Difícil/Estresse Contínuo.png",
 			},
 		],
 	},
