@@ -136,6 +136,7 @@ layout_mode = 2
 size_flags_vertical = 6
 metadata/typing = true
 metadata/down_and_drag = false
+metadata/image = null
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1130880282]
 custom_minimum_size = Vector2(0, 50)

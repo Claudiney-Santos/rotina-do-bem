@@ -47,7 +47,9 @@ func _on_finished_answer() -> void:
 func _on_continue_button_pressed() -> void:
 	GameManager.current_round += 1
 	if GameManager.current_round == len(GameManager.selected_habits):
-		GameManager.unlock_next_level()
-		get_tree().change_scene_to_file("res://scenes/difficulty.tscn")
+		if GameManager.unlock_next_level():
+			get_tree().change_scene_to_file("res://scenes/difficulty.tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/classify-gameplay.tscn")

@@ -21,6 +21,7 @@ metadata/description = ""
 metadata/typing = false
 metadata/down_and_drag = true
 metadata/is_healthy = false
+metadata/image = null
 
 [node name="Panel" type="PanelContainer" parent="." unique_id=918341132]
 custom_minimum_size = Vector2(500, 500)

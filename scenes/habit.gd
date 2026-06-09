@@ -34,14 +34,14 @@ func update_correct_typing(len: int) -> void:
 	description_rich_label.text = "[color=#92d291]%s[/color]%s" % [correct, rest]
 
 func load() -> void:
-	image_texturerect.texture = node.get_meta("image")
+	if node.has_meta("image"):
+		image_texturerect.texture = node.get_meta("image")
 	draggable = not node.get_meta("typing")
 	down_and_drag = node.get_meta("down_and_drag") and draggable
 	is_healthy = node.get_meta("is_healthy")
 	description_rich_label.text = node.get_meta("description")
 
 func set_habit(habit: Dictionary, typing: bool = false) -> void:
-	var teste: String = ""
 	set_meta("description", habit.description.to_upper())
 	set_meta("image", habit.image_resource)
 	set_meta("is_healthy", habit.is_healthy)

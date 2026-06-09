@@ -255,7 +255,7 @@ offset_bottom = -357.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
-text = "ARRASTE A IMAGEM A COLUNA CORRESPONDENTE"
+text = "ARRASTE A IMAGEM À COLUNA CORRESPONDENTE"
 label_settings = ExtResource("3_34xd2")
 horizontal_alignment = 1
 
