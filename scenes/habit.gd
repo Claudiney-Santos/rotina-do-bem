@@ -5,7 +5,8 @@ extends Control
 signal put_up
 signal put_down
 
-@onready var node = $"."
+@onready var node: Control = $"."
+@onready var panel: VBoxContainer = $Panel/VBoxContainer
 @onready var description_rich_label = $Panel/VBoxContainer/RichTextLabel
 @onready var image_texturerect = $Panel/VBoxContainer/ScrollContainer/TextureRect
 
@@ -21,6 +22,7 @@ var _mouse_down_position: Vector2
 var _node_down_position: Vector2
 var _node_anchor_position: Vector2
 var _mouse_status: int = 0
+var _is_immovable: bool = false
 var _is_holding: bool = false
 var _is_hovering: bool = false
 var _scale: float = 1
@@ -32,22 +34,19 @@ func update_correct_typing(len: int) -> void:
 	description_rich_label.text = "[color=#92d291]%s[/color]%s" % [correct, rest]
 
 func load() -> void:
-	image_texturerect.texture = node.get_meta("image")
+	if node.has_meta("image"):
+		image_texturerect.texture = node.get_meta("image")
 	draggable = not node.get_meta("typing")
 	down_and_drag = node.get_meta("down_and_drag") and draggable
 	is_healthy = node.get_meta("is_healthy")
 	description_rich_label.text = node.get_meta("description")
 
 func set_habit(habit: Dictionary, typing: bool = false) -> void:
-	var teste: String = ""
 	set_meta("description", habit.description.to_upper())
 	set_meta("image", habit.image_resource)
 	set_meta("is_healthy", habit.is_healthy)
 	set_meta("typing", typing)
-	if typing:
-		node.mouse_default_cursor_shape = CURSOR_ARROW
-	else:
-		node.mouse_default_cursor_shape = CURSOR_POINTING_HAND
+	panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	self.load()
 
 func set_hovering_positive() -> void:
@@ -67,7 +66,7 @@ func _ready() -> void:
 	self.load()
 
 func _input(event: InputEvent) -> void:
-	if draggable and _is_hovering and event is InputEventMouse:
+	if draggable and not _is_immovable and _is_hovering and event is InputEventMouse:
 		var was_holding = _is_holding
 		is_holding(event)
 		
@@ -76,12 +75,12 @@ func _input(event: InputEvent) -> void:
 				print("Segura e arrasta")
 			else:
 				print("Clica e solta, então arrasta")
-		
+
 		if was_holding and not _is_holding:
 			emit_signal("put_down")
 		if not was_holding and _is_holding:
 			emit_signal("put_up")
-		
+
 		if not was_holding and _is_holding:
 			_mouse_down_position = event.position
 			_node_down_position = node.position
@@ -128,10 +127,21 @@ func is_holding(event: InputEventMouse) -> bool:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if _is_immovable and panel.mouse_default_cursor_shape != Control.CURSOR_ARROW:
+		#panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
+		pass
+		#print('imovvivel')
 	node.scale = Vector2(_scale, _scale)
 
-func is_over_panel(panel: PanelContainer) -> bool:
-	return $Panel.get_global_rect().intersects(panel.get_global_rect(), true)
+func is_over_panel(p: PanelContainer) -> bool:
+	var is_over: bool = $Panel.get_global_rect().intersects(p.get_global_rect(), true)
+	if _is_immovable:
+		panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
+	if is_over:
+		panel.mouse_default_cursor_shape = Control.CURSOR_CAN_DROP
+	else:
+		panel.mouse_default_cursor_shape = Control.CURSOR_MOVE
+	return is_over
 
 func _on_mouse_entered() -> void:
 	print("entrou")
@@ -146,6 +156,7 @@ func _on_mouse_exited() -> void:
 
 func _on_put_down() -> void:
 	_scale = 1
+	make_immovable()
 	var pos: Vector2 = get_global_mouse_position()
 	print("soltou em (%d, %d)" % [pos[0], pos[1]])
 
@@ -153,3 +164,13 @@ func _on_put_down() -> void:
 func _on_put_up() -> void:
 	_scale = 1.2
 	print("segurou")
+
+func make_immovable() -> void:
+	_is_immovable = true
+	panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
+	print("imovivel")
+
+func make_movable() -> void:
+	_is_immovable = false
+	panel.mouse_default_cursor_shape = Control.CURSOR_MOVE
+	print("movivel")

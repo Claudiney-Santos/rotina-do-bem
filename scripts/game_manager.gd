@@ -3,9 +3,26 @@ extends Node
 enum Difficulty { EASY, MEDIUM, HARD }
 
 var selected_difficulty: Difficulty = Difficulty.MEDIUM
+var _unlocked_level: Difficulty = Difficulty.EASY
+
+var unlocked_level: Difficulty:
+	get: return _unlocked_level
 
 var selected_habits: Array = []
 var current_round: int = 0
+
+func unlock_next_level() -> bool:
+	match _unlocked_level:
+		Difficulty.EASY:
+			_unlocked_level = Difficulty.MEDIUM
+			return true
+		Difficulty.MEDIUM:
+			_unlocked_level = Difficulty.HARD
+			return true
+		Difficulty.HARD:
+			_unlocked_level = Difficulty.HARD
+			return false
+	return false
 
 func load_game(difficulty: Difficulty) -> void:
 	current_round = 0

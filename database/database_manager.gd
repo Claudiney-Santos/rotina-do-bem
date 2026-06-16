@@ -18,5 +18,5 @@ func _load_images() -> void:
 	for difficulty in data:
 		for healthiness in data[difficulty]:
 			for habit in data[difficulty][healthiness]:
-				var image_resource: CompressedTexture2D = load("res://images/%s" % habit.image)
+				var image_resource: Texture2D = load("res://images/%s" % habit.image)
 				habit.set("image_resource", image_resource)

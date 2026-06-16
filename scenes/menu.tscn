@@ -8,9 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://dh4fmwexpajd6" path="res://images/Volume.png" id="5_v86rl"]
 [ext_resource type="Texture2D" uid="uid://dfhtyyi47ynf" path="res://images/Music.png" id="6_13sgg"]
 
+[sub_resource type="Gradient" id="Gradient_hgc32"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.8627451, 0.95686275, 0.99215686, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v86rl"]
+gradient = SubResource("Gradient_hgc32")
+
 [sub_resource type="LabelSettings" id="LabelSettings_con2f"]
 font = ExtResource("2_vjb58")
-font_size = 123
+font_size = 80
 font_color = Color(0.05490196, 0.20392157, 0.38431373, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
@@ -127,8 +134,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_con2f")
 
+[node name="Background" type="TextureRect" parent="." unique_id=2111097744]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_v86rl")
+
 [node name="BackgroundTextureRect" type="TextureRect" parent="." unique_id=1731304671]
-modulate = Color(1, 1, 1, 0.74509805)
+modulate = Color(1, 1, 1, 0.31764707)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,7 +152,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_yqeox")
-expand_mode = 3
+expand_mode = 4
 stretch_mode = 5
 
 [node name="TitleLabel" type="Label" parent="." unique_id=499870590]
@@ -147,15 +163,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -621.0
-offset_top = -345.5
+offset_top = -237.0
 offset_right = 614.0
-offset_bottom = -146.5
+offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 16
 text = "ROTINA DO BEM"
 label_settings = SubResource("LabelSettings_con2f")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MainButtonsBoxContainer" type="BoxContainer" parent="." unique_id=1851280352]
 custom_minimum_size = Vector2(400, 0)
@@ -177,6 +194,7 @@ vertical = true
 
 [node name="PlayButton" type="Button" parent="MainButtonsBoxContainer" unique_id=357949121]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_i6lef")
@@ -189,6 +207,7 @@ icon_alignment = 2
 
 [node name="ReportButton" type="Button" parent="MainButtonsBoxContainer" unique_id=2047960723]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_70i5f")
@@ -207,6 +226,7 @@ offset_left = 0.6800003
 offset_top = 0.08199692
 offset_right = -0.08000183
 offset_bottom = 1.4889984
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_mj5lg")
@@ -232,6 +252,7 @@ theme_override_constants/separation = 30
 
 [node name="VolumeCheckButton" type="Button" parent="ConfigButtonsHBoxContainer" unique_id=103856671]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_ufwb2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3dmrc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_81l6r")
@@ -240,6 +261,7 @@ icon_alignment = 1
 
 [node name="MusicCheckBox" type="Button" parent="ConfigButtonsHBoxContainer" unique_id=1527725343]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_6cdou")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rsfmq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_oi1it")
