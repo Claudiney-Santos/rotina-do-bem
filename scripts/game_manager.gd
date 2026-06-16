@@ -56,11 +56,3 @@ func load_game(difficulty: Difficulty) -> void:
 		unhealthy.set("is_healthy", false)
 		selected_habits.push_back(unhealthy)
 	selected_habits.shuffle()
-
-const view_height: int = 1027
-
-func on_resize() -> void:
-	var window: Window = get_window()
-	var win_size: Vector2 = window.size
-	window.content_scale_factor = win_size[1]/view_height * .8
-	print("resized: %d x %d" % [win_size[0], win_size[1]])
