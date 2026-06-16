@@ -3,18 +3,9 @@
 [ext_resource type="Script" uid="uid://ccbbbw743c5bb" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cxogb5q241xjc" path="res://scenes/menu.tscn" id="1_o5qli"]
 
-[node name="Node" type="Control" unique_id=435139455]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Node" type="Node" unique_id=1586045391]
 script = ExtResource("1_0wfyh")
 
 [node name="Menu" parent="." unique_id=2086134230 instance=ExtResource("1_o5qli")]
-layout_mode = 1
 offset_left = 2.0
 offset_right = 2.0
-
-[connection signal="resized" from="." to="." method="_on_resized"]

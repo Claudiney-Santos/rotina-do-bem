@@ -29,6 +29,8 @@ GameManager="*uid://djmwygmx21boy"
 window/size/viewport_width=1440
 window/size/viewport_height=1027
 window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor]
 
