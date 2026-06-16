@@ -109,24 +109,21 @@ grow_vertical = 2
 texture = SubResource("GradientTexture1D_7j3yl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=997393694]
-custom_minimum_size = Vector2(0, 800)
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -304.0
-offset_top = -58.5
-offset_right = 304.0
-offset_bottom = 58.5
+anchor_bottom = 1.0
+offset_left = -406.0
+offset_right = 406.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=601746790]
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 6
 text = "DIGITE A PALAVRA ABAIXO NO TECLADO FÍSICO"
 label_settings = ExtResource("1_ansty")
 horizontal_alignment = 1
@@ -136,12 +133,11 @@ layout_mode = 2
 size_flags_vertical = 6
 metadata/typing = true
 metadata/down_and_drag = false
-metadata/image = null
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1130880282]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_vertical = 6
 theme = SubResource("Theme_7j3yl")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ansty")
 

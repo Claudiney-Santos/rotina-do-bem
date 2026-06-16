@@ -241,28 +241,26 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_u7ch4")
 text = " VOLTAR "
 icon = ExtResource("3_nex32")
 
-[node name="Label" type="Label" parent="." unique_id=1607890936]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=567338517]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -436.0
-offset_top = -414.5
 offset_right = 436.0
-offset_bottom = -357.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1607890936]
+layout_mode = 2
 size_flags_vertical = 2
 text = "ARRASTE A IMAGEM À COLUNA CORRESPONDENTE"
 label_settings = ExtResource("3_34xd2")
 horizontal_alignment = 1
 
-[node name="Habit" parent="." unique_id=1512986 instance=ExtResource("2_hgc32")]
-layout_mode = 1
-offset_left = -304.0
-offset_right = 304.0
+[node name="Habit" parent="VBoxContainer" unique_id=1512986 instance=ExtResource("2_hgc32")]
+layout_mode = 2
 size_flags_vertical = 2
 
 [node name="WrongPanelContainer" type="PanelContainer" parent="." unique_id=1183711126]
@@ -358,6 +356,6 @@ icon_alignment = 2
 [connection signal="player_choose_right" from="." to="." method="_on_player_choose_right"]
 [connection signal="player_choose_wrong" from="." to="." method="_on_player_choose_wrong"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="put_down" from="Habit" to="." method="_on_habit_put_down"]
+[connection signal="put_down" from="VBoxContainer/Habit" to="." method="_on_habit_put_down"]
 [connection signal="pressed" from="WrongPanelContainer/VBoxContainer/TryAgainButton" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="CorrectPanelContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
