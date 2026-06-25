@@ -14,6 +14,7 @@ var habit_description: String = ""
 func _ready() -> void:
 	var current_habit = GameManager.selected_habits[GameManager.current_round]
 	habit_node.set_habit(current_habit, true)
+	habit_node.update_correct_typing(0)
 	habit_description = current_habit.description.to_upper().strip_edges()
 	rich_text.text = habit_description
 	line_edit.grab_focus(true)
@@ -34,6 +35,8 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 		written_len = len(answer)
 		habit_node.update_correct_typing(written_len)
 		print(answer)
+	else:
+		GameManager.mistakes.add_typing_mistake(Mistakes.TypingMistake.new(habit_description, written_len, GameManager.selected_difficulty, GameManager.current_round))
 	line_edit.text = habit_description.substr(0, written_len)
 	line_edit.caret_column = written_len
 	if len(habit_description) == written_len:
@@ -47,9 +50,9 @@ func _on_finished_answer() -> void:
 func _on_continue_button_pressed() -> void:
 	GameManager.current_round += 1
 	if GameManager.current_round == len(GameManager.selected_habits):
-		if GameManager.unlock_next_level():
-			get_tree().change_scene_to_file("res://scenes/difficulty.tscn")
-		else:
+		if not GameManager.unlock_next_level() and GameManager.selected_difficulty == GameManager.Difficulty.HARD:
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/difficulty.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/classify-gameplay.tscn")

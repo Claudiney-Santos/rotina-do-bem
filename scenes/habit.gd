@@ -14,9 +14,19 @@ var neutral_stylebox: StyleBoxFlat = preload("res://styles/style-boxes/neutral_b
 var positive_stylebox: StyleBoxFlat = preload("res://styles/style-boxes/positive_box_habit.tres")
 var negative_stylebox: StyleBoxFlat = preload("res://styles/style-boxes/negative_box_habit.tres")
 
-var draggable = false
-var down_and_drag = false
-var is_healthy = false
+var draggable: bool:
+	get:
+		return not node.get_meta("typing")
+var down_and_drag: bool:
+	get:
+		return node.get_meta("down_and_drag") and draggable
+var is_healthy: bool:
+	get:
+		return node.get_meta("is_healthy")
+
+var description: String:
+	get:
+		return get_meta("description")
 
 var _mouse_down_position: Vector2
 var _node_down_position: Vector2
@@ -28,17 +38,19 @@ var _is_hovering: bool = false
 var _scale: float = 1
 
 func update_correct_typing(len: int) -> void:
-	var description: String = get_meta("description")
 	var correct: String = description.substr(0, len)
-	var rest: String = description.substr(len)
-	description_rich_label.text = "[color=#92d291]%s[/color]%s" % [correct, rest]
+	var current_letter: String = description.substr(len, 1)
+	var rest: String = description.substr(len+1)
+	var current_letter_rt: String = ""
+	if current_letter == " ":
+		current_letter_rt = "[bgcolor=#faf887]%s[/bgcolor]" % current_letter
+	else:
+		current_letter_rt = "[color=#faf887]%s[/color]" % current_letter
+	description_rich_label.text = "[color=#92d291]%s[/color]%s%s" % [correct, current_letter_rt, rest]
 
 func load() -> void:
 	if node.has_meta("image"):
 		image_texturerect.texture = node.get_meta("image")
-	draggable = not node.get_meta("typing")
-	down_and_drag = node.get_meta("down_and_drag") and draggable
-	is_healthy = node.get_meta("is_healthy")
 	description_rich_label.text = node.get_meta("description")
 
 func set_habit(habit: Dictionary, typing: bool = false) -> void:
