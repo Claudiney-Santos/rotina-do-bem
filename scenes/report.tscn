@@ -1,0 +1,286 @@
+[gd_scene format=3 uid="uid://bkfiqti7omvvp"]
+
+[ext_resource type="Script" uid="uid://carsiyx05pf2x" path="res://scenes/report.gd" id="1_q5px1"]
+[ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="1_smm52"]
+[ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="2_q5px1"]
+
+[sub_resource type="Gradient" id="Gradient_qkwfc"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.8627451, 0.95686275, 0.99215686, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4lv02"]
+gradient = SubResource("Gradient_qkwfc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsvqr"]
+bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txauj"]
+bg_color = Color(0.3222329, 0.5220842, 0.6154551, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fhai"]
+bg_color = Color(0.4924193, 0.702862, 0.80371624, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Theme" id="Theme_yvsl5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjlyb"]
+bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Report" type="Control" unique_id=629113566]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q5px1")
+
+[node name="Background" type="TextureRect" parent="." unique_id=20105831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_4lv02")
+
+[node name="BackButton" type="Button" parent="." unique_id=21784286]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.075
+anchor_right = 0.1
+anchor_bottom = 0.075
+offset_left = -75.0
+offset_top = -30.025002
+offset_right = 75.0
+offset_bottom = 29.974998
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_bsvqr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_txauj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4fhai")
+text = " VOLTAR "
+icon = ExtResource("1_smm52")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1055738525]
+custom_minimum_size = Vector2(700, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yvsl5")
+theme_override_styles/panel = SubResource("StyleBoxFlat_fjlyb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1067897650]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=943582978]
+layout_mode = 2
+size_flags_vertical = 0
+text = "RELATÓRIO"
+label_settings = ExtResource("2_q5px1")
+horizontal_alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer/VBoxContainer" unique_id=828750149]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="EasyPanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer" unique_id=694653683]
+layout_mode = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer" unique_id=1869285058]
+layout_mode = 2
+split_offsets = PackedInt32Array(23, 85)
+split_offset = 23
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer" unique_id=659658594]
+layout_mode = 2
+text = "NÍVEL FÁCIL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer" unique_id=1405023654]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer" unique_id=1793623476]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=1859022346]
+layout_mode = 2
+text = "CLICAR-E-ARRASTAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyClassifyStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=1132820217]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+text = "★★★★☆"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer" unique_id=945802371]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer2" unique_id=816875363]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer2/PanelContainer" unique_id=642116614]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=680210200]
+layout_mode = 2
+text = "DIGITAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyTypingStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=879647662]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+text = "★★★★☆"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumPanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer" unique_id=1367804290]
+layout_mode = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer" unique_id=137758362]
+layout_mode = 2
+split_offsets = PackedInt32Array(23, 85)
+split_offset = 23
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer" unique_id=1723870622]
+layout_mode = 2
+text = "NÍVEL MÉDIO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer" unique_id=349724338]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer" unique_id=421768667]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=2036871702]
+layout_mode = 2
+text = "CLICAR-E-ARRASTAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumClassifyStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=832913358]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+text = "★★★★☆"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer" unique_id=1926527610]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer2" unique_id=420775300]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer2/PanelContainer" unique_id=1352748223]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1124478906]
+layout_mode = 2
+text = "DIGITAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumTypingStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1598330995]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+text = "★★★★☆"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardPanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer" unique_id=1893130527]
+layout_mode = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer" unique_id=631640060]
+layout_mode = 2
+split_offsets = PackedInt32Array(23, 85)
+split_offset = 23
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer" unique_id=698199009]
+layout_mode = 2
+text = "NÍVEL DIFÍCIL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer" unique_id=135546633]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer" unique_id=1022411178]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=208158395]
+layout_mode = 2
+text = "CLICAR-E-ARRASTAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardClassifyStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=2073233113]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+text = "★★★★☆"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer" unique_id=447149805]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer2" unique_id=1401284394]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer2/PanelContainer" unique_id=1186015970]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1023096844]
+layout_mode = 2
+text = "DIGITAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardTypingStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1057848020]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+text = "★★★★☆"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

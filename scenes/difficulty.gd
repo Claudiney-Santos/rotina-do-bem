@@ -25,16 +25,19 @@ func _process(delta: float) -> void:
 
 func _on_easy_button_pressed() -> void:
 	GameManager.load_game(GameManager.Difficulty.EASY)
+	GameManager.mistakes.reset_difficulty(GameManager.selected_difficulty)
 	get_tree().change_scene_to_file("res://scenes/classify-gameplay.tscn")
 
 
 func _on_medium_button_pressed() -> void:
 	GameManager.load_game(GameManager.Difficulty.MEDIUM)
+	GameManager.mistakes.reset_difficulty(GameManager.selected_difficulty)
 	get_tree().change_scene_to_file("res://scenes/classify-gameplay.tscn")
 
 
 func _on_hard_button_pressed() -> void:
 	GameManager.load_game(GameManager.Difficulty.HARD)
+	GameManager.mistakes.reset_difficulty(GameManager.selected_difficulty)
 	get_tree().change_scene_to_file("res://scenes/classify-gameplay.tscn")
 
 

@@ -51,7 +51,7 @@ func _on_continue_button_pressed() -> void:
 	GameManager.current_round += 1
 	if GameManager.current_round == len(GameManager.selected_habits):
 		if not GameManager.unlock_next_level() and GameManager.selected_difficulty == GameManager.Difficulty.HARD:
-			get_tree().change_scene_to_file("res://scenes/menu.tscn")
+			get_tree().change_scene_to_file("res://scenes/report.tscn")
 		else:
 			get_tree().change_scene_to_file("res://scenes/difficulty.tscn")
 	else:

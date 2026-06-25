@@ -84,6 +84,7 @@ func _on_player_choose_right() -> void:
 
 func _on_player_choose_wrong() -> void:
 	wrong_panel.show()
+	GameManager.mistakes.add_classify_mistake(Mistakes.ClassifyMistake.new(habit_node.description, GameManager.selected_difficulty, GameManager.current_round))
 	print("Jogador errou")
 
 
