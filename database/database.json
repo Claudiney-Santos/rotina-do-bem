@@ -20,8 +20,8 @@
 		],
 		"unhealthy": [
 			{
-				"description": "sedentarismo",
-				"image": "Fácil/Sedentarismo.webp",
+				"description": "irritabilidade",
+				"image": "Fácil/Irritabilidade.jpg",
 			},
 			{
 				"description": "procastinar",
@@ -34,6 +34,10 @@
 			{
 				"description": "reclamar",
 				"image": "Fácil/Reclamar.webp",
+			},
+			{
+				"description": "ansiedade",
+				"image": "Fácil/Ansiedade.jpg",
 			},
 		],
 	},
@@ -82,8 +86,8 @@
 				"image": "Médio/Roer Unha.jpg",
 			},
 			{
-				"description": "ignorar sintomas",
-				"image": "Médio/Ignorar Sintomas.png",
+				"description": "má postura",
+				"image": "Médio/Má Postura.jpg",
 			},
 			{
 				"description": "isolamento social",
@@ -148,12 +152,12 @@
 				"image": "Difícil/Má Alimentação.webp",
 			},
 			{
-				"description": "má postura",
-				"image": "Difícil/Má Postura.jpg",
-			},
-			{
 				"description": "estresse Contínuo",
 				"image": "Difícil/Estresse Contínuo.png",
+			},
+			{
+				"description": "não praticar atividades físicas",
+				"image": "Difícil/Sedentarismo.webp",
 			},
 		],
 	},
