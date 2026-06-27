@@ -42,13 +42,13 @@ func update_correct_typing(len: int, typo: String = "") -> void:
 	var rest: String = description.substr(len+1)
 	var current_letter_rt: String = ""
 	var show_rt = func(letter: String, is_typo: bool = false) -> String:
+		var tag: String = "color"
 		var color: String = "faf887"
 		if is_typo:
 			color = "f16a6a"
 		if letter == " ":
-			return "[bgcolor=#%s]%s[/bgcolor]" % [color, letter]
-		else:
-			return "[color=#%s]%s[/color]" % [color, letter]
+			tag = "bgcolor"
+		return "[%s=#%s]%s[/%s]" % [tag, color, letter, tag]
 		
 	if typo == "":
 		current_letter_rt = show_rt.call(description.substr(len, 1))
