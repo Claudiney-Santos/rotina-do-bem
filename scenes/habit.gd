@@ -37,15 +37,23 @@ var _is_holding: bool = false
 var _is_hovering: bool = false
 var _scale: float = 1
 
-func update_correct_typing(len: int) -> void:
+func update_correct_typing(len: int, typo: String = "") -> void:
 	var correct: String = description.substr(0, len)
-	var current_letter: String = description.substr(len, 1)
 	var rest: String = description.substr(len+1)
 	var current_letter_rt: String = ""
-	if current_letter == " ":
-		current_letter_rt = "[bgcolor=#faf887]%s[/bgcolor]" % current_letter
+	var show_rt = func(letter: String, is_typo: bool = false) -> String:
+		var color: String = "faf887"
+		if is_typo:
+			color = "f16a6a"
+		if letter == " ":
+			return "[bgcolor=#%s]%s[/bgcolor]" % [color, letter]
+		else:
+			return "[color=#%s]%s[/color]" % [color, letter]
+		
+	if typo == "":
+		current_letter_rt = show_rt.call(description.substr(len, 1))
 	else:
-		current_letter_rt = "[color=#faf887]%s[/color]" % current_letter
+		current_letter_rt = show_rt.call(typo, true)
 	description_rich_label.text = "[color=#92d291]%s[/color]%s%s" % [correct, current_letter_rt, rest]
 
 func load() -> void:

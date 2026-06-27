@@ -238,7 +238,12 @@ text = "CONTINUAR"
 icon = ExtResource("6_grsx4")
 icon_alignment = 2
 
+[node name="Timer" type="Timer" parent="." unique_id=966923740]
+wait_time = 0.5
+
+[connection signal="dead_key_mistake" from="." to="." method="_on_dead_key_mistake"]
 [connection signal="finished_answer" from="." to="." method="_on_finished_answer"]
 [connection signal="text_changed" from="VBoxContainer/PanelContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CorrectPanelContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
