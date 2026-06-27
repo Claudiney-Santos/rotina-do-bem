@@ -38,7 +38,7 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 		written_len = len(answer)
 		habit_node.update_correct_typing(written_len)
 		dead_key_mistake_counter = 0
-	else:
+	elif written_len < len(habit_description):
 		var mistake: Mistakes.TypingMistake = Mistakes.TypingMistake.new(habit_description, written_len, GameManager.selected_difficulty, GameManager.current_round)
 		GameManager.mistakes.add_typing_mistake(mistake)
 		if answer[len(answer)-1] == remove_accents(habit_description)[len(answer)-1]:
