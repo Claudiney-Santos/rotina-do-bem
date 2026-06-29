@@ -78,10 +78,13 @@ var score: Dictionary[String, Dictionary]:
 		var completed_levels: int = 0
 		if completed_level < 3:
 			score.classify[Difficulty.HARD] = 0
+			score.typing[Difficulty.HARD] = 0
 			if completed_level < 2:
 				score.classify[Difficulty.MEDIUM] = 0
+				score.typing[Difficulty.MEDIUM] = 0
 				if completed_level < 1:
 					score.classify[Difficulty.EASY] = 0
+					score.typing[Difficulty.EASY] = 0
 		return score
 
 func unlock_next_level() -> bool:
