@@ -246,6 +246,7 @@ text = "  SAIR  "
 icon = ExtResource("4_g3eks")
 
 [node name="ConfigButtonsHBoxContainer" type="HBoxContainer" parent="." unique_id=600520893]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.93700004
