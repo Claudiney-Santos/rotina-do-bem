@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://2fmtk5eye73o"]
+
+[ext_resource type="Script" uid="uid://qp00y03d72lj" path="res://scenes/about.gd" id="1_lloox"]
+[ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="2_lloox"]
+[ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="3_cm4eg"]
+[ext_resource type="Texture2D" uid="uid://bn861f7wfkme0" path="res://images/utfpr.png" id="4_lloox"]
+
+[sub_resource type="Gradient" id="Gradient_hgc32"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.8627451, 0.95686275, 0.99215686, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_suej7"]
+gradient = SubResource("Gradient_hgc32")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oinrr"]
+bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyg2l"]
+bg_color = Color(0.3222329, 0.5220842, 0.6154551, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3povj"]
+bg_color = Color(0.4924193, 0.702862, 0.80371624, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Theme" id="Theme_q5e74"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwrfu"]
+bg_color = Color(1, 0.98039216, 0.91764706, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="About" type="Control" unique_id=982272829]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lloox")
+
+[node name="Background" type="TextureRect" parent="." unique_id=121042988]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_suej7")
+
+[node name="BackButton" type="Button" parent="." unique_id=788572655]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.075
+anchor_right = 0.1
+anchor_bottom = 0.075
+offset_left = -75.0
+offset_top = -30.025002
+offset_right = 75.0
+offset_bottom = 29.974998
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_oinrr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hyg2l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3povj")
+text = " VOLTAR "
+icon = ExtResource("2_lloox")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=538764591]
+custom_minimum_size = Vector2(800, 700)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_q5e74")
+theme_override_styles/panel = SubResource("StyleBoxFlat_cwrfu")
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=628718435]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Jogo desenvolvido por Claudiney Gustavo Rodrigues dos Santos, Julia Yukari Dairiki e Nicolas Crisostimo Eusébio para obtenção de nota na disciplina de Padrões de Projetos.
+
+Orientado por Simone Nasser Santos.
+
+
+
+Instituição:"
+label_settings = ExtResource("3_cm4eg")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1758854027]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("4_lloox")
+expand_mode = 2
+stretch_mode = 5
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
