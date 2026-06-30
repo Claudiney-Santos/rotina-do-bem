@@ -28,6 +28,10 @@ var description: String:
 	get:
 		return get_meta("description")
 
+var is_immovable: bool:
+	get:
+		return _is_immovable
+
 var _mouse_down_position: Vector2
 var _node_down_position: Vector2
 var _node_anchor_position: Vector2
@@ -86,15 +90,13 @@ func _ready() -> void:
 	self.load()
 
 func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.keycode == KEY_ESCAPE and _is_holding:
+		cancel_drag()
+		return
+
 	if draggable and not _is_immovable and _is_hovering and event is InputEventMouse:
 		var was_holding = _is_holding
 		is_holding(event)
-		
-		if was_holding != _is_holding:
-			if down_and_drag:
-				print("Segura e arrasta")
-			else:
-				print("Clica e solta, então arrasta")
 
 		if was_holding and not _is_holding:
 			emit_signal("put_down")
@@ -145,18 +147,22 @@ func is_holding(event: InputEventMouse) -> bool:
 			_is_holding = false
 	return _is_holding
 
+func cancel_drag() -> void:
+	_is_holding = false
+	_mouse_status = 0
+	_scale = 1
+	node.set_position(_node_down_position)
+	emit_signal("put_down")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if _is_immovable and panel.mouse_default_cursor_shape != Control.CURSOR_ARROW:
-		#panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
-		pass
-		#print('imovvivel')
 	node.scale = Vector2(_scale, _scale)
 
 func is_over_panel(p: PanelContainer) -> bool:
-	var is_over: bool = $Panel.get_global_rect().intersects(p.get_global_rect(), true)
 	if _is_immovable:
 		panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
+		return $Panel.get_global_rect().intersects(p.get_global_rect(), true)
+	var is_over: bool = $Panel.get_global_rect().intersects(p.get_global_rect(), true)
 	if is_over:
 		panel.mouse_default_cursor_shape = Control.CURSOR_CAN_DROP
 	else:
@@ -164,12 +170,10 @@ func is_over_panel(p: PanelContainer) -> bool:
 	return is_over
 
 func _on_mouse_entered() -> void:
-	print("entrou")
 	_is_hovering = true
 
 
 func _on_mouse_exited() -> void:
-	print("saiu")
 	if not _is_holding:
 		_is_hovering = false
 
@@ -177,20 +181,15 @@ func _on_mouse_exited() -> void:
 func _on_put_down() -> void:
 	_scale = 1
 	make_immovable()
-	var pos: Vector2 = get_global_mouse_position()
-	print("soltou em (%d, %d)" % [pos[0], pos[1]])
 
 
 func _on_put_up() -> void:
 	_scale = 1.2
-	print("segurou")
 
 func make_immovable() -> void:
 	_is_immovable = true
 	panel.mouse_default_cursor_shape = Control.CURSOR_ARROW
-	print("imovivel")
 
 func make_movable() -> void:
 	_is_immovable = false
 	panel.mouse_default_cursor_shape = Control.CURSOR_MOVE
-	print("movivel")

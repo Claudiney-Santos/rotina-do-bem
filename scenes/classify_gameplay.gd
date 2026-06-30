@@ -50,6 +50,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if habit_node.is_immovable:
+		return
 	if habit_node.is_over_panel($NegativePanel):
 		habit_node.set_hovering_negative()
 	elif habit_node.is_over_panel($PositivePanel):
@@ -66,10 +68,6 @@ func _on_habit_put_down() -> void:
 	var current_habit = GameManager.selected_habits[GameManager.current_round_index]
 	var choose_negative: bool = habit_node.is_over_panel($NegativePanel)
 	var choose_positive: bool = habit_node.is_over_panel($PositivePanel)
-	if choose_negative:
-		print("escolheu negativo")
-	if choose_positive:
-		print("escolheu positivo")
 	if (choose_negative && !current_habit.is_healthy) || (choose_positive && current_habit.is_healthy):
 		emit_signal("player_choose_right")
 	elif choose_negative || choose_positive:
@@ -80,7 +78,6 @@ func _on_habit_put_down() -> void:
 
 func _on_player_choose_right() -> void:
 	correct_panel.show()
-	print("Jogador acertou")
 
 
 func _on_player_choose_wrong() -> void:
@@ -88,7 +85,6 @@ func _on_player_choose_wrong() -> void:
 	GameManager.current_round.push_classify_mistake(
 		Mistakes.ClassifyMistake.new(habit_node.description, GameManager.selected_difficulty, GameManager.current_round_index)
 	)
-	print("Jogador errou")
 
 
 func _on_try_again_button_pressed() -> void:
