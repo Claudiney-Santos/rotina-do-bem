@@ -158,6 +158,12 @@ func cancel_drag() -> void:
 func _process(delta: float) -> void:
 	node.scale = Vector2(_scale, _scale)
 
+func panel_overlap(p: PanelContainer) -> bool:
+	return $Panel.get_global_rect().intersects(p.get_global_rect(), true)
+
+func set_drag_cursor(shape: int) -> void:
+	panel.mouse_default_cursor_shape = shape
+
 func is_over_panel(p: PanelContainer) -> bool:
 	if _is_immovable:
 		panel.mouse_default_cursor_shape = Control.CURSOR_ARROW

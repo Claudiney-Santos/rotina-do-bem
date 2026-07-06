@@ -52,12 +52,18 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if habit_node.is_immovable:
 		return
-	if habit_node.is_over_panel($NegativePanel):
+	var over_negative: bool = habit_node.panel_overlap($NegativePanel)
+	var over_positive: bool = habit_node.panel_overlap($PositivePanel)
+	if over_negative:
 		habit_node.set_hovering_negative()
-	elif habit_node.is_over_panel($PositivePanel):
+	elif over_positive:
 		habit_node.set_hovering_positive()
 	else:
 		habit_node.set_hovering_reset()
+	if over_negative or over_positive:
+		habit_node.set_drag_cursor(Control.CURSOR_CAN_DROP)
+	else:
+		habit_node.set_drag_cursor(Control.CURSOR_MOVE)
 
 
 func _on_back_button_pressed() -> void:
