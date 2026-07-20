@@ -21,6 +21,7 @@ metadata/description = ""
 metadata/typing = false
 metadata/down_and_drag = true
 metadata/is_healthy = false
+metadata/image = null
 
 [node name="Panel" type="PanelContainer" parent="." unique_id=918341132]
 custom_minimum_size = Vector2(500, 500)
@@ -58,6 +59,7 @@ stretch_mode = 6
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1548300077]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("3_3d5kg")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true

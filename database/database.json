@@ -6,86 +6,158 @@
 				"image": "running.png",
 			},
 			{
-				"description": "comer vegetais",
-				"image": "vegetables.png",
+				"description": "caminhar",
+				"image": "Fácil/Caminhar.jpg",
+			},
+			{
+				"description": "estudar",
+				"image": "Fácil/Estudar.webp",
+			},
+			{
+				"description": "descansar",
+				"image": "Fácil/Relaxar.webp",
 			},
 		],
 		"unhealthy": [
 			{
-				"description": "comer muito doce",
-				"image": "candy.jpg",
+				"description": "irritabilidade",
+				"image": "Fácil/Irritabilidade.jpg",
 			},
 			{
-				"description": "usar celular até tarde",
-				"image": "smartphone.jpg",
+				"description": "procastinar",
+				"image": "Fácil/Procastinar.jpeg",
+			},
+			{
+				"description": "fofocar",
+				"image": "Fácil/Fofocar.jpg",
+			},
+			{
+				"description": "reclamar",
+				"image": "Fácil/Reclamar.webp",
+			},
+			{
+				"description": "ansiedade",
+				"image": "Fácil/Ansiedade.jpg",
 			},
 		],
 	},
 	"medium": {
 		"healthy": [
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "se exercitar",
+				"image": "Médio/Se exercitar.webp",
 			},
 			{
 				"description": "comer vegetais",
-				"image": "vegetables.png",
+				"image": "Médio/Comer Vegetais.webp",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "comer frutas",
+				"image": "Médio/Comer Fruta.jpg",
+			},
+			{
+				"description": "tomar banho",
+				"image": "Médio/Tomar Banho.jpg",
+			},
+			{
+				"description": "arrumar cama",
+				"image": "Médio/Arrumar Cama.webp",
+			},
+			{
+				"description": "ler livros",
+				"image": "Médio/Ler Livros.jpg",
 			},
 		],
 		"unhealthy": [
 			{
-				"description": "comer muito doce",
-				"image": "candy.jpg",
+				"description": "dormir tarde",
+				"image": "Médio/Dormir Tarde.png",
 			},
 			{
-				"description": "usar celular até tarde",
-				"image": "smartphone.jpg",
+				"description": "comer demais",
+				"image": "Médio/Comer demais.jpg",
 			},
 			{
-				"description": "comer muito doce",
-				"image": "candy.jpg",
+				"description": "beber refrigerante",
+				"image": "Médio/Beber Refrigerante.jpeg",
+			},
+			{
+				"description": "roer unhas",
+				"image": "Médio/Roer Unha.jpg",
+			},
+			{
+				"description": "má postura",
+				"image": "Médio/Má Postura.jpg",
+			},
+			{
+				"description": "isolamento social",
+				"image": "Médio/Isolamento Social.webp",
 			},
 		],
 	},
 	"hard": {
 		"healthy": [
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "dormir 8 horas",
+				"image": "Difícil/Dormir 8 horas.webp",
 			},
 			{
-				"description": "comer vegetais",
-				"image": "vegetables.png",
+				"description": "sair com amigos",
+				"image": "Difícil/Sair com amigos.jpg",
 			},
 			{
-				"description": "correr",
-				"image": "running.png",
+				"description": "escovar os dentes",
+				"image": "Difícil/Escovar os Dentes.webp",
 			},
 			{
-				"description": "comer vegetais",
-				"image": "vegetables.png",
+				"description": "beber água",
+				"image": "Difícil/Tomar Água.jpg",
+			},
+			{
+				"description": "passear no parque",
+				"image": "Difícil/Passear no Parque.jpg",
+			},
+			{
+				"description": "ir para escola",
+				"image": "Difícil/Ir a Escola.jpg",
+			},
+			{
+				"description": "limpar a casa",
+				"image": "Difícil/Limpar a casa.webp",
 			},
 		],
 		"unhealthy": [
 			{
-				"description": "comer muito doce",
-				"image": "candy.jpg",
-			},
-			{
-				"description": "usar celular até tarde",
-				"image": "smartphone.jpg",
+				"description": "assistir muita tv",
+				"image": "Difícil/Assistir Muita TV.jpg",
 			},
 			{
 				"description": "comer muito doce",
-				"image": "candy.jpg",
+				"image": "Difícil/Comer muito doce.jpg",
 			},
 			{
-				"description": "usar celular até tarde",
-				"image": "smartphone.jpg",
+				"description": "beber pouca água",
+				"image": "Difícil/Beber Pouca Água.png",
+			},
+			{
+				"description": "comer muito rápido",
+				"image": "Difícil/Comer Muito Rápido.webp",
+			},
+			{
+				"description": "gastar muito dinheiro",
+				"image": "Difícil/Gastar Muito Dinheiro.webp",
+			},
+			{
+				"description": "má alimentação",
+				"image": "Difícil/Má Alimentação.webp",
+			},
+			{
+				"description": "estresse Contínuo",
+				"image": "Difícil/Estresse Contínuo.png",
+			},
+			{
+				"description": "não praticar atividades físicas",
+				"image": "Difícil/Sedentarismo.webp",
 			},
 		],
 	},

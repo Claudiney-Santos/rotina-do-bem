@@ -3,10 +3,10 @@ extends Control
 signal player_choose_right
 signal player_choose_wrong
 
-@onready var habit_node: Habit = $Habit
-@onready var negative_vbox = $NegativePanel/NegativeVBoxContainer
-@onready var positive_vbox = $PositivePanel/PositiveVBoxContainer
-@onready var habit_panel = $NegativePanel/NegativeVBoxContainer/HabitPanel
+@onready var habit_node: Habit = $VBoxContainer/Habit
+@onready var negative_vbox = $NegativePanel/VBoxContainer/NegativeVBoxContainer
+@onready var positive_vbox = $PositivePanel/VBoxContainer/PositiveVBoxContainer
+@onready var habit_panel = $NegativePanel/VBoxContainer/NegativeVBoxContainer/HabitPanel
 @onready var wrong_panel = $WrongPanelContainer
 @onready var correct_panel = $CorrectPanelContainer
 
@@ -73,6 +73,8 @@ func _on_habit_put_down() -> void:
 		emit_signal("player_choose_right")
 	elif choose_negative || choose_positive:
 		emit_signal("player_choose_wrong")
+	else:
+		habit_node.make_movable()
 
 
 func _on_player_choose_right() -> void:
@@ -82,11 +84,13 @@ func _on_player_choose_right() -> void:
 
 func _on_player_choose_wrong() -> void:
 	wrong_panel.show()
+	GameManager.mistakes.add_classify_mistake(Mistakes.ClassifyMistake.new(habit_node.description, GameManager.selected_difficulty, GameManager.current_round))
 	print("Jogador errou")
 
 
 func _on_try_again_button_pressed() -> void:
 	wrong_panel.hide()
+	habit_node.make_movable()
 
 
 func _on_continue_button_pressed() -> void:

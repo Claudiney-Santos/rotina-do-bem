@@ -2,26 +2,64 @@ extends Node
 
 enum Difficulty { EASY, MEDIUM, HARD }
 
+const qnt_half_habits = {
+	Difficulty.EASY: 2,
+	Difficulty.MEDIUM: 3,
+	Difficulty.HARD: 4,
+}
+
 var selected_difficulty: Difficulty = Difficulty.MEDIUM
+var _unlocked_level: Difficulty = Difficulty.EASY
+
+var unlocked_level: Difficulty:
+	get: return _unlocked_level
 
 var selected_habits: Array = []
 var current_round: int = 0
 
+var mistakes: Mistakes = Mistakes.new()
+
+var mistakes_count: Dictionary[String, Dictionary]:
+	get:
+		var count: Dictionary[String, Dictionary] = {
+			classify = {},
+			typing = {}
+		}
+		for type in count:
+			count[type][Difficulty.EASY] = 0
+			count[type][Difficulty.MEDIUM] = 0
+			count[type][Difficulty.HARD] = 0
+		for cm in mistakes.classify_mistakes:
+			count.classify[cm.difficulty] += 1
+		for tm in mistakes.typing_mistakes:
+			count.typing[tm.difficulty] += 1
+		return count
+
+func unlock_next_level() -> bool:
+	match _unlocked_level:
+		Difficulty.EASY:
+			_unlocked_level = Difficulty.MEDIUM
+			return true
+		Difficulty.MEDIUM:
+			_unlocked_level = Difficulty.HARD
+			return true
+		Difficulty.HARD:
+			_unlocked_level = Difficulty.HARD
+			return false
+	return false
+
 func load_game(difficulty: Difficulty) -> void:
 	current_round = 0
 	selected_difficulty = difficulty
-	var qnt_half_habits: int = 0
 	var diff: String = ""
 	match difficulty:
 		Difficulty.EASY:
 			diff = "easy"
-			qnt_half_habits = 2
 		Difficulty.MEDIUM:
 			diff = "medium"
-			qnt_half_habits = 3
 		Difficulty.HARD:
 			diff = "hard"
-			qnt_half_habits = 4
+	var qnt_half_habits: int = qnt_half_habits[difficulty]
 	var healthy_habits: Array = Database.data[diff].healthy.duplicate()
 	var unhealthy_habits: Array = Database.data[diff].unhealthy.duplicate()
 	if len(healthy_habits) < qnt_half_habits:
