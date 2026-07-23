@@ -39,6 +39,9 @@ class ClassifyMistake:
 		self.round = round
 
 class TypingMistake:
+	static var _letter_regex: RegEx = RegEx.create_from_string("^\\p{L}$")
+	static var _ascii_regex: RegEx = RegEx.create_from_string("^[a-zA-Z]$")
+
 	var word: String = ""
 	var difficulty: GameManager.Difficulty = GameManager.Difficulty.EASY
 	var position: int = 0
@@ -47,8 +50,8 @@ class TypingMistake:
 	var has_accent: bool:
 		get:
 			var character: String = word[position]
-			var is_any_letter: bool = RegEx.create_from_string("^\\p{L}$").search(character) != null
-			var is_basic_ascii: bool = RegEx.create_from_string("^[a-zA-Z]$").search(character) != null
+			var is_any_letter: bool = _letter_regex.search(character) != null
+			var is_basic_ascii: bool = _ascii_regex.search(character) != null
 			return is_any_letter and not is_basic_ascii
 
 	func _init(word: String, position: int, difficulty: GameManager.Difficulty, round: int):

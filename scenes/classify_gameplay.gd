@@ -19,7 +19,7 @@ func reset_vboxes() -> void:
 	var selected_healthy_habits: Array = []
 	var selected_unhealthy_habits: Array = []
 
-	for i in range(GameManager.current_round):
+	for i in range(GameManager.current_round_index):
 		if selected_habits[i].is_healthy:
 			selected_healthy_habits.push_back(selected_habits[i])
 		else:
@@ -41,7 +41,8 @@ func reset_vboxes() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var current_habit = GameManager.selected_habits[GameManager.current_round]
+	var current_habit = GameManager.selected_habits[GameManager.current_round_index+1]
+	GameManager.new_round(current_habit.description)
 	habit_node.set_habit(current_habit)
 	var qnt_half_habits = len(GameManager.selected_habits)/2
 	if qnt_half_habits != negative_vbox.get_child_count():
@@ -49,12 +50,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if habit_node.is_over_panel($NegativePanel):
+	if habit_node.is_immovable:
+		return
+	var over_negative: bool = habit_node.panel_overlap($NegativePanel)
+	var over_positive: bool = habit_node.panel_overlap($PositivePanel)
+	if over_negative:
 		habit_node.set_hovering_negative()
-	elif habit_node.is_over_panel($PositivePanel):
+	elif over_positive:
 		habit_node.set_hovering_positive()
 	else:
 		habit_node.set_hovering_reset()
+	if over_negative or over_positive:
+		habit_node.set_drag_cursor(Control.CURSOR_CAN_DROP)
+	else:
+		habit_node.set_drag_cursor(Control.CURSOR_MOVE)
 
 
 func _on_back_button_pressed() -> void:
@@ -62,13 +71,9 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_habit_put_down() -> void:
-	var current_habit = GameManager.selected_habits[GameManager.current_round]
+	var current_habit = GameManager.selected_habits[GameManager.current_round_index]
 	var choose_negative: bool = habit_node.is_over_panel($NegativePanel)
 	var choose_positive: bool = habit_node.is_over_panel($PositivePanel)
-	if choose_negative:
-		print("escolheu negativo")
-	if choose_positive:
-		print("escolheu positivo")
 	if (choose_negative && !current_habit.is_healthy) || (choose_positive && current_habit.is_healthy):
 		emit_signal("player_choose_right")
 	elif choose_negative || choose_positive:
@@ -79,13 +84,13 @@ func _on_habit_put_down() -> void:
 
 func _on_player_choose_right() -> void:
 	correct_panel.show()
-	print("Jogador acertou")
 
 
 func _on_player_choose_wrong() -> void:
 	wrong_panel.show()
-	GameManager.mistakes.add_classify_mistake(Mistakes.ClassifyMistake.new(habit_node.description, GameManager.selected_difficulty, GameManager.current_round))
-	print("Jogador errou")
+	GameManager.current_round.push_classify_mistake(
+		Mistakes.ClassifyMistake.new(habit_node.description, GameManager.selected_difficulty, GameManager.current_round_index)
+	)
 
 
 func _on_try_again_button_pressed() -> void:

@@ -215,7 +215,18 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_i42df")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7jp70")
 text = "   RELATÓRIO   "
 
+[node name="AboutButton" type="Button" parent="MainButtonsBoxContainer" unique_id=253620494]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_70i5f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i42df")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7jp70")
+text = "   SOBRE   "
+
 [node name="QuitButton" type="Button" parent="." unique_id=824025195]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -236,6 +247,7 @@ text = "  SAIR  "
 icon = ExtResource("4_g3eks")
 
 [node name="ConfigButtonsHBoxContainer" type="HBoxContainer" parent="." unique_id=600520893]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.93700004
@@ -269,4 +281,5 @@ icon = ExtResource("6_13sgg")
 
 [connection signal="pressed" from="MainButtonsBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainButtonsBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
+[connection signal="pressed" from="MainButtonsBoxContainer/AboutButton" to="." method="_on_about_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dvqflctjbrsqg"]
+
+[ext_resource type="FontFile" uid="uid://bde42gbgj4e7c" path="res://fonts/dejavu-sans/ttf/DejaVuSans.ttf" id="1_5iac2"]
+
+[resource]
+font = ExtResource("1_5iac2")
+font_size = 32
+font_color = Color(0.98039216, 0.972549, 0.5294118, 1)

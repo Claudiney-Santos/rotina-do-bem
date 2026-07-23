@@ -9,13 +9,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var mistakes_count = GameManager.mistakes_count
+	var score: Dictionary[String, Dictionary] = GameManager.score
 	for diff in [GameManager.Difficulty.EASY, GameManager.Difficulty.MEDIUM, GameManager.Difficulty.HARD]:
-		var qnt_habits: int = 2*GameManager.qnt_half_habits[diff];
-		var wrong_typing: int = mistakes_count.typing[diff];
-		var wrong_classify: int = mistakes_count.classify[diff];
-		set_stars((5*(qnt_habits-wrong_classify))/qnt_habits, diff, false)
-		set_stars((5*(qnt_habits-wrong_typing))/qnt_habits, diff, true)
+		set_stars(floorf(5*score.classify[diff]), diff, false)
+		set_stars(floorf(5*score.typing[diff]), diff, true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

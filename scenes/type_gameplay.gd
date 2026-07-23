@@ -15,7 +15,7 @@ var dead_key_mistake_counter: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var current_habit = GameManager.selected_habits[GameManager.current_round]
+	var current_habit = GameManager.selected_habits[GameManager.current_round_index]
 	habit_node.set_habit(current_habit, true)
 	habit_node.update_correct_typing(0)
 	habit_description = current_habit.description.to_upper().strip_edges()
@@ -33,14 +33,15 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_line_edit_text_changed(new_text: String) -> void:
-	var answer: String = new_text.to_upper().strip_edges(true, false)
+	var answer: String = new_text.to_upper()
 	if habit_description.find(answer) == 0 and len(answer) > written_len:
 		written_len = len(answer)
 		habit_node.update_correct_typing(written_len)
 		dead_key_mistake_counter = 0
-	else:
-		var mistake: Mistakes.TypingMistake = Mistakes.TypingMistake.new(habit_description, written_len, GameManager.selected_difficulty, GameManager.current_round)
-		GameManager.mistakes.add_typing_mistake(mistake)
+	elif written_len < len(habit_description):
+		var mistake: Mistakes.TypingMistake = Mistakes.TypingMistake.new(habit_description, written_len, GameManager.selected_difficulty, GameManager.current_round_index)
+		GameManager.current_round.push_typing_mistake(mistake)
+		
 		if answer[len(answer)-1] == remove_accents(habit_description)[len(answer)-1]:
 			dead_key_mistake_counter += 1
 		if dead_key_mistake_counter >= 3:
@@ -59,7 +60,7 @@ func remove_accents(text: String) -> String:
 	
 	for i in range(accented.length()):
 		text = text.replace(accented[i], unaccented[i])
-		
+
 	return text
 
 func _on_finished_answer() -> void:
@@ -67,8 +68,7 @@ func _on_finished_answer() -> void:
 
 
 func _on_continue_button_pressed() -> void:
-	GameManager.current_round += 1
-	if GameManager.current_round == len(GameManager.selected_habits):
+	if GameManager.current_round_index == len(GameManager.selected_habits)-1:
 		if not GameManager.unlock_next_level() and GameManager.selected_difficulty == GameManager.Difficulty.HARD:
 			get_tree().change_scene_to_file("res://scenes/report.tscn")
 		else:
