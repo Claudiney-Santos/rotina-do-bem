@@ -1,0 +1,20 @@
+- [x] Modificar o estilo da fonte para o painel de continuar e tentar novamente
+- [X] Analisar a base de dados para melhor adequação aos alunos
+- [X] Analisar a necessidade do botão de voltar durante a gameplay
+- [ ] Usar o feedback através de estrelhas durante a jogatina
+- [ ] Analisar os botões de som e música
+- [ ] ~Talvez o formato dos cards de hábito gerem confusão aos alunos (repensar em algo mais intuitivo)~
+- [X] Adicionar uma tela Sobre (descrevendo que o software foi desenvolvido para a disciplina, quem foram os desenvolvedores, etc)
+- [X] Considerar um sistema de progresso (somente avançar de dificuldade quando concluir a anterior)
+- [ ] Poderia ser interessante adicionar uma tela descrevendo o significado das palavras que os alunos provavelmente não conhecem.
+- [ ] Tentar melhorar o feedback visual para digitação de espaço.
+- [ ] Retirar o botão de continuar da seção de classificação para digitação.
+- [ ] Aumentar o tamanho da descrição na tela de digitação.
+- [ ] Impedir que o aluno apague alguma letra digitada, caso ele tenha digitado corretamente.
+- [ ] Permitir avançar para a próxima rodada usando ENTER ou ESPAÇO, além do botão de continuar.
+- [ ] Ao terminar uma dificuldade, mostrar opção de ir par atela inicial ou ir para a próxima dificuldade.
+- [ ] Considerar aumentar o constrate do caractere atual na sesão de digitação.
+- [ ] Na sessão de digitação, nas palavras com acento, somente aceitar se o acento for corretamente usado. Após 3 tentativas, mostrar um aviso.
+- [ ] Ao exportar para web, não é possível digitar acentos no Firefox (o Chromium funciona).
+- [X] Na web, caracteres de estrela não são exibidos corretamente.
+- [ ] Na web, o jogo exibe uma tela preta ao ser carregado uma segunda vez, mesmo que o jogo tenha sido carregado corretamente na primeira vez.
