@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqmdvnk38yblg"
-path="res://.godot/imported/rotina-do-bem-icon.jpeg-2490edeead886569830e41c844766bf8.ctex"
+uid="uid://bsvmbnotytfyb"
+path="res://.godot/imported/rotina-do-bem-card.png-b2e0b348c9d0c8a1579f515bcfaf381b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/rotina-do-bem-icon.jpeg"
-dest_files=["res://.godot/imported/rotina-do-bem-icon.jpeg-2490edeead886569830e41c844766bf8.ctex"]
+source_file="res://images/rotina-do-bem-card.png"
+dest_files=["res://.godot/imported/rotina-do-bem-card.png-b2e0b348c9d0c8a1579f515bcfaf381b.ctex"]
 
 [params]
 
