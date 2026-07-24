@@ -12,6 +12,7 @@ signal dead_key_mistake
 var written_len: int = 0
 var habit_description: String = ""
 var dead_key_mistake_counter: int = 0
+var finished: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +28,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and (event.keycode == KEY_ENTER or event.keycode == KEY_SPACE) and finished:
+		_on_continue_button_pressed()
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/difficulty.tscn")
@@ -64,6 +68,7 @@ func remove_accents(text: String) -> String:
 	return text
 
 func _on_finished_answer() -> void:
+	finished = true
 	correct_panel.show()
 
 

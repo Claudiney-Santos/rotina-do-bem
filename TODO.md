@@ -8,11 +8,11 @@
 - [X] Considerar um sistema de progresso (somente avançar de dificuldade quando concluir a anterior)
 - [ ] Poderia ser interessante adicionar uma tela descrevendo o significado das palavras que os alunos provavelmente não conhecem.
 - [ ] Tentar melhorar o feedback visual para digitação de espaço.
-- [ ] Retirar o botão de continuar da seção de classificação para digitação.
+- [X] Retirar o botão de continuar da seção de classificação para digitação.
 - [ ] Aumentar o tamanho da descrição na tela de digitação.
 - [ ] Impedir que o aluno apague alguma letra digitada, caso ele tenha digitado corretamente.
-- [ ] Permitir avançar para a próxima rodada usando ENTER ou ESPAÇO, além do botão de continuar.
-- [ ] Ao terminar uma dificuldade, mostrar opção de ir par atela inicial ou ir para a próxima dificuldade.
+- [X] Permitir avançar para a próxima rodada usando ENTER ou ESPAÇO, além do botão de continuar.
+- [ ] Ao terminar uma dificuldade, mostrar opção de ir para tela inicial ou ir para a próxima dificuldade.
 - [ ] Considerar aumentar o constrate do caractere atual na sesão de digitação.
 - [ ] Na sessão de digitação, nas palavras com acento, somente aceitar se o acento for corretamente usado. Após 3 tentativas, mostrar um aviso.
 - [ ] Ao exportar para web, não é possível digitar acentos no Firefox (o Chromium funciona).
