@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cjcpxrvv403h1" path="res://scenes/type_gameplay.gd" id="1_jok07"]
 [ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="2_7j3yl"]
 [ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="5_40v1b"]
-[ext_resource type="Texture2D" uid="uid://dr5y66758xe74" path="res://images/continue.svg" id="6_grsx4"]
+[ext_resource type="Texture2D" uid="uid://hqem41aquh0x" path="res://images/continue.svg" id="6_grsx4"]
 
 [sub_resource type="Gradient" id="Gradient_qkwfc"]
 offsets = PackedFloat32Array(0)
