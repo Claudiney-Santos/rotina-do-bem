@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="3_nex32"]
 [ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="6_17o8i"]
 [ext_resource type="Texture2D" uid="uid://pxieypd6nj74" path="res://images/stash_arrow-retry-duotone.svg" id="6_nex32"]
-[ext_resource type="Texture2D" uid="uid://dr5y66758xe74" path="res://images/continue.svg" id="7_m6muk"]
+[ext_resource type="Texture2D" uid="uid://hqem41aquh0x" path="res://images/continue.svg" id="7_m6muk"]
 
 [sub_resource type="Gradient" id="Gradient_34xd2"]
 offsets = PackedFloat32Array(0)
@@ -176,8 +176,8 @@ size_flags_horizontal = 4
 [node name="HabitPanel" type="PanelContainer" parent="NegativePanel/VBoxContainer/NegativeVBoxContainer" unique_id=2017134655]
 visible = false
 clip_children = 2
-clip_contents = true
 custom_minimum_size = Vector2(0, 150)
+clip_contents = true
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5unp7")
