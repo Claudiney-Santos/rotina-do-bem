@@ -83,7 +83,8 @@ func _on_habit_put_down() -> void:
 
 
 func _on_player_choose_right() -> void:
-	correct_panel.show()
+	# correct_panel.show()
+	_on_continue_button_pressed()
 
 
 func _on_player_choose_wrong() -> void:
