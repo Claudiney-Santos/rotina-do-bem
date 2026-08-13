@@ -64,6 +64,8 @@ func load() -> void:
 	if node.has_meta("image"):
 		image_texturerect.texture = node.get_meta("image")
 	description_rich_label.text = node.get_meta("description")
+	if get_meta("typing"):
+		description_rich_label.add_theme_font_size_override("normal_font_size", 64)
 
 func set_habit(habit: Dictionary, typing: bool = false) -> void:
 	set_meta("description", habit.description.to_upper())
