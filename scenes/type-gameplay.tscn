@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cjcpxrvv403h1" path="res://scenes/type_gameplay.gd" id="1_jok07"]
 [ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="2_7j3yl"]
 [ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="5_40v1b"]
-[ext_resource type="Texture2D" uid="uid://hqem41aquh0x" path="res://images/continue.svg" id="6_grsx4"]
+[ext_resource type="Texture2D" uid="uid://dr5y66758xe74" path="res://images/continue.svg" id="6_grsx4"]
 
 [sub_resource type="Gradient" id="Gradient_qkwfc"]
 offsets = PackedFloat32Array(0)
@@ -135,7 +135,7 @@ metadata/typing = true
 metadata/down_and_drag = false
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1130880282]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 6
 theme = SubResource("Theme_7j3yl")
@@ -160,6 +160,7 @@ size_flags_vertical = 4
 theme = SubResource("Theme_ansty")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_40v1b")
 alignment = 1
 context_menu_enabled = false
