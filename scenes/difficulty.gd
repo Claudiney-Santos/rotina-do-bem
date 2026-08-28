@@ -1,6 +1,5 @@
 extends Control
 
-
 @onready var easy_classify_button: Button = $%EasyClassifyButton
 @onready var easy_memory_button: Button = $%EasyMemoryButton
 @onready var easy_quiz_button: Button = $%EasyQuizButton
@@ -13,6 +12,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#GameManager.load_game(GameManager.Difficulty.EASY)
 	var btns: Array[Button] = [
 		easy_classify_button, easy_memory_button, easy_quiz_button,
 		medium_classify_button, medium_memory_button, medium_quiz_button,
@@ -40,12 +40,12 @@ func _on_easy_classify_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/classify-gameplay.tscn")
 
 func _on_easy_memory_button_pressed() -> void:
-	#get_tree().change_scene_to_file("res://scenes/memory-gameplay.tscn")
-	pass
+	GameManager.selected_difficulty = GameManager.Difficulty.EASY
+	get_tree().change_scene_to_file("res://scenes/memory-gameplay.tscn")
 
 func _on_easy_quiz_button_pressed() -> void:
-	#get_tree().change_scene_to_file("res://scenes/quiz-gameplay.tscn")
-	pass
+	GameManager.selected_difficulty = GameManager.Difficulty.EASY
+	get_tree().change_scene_to_file("res://scenes/quiz-gameplay.tscn")
 
 func _on_medium_classify_button_pressed() -> void:
 	GameManager.load_game(GameManager.Difficulty.MEDIUM)
@@ -53,12 +53,12 @@ func _on_medium_classify_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/classify-gameplay.tscn")
 
 func _on_medium_memory_button_pressed() -> void:
-	#get_tree().change_scene_to_file("res://scenes/memory-gameplay.tscn")
-	pass
+	GameManager.selected_difficulty = GameManager.Difficulty.MEDIUM
+	get_tree().change_scene_to_file("res://scenes/memory-gameplay.tscn")
 
 func _on_medium_quiz_button_pressed() -> void:
-	#get_tree().change_scene_to_file("res://scenes/quiz-gameplay.tscn")
-	pass
+	GameManager.selected_difficulty = GameManager.Difficulty.MEDIUM
+	get_tree().change_scene_to_file("res://scenes/quiz-gameplay.tscn")
 
 func _on_hard_classify_button_pressed() -> void:
 	GameManager.load_game(GameManager.Difficulty.HARD)
@@ -66,9 +66,9 @@ func _on_hard_classify_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/classify-gameplay.tscn")
 
 func _on_hard_memory_button_pressed() -> void:
-	#get_tree().change_scene_to_file("res://scenes/memory-gameplay.tscn")
-	pass
+	GameManager.selected_difficulty = GameManager.Difficulty.HARD
+	get_tree().change_scene_to_file("res://scenes/memory-gameplay.tscn")
 
 func _on_hard_quiz_button_pressed() -> void:
-	#get_tree().change_scene_to_file("res://scenes/quiz-gameplay.tscn")
-	pass
+	GameManager.selected_difficulty = GameManager.Difficulty.HARD
+	get_tree().change_scene_to_file("res://scenes/quiz-gameplay.tscn")

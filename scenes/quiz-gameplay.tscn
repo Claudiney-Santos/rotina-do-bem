@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cc714wv60sdnh"]
+
+[ext_resource type="Script" uid="uid://dbmgbyc1it8bh" path="res://scenes/quiz_gameplay.gd" id="1_bgm4w"]
+[ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="2_i3d7i"]
+
+[sub_resource type="Gradient" id="Gradient_qkwfc"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.8627451, 0.95686275, 0.99215686, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5lxi0"]
+gradient = SubResource("Gradient_qkwfc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rb6pv"]
+bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekrhd"]
+bg_color = Color(0.3222329, 0.5220842, 0.6154551, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkph3"]
+bg_color = Color(0.4924193, 0.702862, 0.80371624, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="QuizGameplay" type="Control" unique_id=1701419807]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bgm4w")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1171865190]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_5lxi0")
+
+[node name="BackButton" type="Button" parent="." unique_id=406859564]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.075
+anchor_right = 0.1
+anchor_bottom = 0.075
+offset_left = -75.0
+offset_top = -30.025002
+offset_right = 75.0
+offset_bottom = 29.974998
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_rb6pv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekrhd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kkph3")
+text = " VOLTAR "
+icon = ExtResource("2_i3d7i")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

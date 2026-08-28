@@ -1,0 +1,224 @@
+[gd_scene format=3 uid="uid://cewmh5qv1rs3g"]
+
+[ext_resource type="Script" uid="uid://bsbta141ujfkm" path="res://scenes/memory_gameplay.gd" id="1_7dfej"]
+[ext_resource type="PackedScene" uid="uid://ntoxspqxyupc" path="res://scenes/memory-card.tscn" id="2_sgqdo"]
+[ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="3_sgqdo"]
+[ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="4_il8la"]
+[ext_resource type="Texture2D" uid="uid://dr5y66758xe74" path="res://images/continue.svg" id="5_24x5y"]
+
+[sub_resource type="Gradient" id="Gradient_sgqdo"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.8627451, 0.95686275, 0.99215686, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_au0oe"]
+gradient = SubResource("Gradient_sgqdo")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4onw"]
+bg_color = Color(1, 0.98039216, 0.91764706, 1)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4cur"]
+bg_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j85ee"]
+bg_color = Color(0.36795977, 0.58897984, 0.36746898, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4j3y"]
+bg_color = Color(0.62532574, 0.8652726, 0.6205774, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="MemoryGameplay" type="Control" unique_id=857720594]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7dfej")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1177268332]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_au0oe")
+
+[node name="FlowContainer" type="FlowContainer" parent="." unique_id=239074898]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -366.5
+offset_right = 450.0
+offset_bottom = 485.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MemoryCard" parent="FlowContainer" unique_id=1512986 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard2" parent="FlowContainer" unique_id=741063037 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard3" parent="FlowContainer" unique_id=453768077 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard4" parent="FlowContainer" unique_id=865794151 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard5" parent="FlowContainer" unique_id=1832543800 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard6" parent="FlowContainer" unique_id=319628314 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard7" parent="FlowContainer" unique_id=1151495115 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard8" parent="FlowContainer" unique_id=442136863 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard9" parent="FlowContainer" unique_id=1152512819 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard10" parent="FlowContainer" unique_id=1858683901 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard11" parent="FlowContainer" unique_id=1818081061 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard12" parent="FlowContainer" unique_id=1597372316 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard13" parent="FlowContainer" unique_id=254480322 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard14" parent="FlowContainer" unique_id=644189970 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard15" parent="FlowContainer" unique_id=1026486854 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="MemoryCard16" parent="FlowContainer" unique_id=1457772307 instance=ExtResource("2_sgqdo")]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=399141947]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 81.0
+offset_right = 320.0
+offset_bottom = 138.0
+grow_horizontal = 2
+text = "Clique na imagem e na descrição"
+label_settings = ExtResource("3_sgqdo")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="CorrectPanelContainer" type="PanelContainer" parent="." unique_id=1898158115]
+visible = false
+custom_minimum_size = Vector2(600, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u4onw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CorrectPanelContainer" unique_id=1306807529]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CorrectPanelContainer/VBoxContainer" unique_id=1075695174]
+layout_mode = 2
+size_flags_vertical = 0
+text = "PARABÉNS! VOCÊ CONSEGUIU!"
+label_settings = ExtResource("3_sgqdo")
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="CorrectPanelContainer/VBoxContainer" unique_id=591211814]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_il8la")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_o4cur")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j85ee")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j4j3y")
+text = "CONTINUAR"
+icon = ExtResource("5_24x5y")
+icon_alignment = 2
+
+[connection signal="win" from="." to="." method="_on_win"]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard2" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard3" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard4" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard5" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard6" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard7" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard8" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard9" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard10" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard11" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard12" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard13" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard14" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard15" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="reveal_card" from="FlowContainer/MemoryCard16" to="." method="_on_memory_card_reveal_card" flags=18]
+[connection signal="pressed" from="CorrectPanelContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

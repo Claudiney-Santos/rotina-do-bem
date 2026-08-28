@@ -278,7 +278,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ehmk3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0f3ke")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v84k8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_7ejwj")
-text = "CLASSIFICAÇÃO"
+text = "ARRASTA-E-SOLTA
+E DIGITAÇÃO"
 language = "pt_BR"
 
 [node name="EasyMemoryButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/EasyVBoxContainer/HBoxContainer" unique_id=732898359]
@@ -337,7 +338,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xu2wo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ei0xv")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_rf3r8")
 disabled = true
-text = "CLASSIFICAÇÃO"
+text = "ARRASTA-E-SOLTA
+E DIGITAÇÃO"
 
 [node name="MediumMemoryButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/MediumVBoxContainer/HBoxContainer" unique_id=631625905]
 unique_name_in_owner = true
@@ -395,7 +397,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ae4la")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vi71m")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_qyl6w")
 disabled = true
-text = "CLASSIFICAÇÃO"
+text = "ARRASTA-E-SOLTA
+E DIGITAÇÃO"
 
 [node name="HardMemoryButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/HardVBoxContainer/HBoxContainer" unique_id=169189901]
 unique_name_in_owner = true

@@ -8,7 +8,7 @@ const qnt_half_habits = {
 	Difficulty.HARD: 4,
 }
 
-var selected_difficulty: Difficulty = Difficulty.MEDIUM
+var selected_difficulty: Difficulty = Difficulty.EASY
 var _completed_level: int = 0
 var _completed_activity: int = 0
 
