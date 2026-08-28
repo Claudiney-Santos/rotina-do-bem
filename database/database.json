@@ -4,40 +4,49 @@
 			{
 				"description": "correr",
 				"image": "running.png",
+				"explanation": "ajuda a perder peso",
 			},
 			{
 				"description": "caminhar",
 				"image": "Fácil/Caminhar.jpg",
+				"explanation": "fortalece os ossos",
 			},
 			{
 				"description": "estudar",
 				"image": "Fácil/Estudar.webp",
+				"explanation": "aumenta a inteligência",
 			},
 			{
 				"description": "descansar",
 				"image": "Fácil/Relaxar.webp",
+				"explanation": "reduz o estresse",
 			},
 		],
 		"unhealthy": [
 			{
 				"description": "irritabilidade",
 				"image": "Fácil/Irritabilidade.jpg",
+				"explanation": "deixa facilmente irritado",
 			},
 			{
 				"description": "procrastinar",
 				"image": "Fácil/Procastinar.jpeg",
+				"explanation": "atrasa os deveres",
 			},
 			{
 				"description": "fofocar",
 				"image": "Fácil/Fofocar.jpg",
+				"explanation": "chateia outras pessoas",
 			},
 			{
 				"description": "reclamar",
 				"image": "Fácil/Reclamar.webp",
+				"explanation": "aumenta o estresse",
 			},
 			{
 				"description": "ansiedade",
 				"image": "Fácil/Ansiedade.jpg",
+				"explanation": "causa mal estar",
 			},
 		],
 	},
@@ -46,52 +55,64 @@
 			{
 				"description": "se exercitar",
 				"image": "Médio/Se exercitar.webp",
+				"explanation": "fortalece os músculos",
 			},
 			{
 				"description": "comer vegetais",
 				"image": "Médio/Comer Vegetais.webp",
+				"explanation": "melhora a saúde",
 			},
 			{
 				"description": "comer frutas",
 				"image": "Médio/Comer Fruta.jpg",
+				"explanation": "melhora a saúde",
 			},
 			{
 				"description": "tomar banho",
 				"image": "Médio/Tomar Banho.jpg",
+				"explanation": "melhora higiene",
 			},
 			{
 				"description": "arrumar cama",
 				"image": "Médio/Arrumar Cama.webp",
+				"explanation": "aumenta a disciplina",
 			},
 			{
 				"description": "ler livros",
 				"image": "Médio/Ler Livros.jpg",
+				"explanation": "aumenta a inteligência",
 			},
 		],
 		"unhealthy": [
 			{
 				"description": "dormir tarde",
 				"image": "Médio/Dormir Tarde.png",
+				"explanation": "piora qualidade de vida",
 			},
 			{
 				"description": "comer demais",
 				"image": "Médio/Comer demais.jpg",
+				"explanation": "piora a saúde",
 			},
 			{
 				"description": "beber refrigerante",
 				"image": "Médio/Beber Refrigerante.jpeg",
+				"explanation": "piora a saúde",
 			},
 			{
 				"description": "roer unhas",
 				"image": "Médio/Roer Unha.jpg",
+				"explanation": "piora a saúde",
 			},
 			{
 				"description": "má postura",
 				"image": "Médio/Má Postura.jpg",
+				"explanation": "piora a saúde",
 			},
 			{
 				"description": "isolamento social",
 				"image": "Médio/Isolamento Social.webp",
+				"explanation": "piora a saúde",
 			},
 		],
 	},
@@ -100,64 +121,79 @@
 			{
 				"description": "dormir 8 horas",
 				"image": "Difícil/Dormir 8 horas.webp",
+				"explanation": "melhora a qualidade de vida",
 			},
 			{
 				"description": "sair com amigos",
 				"image": "Difícil/Sair com amigos.jpg",
+				"explanation": "traz felicidade",
 			},
 			{
 				"description": "escovar os dentes",
 				"image": "Difícil/Escovar os Dentes.webp",
+				"explanation": "aumenta a higiene",
 			},
 			{
 				"description": "beber água",
 				"image": "Difícil/Tomar Água.jpg",
+				"explanation": "mantém o corpo hidratado",
 			},
 			{
 				"description": "passear no parque",
 				"image": "Difícil/Passear no Parque.jpg",
+				"explanation": "melhora a saúde",
 			},
 			{
 				"description": "ir para escola",
 				"image": "Difícil/Ir a Escola.jpg",
+				"explanation": "melhora a saúde",
 			},
 			{
 				"description": "limpar a casa",
 				"image": "Difícil/Limpar a casa.webp",
+				"explanation": "melhora a saúde",
 			},
 		],
 		"unhealthy": [
 			{
 				"description": "assistir muita tv",
 				"image": "Difícil/Assistir Muita TV.jpg",
+				"explanation": "piora a saúde",
 			},
 			{
 				"description": "comer muito doce",
 				"image": "Difícil/Comer muito doce.jpg",
+				"explanation": "piora a saúde",
 			},
 			{
 				"description": "beber pouca água",
 				"image": "Difícil/Beber Pouca Água.png",
+				"explanation": "piora a saúde",
 			},
 			{
 				"description": "comer muito rápido",
 				"image": "Difícil/Comer Muito Rápido.webp",
+				"explanation": "piora a saúde",
 			},
 			{
 				"description": "gastar muito dinheiro",
 				"image": "Difícil/Gastar Muito Dinheiro.webp",
+				"explanation": "piora a saúde",
 			},
 			{
 				"description": "má alimentação",
 				"image": "Difícil/Má Alimentação.webp",
+				"explanation": "piora a saúde",
 			},
 			{
 				"description": "estresse contínuo",
 				"image": "Difícil/Estresse Contínuo.png",
+				"explanation": "piora a saúde",
 			},
 			{
 				"description": "não praticar atividades físicas",
 				"image": "Difícil/Sedentarismo.webp",
+				"explanation": "piora a saúde",
 			},
 		],
 	},
