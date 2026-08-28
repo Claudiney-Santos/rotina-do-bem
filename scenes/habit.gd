@@ -108,7 +108,7 @@ func _input(event: InputEvent) -> void:
 		if not was_holding and _is_holding:
 			_mouse_down_position = event.position
 			_node_down_position = node.position
-			_node_anchor_position = event.position
+			_node_anchor_position = node.position
 			node.set_position(_node_down_position*_scale + _node_anchor_position*(1-_scale))
 		elif _is_holding:
 			var delta: Vector2 = (event.position - _mouse_down_position)

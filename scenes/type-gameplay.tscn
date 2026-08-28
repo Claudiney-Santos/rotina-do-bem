@@ -130,6 +130,7 @@ horizontal_alignment = 1
 
 [node name="Habit" parent="VBoxContainer" unique_id=1512986 instance=ExtResource("1_66mvn")]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 metadata/typing = true
 metadata/down_and_drag = false

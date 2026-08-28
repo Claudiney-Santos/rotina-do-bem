@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="3_nex32"]
 [ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="6_17o8i"]
 [ext_resource type="Texture2D" uid="uid://pxieypd6nj74" path="res://images/stash_arrow-retry-duotone.svg" id="6_nex32"]
-[ext_resource type="Texture2D" uid="uid://hqem41aquh0x" path="res://images/continue.svg" id="7_m6muk"]
+[ext_resource type="Texture2D" uid="uid://dr5y66758xe74" path="res://images/continue.svg" id="7_m6muk"]
 
 [sub_resource type="Gradient" id="Gradient_34xd2"]
 offsets = PackedFloat32Array(0)
@@ -261,6 +261,7 @@ horizontal_alignment = 1
 
 [node name="Habit" parent="VBoxContainer" unique_id=1512986 instance=ExtResource("2_hgc32")]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 2
 
 [node name="WrongPanelContainer" type="PanelContainer" parent="." unique_id=1183711126]
