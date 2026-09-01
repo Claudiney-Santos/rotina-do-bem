@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dbmgbyc1it8bh" path="res://scenes/quiz_gameplay.gd" id="1_bgm4w"]
 [ext_resource type="Texture2D" uid="uid://cby74nwqpo2dd" path="res://images/Seta.png" id="2_i3d7i"]
+[ext_resource type="LabelSettings" uid="uid://cbqwpqr3do7v" path="res://styles/labels/default_label.tres" id="3_ekrhd"]
+[ext_resource type="PackedScene" uid="uid://do3k4hd84jjsg" path="res://scenes/habit.tscn" id="3_i3d7i"]
+[ext_resource type="FontFile" uid="uid://c2h3s7w5fxahu" path="res://fonts/Source_Sans_3/static/SourceSans3-Bold.ttf" id="5_kkph3"]
+[ext_resource type="Texture2D" uid="uid://pxieypd6nj74" path="res://images/stash_arrow-retry-duotone.svg" id="6_w7c7b"]
 
 [sub_resource type="Gradient" id="Gradient_qkwfc"]
 offsets = PackedFloat32Array(0)
@@ -31,6 +35,91 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6ebh"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.4117647, 0.627451, 0.7294118, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7c7b"]
+bg_color = Color(0.6537974, 0.8117963, 0.88972586, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.23114797, 0.39531007, 0.4714328, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ay4d"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.72800034, 0.85366, 0.91632736, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlg04"]
+bg_color = Color(0.9876539, 0.7875507, 0.7751135, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.94509804, 0.41568628, 0.41568628, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kj6o3"]
+bg_color = Color(1, 0.98039216, 0.91764706, 1)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.94509804, 0.41568628, 0.41568628, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q8nx"]
+bg_color = Color(0.57254905, 0.8235294, 0.5686275, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbruo"]
+bg_color = Color(0.36795977, 0.58897984, 0.36746898, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkwri"]
+bg_color = Color(0.62532574, 0.8652726, 0.6205774, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [node name="QuizGameplay" type="Control" unique_id=1701419807]
 layout_mode = 3
 anchors_preset = 15
@@ -50,6 +139,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture1D_5lxi0")
 
 [node name="BackButton" type="Button" parent="." unique_id=406859564]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -69,4 +159,144 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_kkph3")
 text = " VOLTAR "
 icon = ExtResource("2_i3d7i")
 
+[node name="Label" type="Label" parent="." unique_id=1811008896]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 81.0
+offset_right = 320.0
+offset_bottom = 138.0
+grow_horizontal = 2
+text = "SELECIONE A CONSEQUÊNCIA"
+label_settings = ExtResource("3_ekrhd")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Habit" parent="." unique_id=1512986 instance=ExtResource("3_i3d7i")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_left = 69.0
+offset_top = -249.5
+offset_right = 569.0
+offset_bottom = 250.5
+grow_vertical = 2
+metadata/typing = true
+metadata/down_and_drag = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1907070846]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -760.0
+offset_top = -103.0
+offset_right = -60.0
+offset_bottom = 103.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1113519659]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.15425095, 0.1414474, 0.3327431, 1)
+theme_override_colors/font_disabled_color = Color(0.20939443, 0.026705788, 0.03724562, 1)
+theme_override_fonts/font = ExtResource("5_kkph3")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6ebh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w7c7b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3ay4d")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jlg04")
+text = "DESCRIÇÃO"
+autowrap_mode = 3
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1199084473]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.15425095, 0.1414474, 0.3327431, 1)
+theme_override_colors/font_disabled_color = Color(0.20939443, 0.026705788, 0.03724562, 1)
+theme_override_fonts/font = ExtResource("5_kkph3")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6ebh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w7c7b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3ay4d")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jlg04")
+text = "DESCRIÇÃO"
+autowrap_mode = 3
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=152869433]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.15425095, 0.1414474, 0.3327431, 1)
+theme_override_colors/font_disabled_color = Color(0.20939443, 0.026705788, 0.03724562, 1)
+theme_override_fonts/font = ExtResource("5_kkph3")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6ebh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w7c7b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3ay4d")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jlg04")
+text = "DESCRIÇÃO"
+autowrap_mode = 3
+
+[node name="WrongPanelContainer" type="PanelContainer" parent="." unique_id=21978677]
+visible = false
+custom_minimum_size = Vector2(700, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -175.0
+offset_right = 300.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kj6o3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WrongPanelContainer" unique_id=337957828]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WrongPanelContainer/VBoxContainer" unique_id=1266711656]
+layout_mode = 2
+size_flags_vertical = 0
+text = "RESPOSTA INCORRETA.
+VAMOS TENTAR NOVAMENTE?"
+label_settings = ExtResource("3_ekrhd")
+horizontal_alignment = 1
+
+[node name="TryAgainButton" type="Button" parent="WrongPanelContainer/VBoxContainer" unique_id=1642626699]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_kkph3")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q8nx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xbruo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bkwri")
+text = "TENTAR NOVAMENTE"
+icon = ExtResource("6_w7c7b")
+icon_alignment = 2
+expand_icon = true
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_quiz_answer" binds= [0]]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_quiz_answer" binds= [1]]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_quiz_answer" binds= [2]]
+[connection signal="pressed" from="WrongPanelContainer/VBoxContainer/TryAgainButton" to="." method="_on_try_again_button_pressed"]
