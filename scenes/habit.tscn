@@ -9,6 +9,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_c2u58"]
 
 [node name="Habit" type="Control" unique_id=1512986 node_paths=PackedStringArray("shortcut_context")]
+custom_minimum_size = Vector2(500, 500)
 layout_mode = 3
 anchor_right = 0.347
 anchor_bottom = 0.48700002
@@ -24,7 +25,6 @@ metadata/_edit_vertical_guides_ = [970.0, 470.0]
 metadata/_edit_horizontal_guides_ = [264.0, 764.0]
 
 [node name="Panel" type="PanelContainer" parent="." unique_id=918341132]
-custom_minimum_size = Vector2(500, 500)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
