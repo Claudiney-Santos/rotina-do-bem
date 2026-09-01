@@ -99,7 +99,13 @@ func unlock_next_activity() -> bool:
 
 	if _completed_activity >= 3:
 		_completed_activity = 0
-		_completed_level += 1
+		match selected_difficulty:
+			Difficulty.EASY:
+				_completed_level = 1
+			Difficulty.MEDIUM:
+				_completed_level = 2
+			Difficulty.HARD:
+				_completed_level = 3
 
 	if _completed_level >= 3:
 		_completed_level = 3
