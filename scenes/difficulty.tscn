@@ -41,6 +41,62 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehmk3"]
+bg_color = Color(0.23529412, 0.35686275, 0.49803922, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0f3ke"]
+bg_color = Color(0.20744371, 0.31924596, 0.44899178, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v84k8"]
+bg_color = Color(0.2944259, 0.43312773, 0.5945329, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ejwj"]
+bg_color = Color(0.568, 0.6342666, 0.71, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_do7rh"]
+bg_color = Color(0.23529412, 0.35686275, 0.49803922, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbmhm"]
+bg_color = Color(0.20744371, 0.31924596, 0.44899178, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eicnw"]
+bg_color = Color(0.2944259, 0.43312773, 0.5945329, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33i34"]
+bg_color = Color(0.568, 0.6342666, 0.71, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0d2u"]
 bg_color = Color(0.23529412, 0.35686275, 0.49803922, 1)
 corner_radius_top_left = 16
@@ -57,6 +113,13 @@ corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8aph"]
 bg_color = Color(0.2944259, 0.43312773, 0.5945329, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ioc7c"]
+bg_color = Color(0.568, 0.6342666, 0.71, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -157,17 +220,17 @@ text = " VOLTAR "
 icon = ExtResource("2_q5e74")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=538764591]
-custom_minimum_size = Vector2(700, 600)
+custom_minimum_size = Vector2(700, 800)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -600.0
+offset_top = -363.5
+offset_right = 600.0
+offset_bottom = 436.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_q5e74")
@@ -181,24 +244,92 @@ label_settings = ExtResource("2_q0d2u")
 horizontal_alignment = 1
 
 [node name="ButtonsVBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=2126600827]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
+alignment = 1
 
-[node name="EasyButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=625673925]
+[node name="EasyVBoxContainer" type="VBoxContainer" parent="PanelContainer/ButtonsVBoxContainer" unique_id=510826090]
 layout_mode = 2
+alignment = 1
+
+[node name="EasyLabel" type="Label" parent="PanelContainer/ButtonsVBoxContainer/EasyVBoxContainer" unique_id=2103038972]
+layout_mode = 2
+text = "Fácil"
+label_settings = ExtResource("2_q0d2u")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/ButtonsVBoxContainer/EasyVBoxContainer" unique_id=1914718784]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="EasyClassifyButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/EasyVBoxContainer/HBoxContainer" unique_id=625673925]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ehmk3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0f3ke")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v84k8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7ejwj")
+text = "ARRASTA-E-SOLTA
+E DIGITAÇÃO"
+language = "pt_BR"
+
+[node name="EasyMemoryButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/EasyVBoxContainer/HBoxContainer" unique_id=732898359]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_do7rh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dbmhm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eicnw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_33i34")
+disabled = true
+text = "JOGO DA
+MEMÓRIA"
+
+[node name="EasyQuizButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/EasyVBoxContainer/HBoxContainer" unique_id=1767860741]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_q0d2u")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_100ey")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h8aph")
-text = "FÁCIL"
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ioc7c")
+disabled = true
+text = "TRIVIA"
 
-[node name="MediumButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1362505371]
+[node name="MediumVBoxContainer" type="VBoxContainer" parent="PanelContainer/ButtonsVBoxContainer" unique_id=79963173]
 layout_mode = 2
+alignment = 1
+
+[node name="MediumLabel" type="Label" parent="PanelContainer/ButtonsVBoxContainer/MediumVBoxContainer" unique_id=1986924306]
+layout_mode = 2
+text = "Médio"
+label_settings = ExtResource("2_q0d2u")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/ButtonsVBoxContainer/MediumVBoxContainer" unique_id=375622778]
+layout_mode = 2
+alignment = 1
+
+[node name="MediumClassifyButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/MediumVBoxContainer/HBoxContainer" unique_id=1362505371]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
@@ -207,10 +338,57 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xu2wo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ei0xv")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_rf3r8")
 disabled = true
-text = "MÉDIO"
+text = "ARRASTA-E-SOLTA
+E DIGITAÇÃO"
 
-[node name="HardButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer" unique_id=1557915204]
+[node name="MediumMemoryButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/MediumVBoxContainer/HBoxContainer" unique_id=631625905]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_do7rh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dbmhm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eicnw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_33i34")
+disabled = true
+text = "JOGO DA
+MEMÓRIA"
+
+[node name="MediumQuizButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/MediumVBoxContainer/HBoxContainer" unique_id=135632351]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0d2u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_100ey")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h8aph")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ioc7c")
+disabled = true
+text = "TRIVIA"
+
+[node name="HardVBoxContainer" type="VBoxContainer" parent="PanelContainer/ButtonsVBoxContainer" unique_id=2004030675]
+layout_mode = 2
+alignment = 1
+
+[node name="HardLabel" type="Label" parent="PanelContainer/ButtonsVBoxContainer/HardVBoxContainer" unique_id=1641576297]
+layout_mode = 2
+text = "Difícil"
+label_settings = ExtResource("2_q0d2u")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/ButtonsVBoxContainer/HardVBoxContainer" unique_id=606414421]
+layout_mode = 2
+alignment = 1
+
+[node name="HardClassifyButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/HardVBoxContainer/HBoxContainer" unique_id=1557915204]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
@@ -219,9 +397,45 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ae4la")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vi71m")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_qyl6w")
 disabled = true
-text = "DIFÍCIL"
+text = "ARRASTA-E-SOLTA
+E DIGITAÇÃO"
+
+[node name="HardMemoryButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/HardVBoxContainer/HBoxContainer" unique_id=169189901]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_do7rh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dbmhm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eicnw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_33i34")
+disabled = true
+text = "JOGO DA
+MEMÓRIA"
+
+[node name="HardQuizButton" type="Button" parent="PanelContainer/ButtonsVBoxContainer/HardVBoxContainer/HBoxContainer" unique_id=1883884499]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0d2u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_100ey")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h8aph")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ioc7c")
+disabled = true
+text = "TRIVIA"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/EasyButton" to="." method="_on_easy_button_pressed"]
-[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/MediumButton" to="." method="_on_medium_button_pressed"]
-[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/HardButton" to="." method="_on_hard_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/EasyVBoxContainer/HBoxContainer/EasyClassifyButton" to="." method="_on_easy_classify_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/EasyVBoxContainer/HBoxContainer/EasyMemoryButton" to="." method="_on_easy_memory_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/EasyVBoxContainer/HBoxContainer/EasyQuizButton" to="." method="_on_easy_quiz_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/MediumVBoxContainer/HBoxContainer/MediumClassifyButton" to="." method="_on_medium_classify_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/MediumVBoxContainer/HBoxContainer/MediumMemoryButton" to="." method="_on_medium_memory_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/MediumVBoxContainer/HBoxContainer/MediumQuizButton" to="." method="_on_medium_quiz_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/HardVBoxContainer/HBoxContainer/HardClassifyButton" to="." method="_on_hard_classify_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/HardVBoxContainer/HBoxContainer/HardMemoryButton" to="." method="_on_hard_memory_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/HardVBoxContainer/HBoxContainer/HardQuizButton" to="." method="_on_hard_quiz_button_pressed"]

@@ -8,11 +8,15 @@ const qnt_half_habits = {
 	Difficulty.HARD: 4,
 }
 
-var selected_difficulty: Difficulty = Difficulty.MEDIUM
+var selected_difficulty: Difficulty = Difficulty.EASY
 var _completed_level: int = 0
+var _completed_activity: int = 0
 
 var completed_level: int:
 	get: return _completed_level
+	
+var completed_activity: int:
+	get: return _completed_activity
 
 var selected_habits: Array = []
 var current_round_index: int:
@@ -87,18 +91,28 @@ var score: Dictionary[String, Dictionary]:
 					score.typing[Difficulty.EASY] = 0
 		return score
 
-func unlock_next_level() -> bool:
-	match _completed_level:
-		0:
-			_completed_level = 1
-			return true
-		1:
-			_completed_level = 2
-			return true
-		2:
-			_completed_level = 3
-			return false
-	return false
+func unlock_next_activity() -> bool:
+	if _completed_level >= 3:
+		return false
+
+	_completed_activity += 1
+
+	if _completed_activity >= 3:
+		_completed_activity = 0
+		match selected_difficulty:
+			Difficulty.EASY:
+				_completed_level = 1
+			Difficulty.MEDIUM:
+				_completed_level = 2
+			Difficulty.HARD:
+				_completed_level = 3
+
+	if _completed_level >= 3:
+		_completed_level = 3
+		_completed_activity = 3
+		return false
+
+	return true
 
 func load_game(difficulty: Difficulty) -> void:
 	selected_difficulty = difficulty

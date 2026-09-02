@@ -6,35 +6,29 @@
 
 [sub_resource type="Theme" id="Theme_14rkp"]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_c2u58"]
+
 [node name="Habit" type="Control" unique_id=1512986 node_paths=PackedStringArray("shortcut_context")]
+custom_minimum_size = Vector2(600, 600)
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
+anchor_right = 0.347
+anchor_bottom = 0.48700002
+offset_right = 0.32000732
+offset_bottom = -0.14901733
 shortcut_context = NodePath(".")
 script = ExtResource("1_14rkp")
 metadata/description = ""
 metadata/typing = false
 metadata/down_and_drag = true
 metadata/is_healthy = false
-metadata/image = null
+metadata/_edit_vertical_guides_ = [970.0, 470.0]
+metadata/_edit_horizontal_guides_ = [264.0, 764.0]
 
 [node name="Panel" type="PanelContainer" parent="." unique_id=918341132]
-custom_minimum_size = Vector2(500, 500)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -250.0
-offset_right = 250.0
-offset_bottom = 250.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_14rkp")
@@ -45,7 +39,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer" unique_id=1115164435]
-custom_minimum_size = Vector2(400, 400)
+custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/ScrollContainer" unique_id=862345154]
@@ -53,6 +47,7 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture = SubResource("CanvasTexture_c2u58")
 expand_mode = 2
 stretch_mode = 6
 
@@ -61,9 +56,10 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("3_3d5kg")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
-text = "Descrição"
+text = "DESCRIÇÃO"
+fit_content = true
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1

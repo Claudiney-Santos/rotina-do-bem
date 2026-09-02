@@ -4,161 +4,197 @@
 			{
 				"description": "correr",
 				"image": "running.png",
+				"explanation": "deixa as pernas fortes e dá muita energia"
 			},
 			{
 				"description": "caminhar",
 				"image": "Fácil/Caminhar.jpg",
+				"explanation": "ajuda o corpo a se mexer e fortalece os ossos"
 			},
 			{
 				"description": "estudar",
 				"image": "Fácil/Estudar.webp",
+				"explanation": "ajuda a aprender coisas novas e ficar esperto"
 			},
 			{
 				"description": "descansar",
 				"image": "Fácil/Relaxar.webp",
-			},
+				"explanation": "ajuda o corpo a relaxar e recuperar as energias"
+			}
 		],
 		"unhealthy": [
 			{
 				"description": "irritabilidade",
 				"image": "Fácil/Irritabilidade.jpg",
+				"explanation": "deixa a gente bravo por qualquer coisinha"
 			},
 			{
 				"description": "procrastinar",
 				"image": "Fácil/Procastinar.jpeg",
+				"explanation": "faz a gente deixar para depois o que precisa fazer hoje"
 			},
 			{
 				"description": "fofocar",
 				"image": "Fácil/Fofocar.jpg",
+				"explanation": "fala mal dos outros e deixa os amigos tristes"
 			},
 			{
 				"description": "reclamar",
 				"image": "Fácil/Reclamar.webp",
+				"explanation": "deixa a gente de mau humor e chateado"
 			},
 			{
 				"description": "ansiedade",
 				"image": "Fácil/Ansiedade.jpg",
-			},
-		],
+				"explanation": "deixa o coração preocupado antes da hora"
+			}
+		]
 	},
 	"medium": {
 		"healthy": [
 			{
 				"description": "se exercitar",
 				"image": "Médio/Se exercitar.webp",
+				"explanation": "deixa o corpo forte, flexível e saudável"
 			},
 			{
 				"description": "comer vegetais",
 				"image": "Médio/Comer Vegetais.webp",
+				"explanation": "dá vitaminas para o corpo crescer forte e saudável"
 			},
 			{
 				"description": "comer frutas",
 				"image": "Médio/Comer Fruta.jpg",
+				"explanation": "dá vitaminas gostosas para proteger contra doenças"
 			},
 			{
 				"description": "tomar banho",
 				"image": "Médio/Tomar Banho.jpg",
+				"explanation": "deixa o corpo limpo, cheiroso e livre de germes"
 			},
 			{
 				"description": "arrumar cama",
 				"image": "Médio/Arrumar Cama.webp",
+				"explanation": "deixa o quarto organizado e bonito logo cedo"
 			},
 			{
 				"description": "ler livros",
 				"image": "Médio/Ler Livros.jpg",
-			},
+				"explanation": "faz a imaginação voar e ensina coisas incríveis"
+			}
 		],
 		"unhealthy": [
 			{
 				"description": "dormir tarde",
 				"image": "Médio/Dormir Tarde.png",
+				"explanation": "deixa o corpo cansado"
 			},
 			{
 				"description": "comer demais",
 				"image": "Médio/Comer demais.jpg",
+				"explanation": "pode dar dor de barriga e deixar o corpo pesado"
 			},
 			{
 				"description": "beber refrigerante",
 				"image": "Médio/Beber Refrigerante.jpeg",
+				"explanation": "tem muito açúcar e pode machucar os dentes e a barriga"
 			},
 			{
 				"description": "roer unhas",
 				"image": "Médio/Roer Unha.jpg",
+				"explanation": "pode machucar os dedos e levar sujeira para a boca"
 			},
 			{
 				"description": "má postura",
 				"image": "Médio/Má Postura.jpg",
+				"explanation": "pode dar dor nas costas e entortar a coluna"
 			},
 			{
 				"description": "isolamento social",
 				"image": "Médio/Isolamento Social.webp",
-			},
-		],
+				"explanation": "faz a gente se sentir sozinho e sem amigos para brincar"
+			}
+		]
 	},
 	"hard": {
 		"healthy": [
 			{
 				"description": "dormir 8 horas",
 				"image": "Difícil/Dormir 8 horas.webp",
+				"explanation": "dá o descanso perfeito para acordar cheio de energia"
 			},
 			{
 				"description": "sair com amigos",
 				"image": "Difícil/Sair com amigos.jpg",
+				"explanation": "faz a gente dar risada e se divertir bastante"
 			},
 			{
 				"description": "escovar os dentes",
 				"image": "Difícil/Escovar os Dentes.webp",
+				"explanation": "protege os dentes contra cáries e deixa o hálito fresco"
 			},
 			{
 				"description": "beber água",
 				"image": "Difícil/Tomar Água.jpg",
+				"explanation": "deixa o corpo hidratado e funcionando super bem"
 			},
 			{
 				"description": "passear no parque",
 				"image": "Difícil/Passear no Parque.jpg",
+				"explanation": "ajuda a respirar ar puro e curtir a natureza"
 			},
 			{
 				"description": "ir para escola",
 				"image": "Difícil/Ir a Escola.jpg",
+				"explanation": "ajuda a aprender, fazer amigos e descobrir o mundo"
 			},
 			{
 				"description": "limpar a casa",
 				"image": "Difícil/Limpar a casa.webp",
-			},
+				"explanation": "deixa o ambiente limpo, organizado e gostoso de morar"
+			}
 		],
 		"unhealthy": [
 			{
 				"description": "assistir muita tv",
 				"image": "Difícil/Assistir Muita TV.jpg",
+				"explanation": "cansa os olhos e tira o tempo de brincar ao ar livre"
 			},
 			{
 				"description": "comer muito doce",
 				"image": "Difícil/Comer muito doce.jpg",
+				"explanation": "pode causar cáries nos dentes e dor de barriga"
 			},
 			{
 				"description": "beber pouca água",
 				"image": "Difícil/Beber Pouca Água.png",
+				"explanation": "deixa o corpo sem energia e com muita sede"
 			},
 			{
 				"description": "comer muito rápido",
 				"image": "Difícil/Comer Muito Rápido.webp",
+				"explanation": "faz mal para a digestão e pode dar dor de barriga"
 			},
 			{
 				"description": "gastar muito dinheiro",
 				"image": "Difícil/Gastar Muito Dinheiro.webp",
+				"explanation": "faz faltar moedinhas para as coisas que realmente importam"
 			},
 			{
 				"description": "má alimentação",
 				"image": "Difícil/Má Alimentação.webp",
+				"explanation": "deixa o corpo sem as vitaminas necessárias para ter uma boa saúde"
 			},
 			{
 				"description": "estresse contínuo",
 				"image": "Difícil/Estresse Contínuo.png",
+				"explanation": "deixa a cabeça preocupada e o corpo muito cansado"
 			},
 			{
 				"description": "não praticar atividades físicas",
 				"image": "Difícil/Sedentarismo.webp",
-			},
-		],
-	},
+				"explanation": "deixa o corpo preguiçoso e os músculos fracos"
+			}
+		]
+	}
 }
