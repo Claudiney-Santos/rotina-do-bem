@@ -42,6 +42,7 @@ func _ready() -> void:
 	var quiz_info: Array[Label] = [easy_quiz_info, medium_quiz_info, hard_quiz_info]
 	var score: Dictionary[String, Dictionary] = GameManager.score
 	var counts: Dictionary[String, Dictionary] = GameManager.mistake_counts
+	var times: Dictionary[String, Dictionary] = GameManager.play_times
 	for diff in [GameManager.Difficulty.EASY, GameManager.Difficulty.MEDIUM, GameManager.Difficulty.HARD]:
 		var i: int = int(diff)
 		var has_rounds: bool = len(GameManager.rounds[diff]) > 0
@@ -49,8 +50,8 @@ func _ready() -> void:
 		set_stars(typing_stars[i], floorf(5*score.typing[diff]))
 		set_stars(memory_stars[i], floorf(5*score.memory[diff]))
 		set_stars(quiz_stars[i], floorf(5*score.quiz[diff]))
-		classify_info[i].text = mistake_info(counts.classify[diff].mistakes, has_rounds)
-		typing_info[i].text = mistake_info(counts.typing[diff].mistakes, has_rounds)
+		classify_info[i].text = activity_info(counts.classify[diff].mistakes, times.classify[diff], has_rounds)
+		typing_info[i].text = activity_info(counts.typing[diff].mistakes, times.typing[diff], has_rounds)
 		memory_info[i].text = memory_info_text(diff)
 		quiz_info[i].text = quiz_info_text(diff)
 
@@ -61,19 +62,21 @@ func star_text(number: int) -> String:
 	var clamped: int = clampi(number, 0, star_limit)
 	return full_star.repeat(clamped) + empty_star.repeat(star_limit - clamped)
 
-func mistake_info(mistakes: int, has_data: bool) -> String:
+func format_time(time_seconds: float) -> String:
+	var total_seconds: int = int(time_seconds)
+	return "%02d:%02d" % [total_seconds / 60, total_seconds % 60]
+
+func activity_info(mistakes: int, time_seconds: float, has_data: bool) -> String:
 	if not has_data:
 		return no_data
-	return "ERROS: %d" % mistakes
+	return "ERROS: %d • TEMPO: %s" % [mistakes, format_time(time_seconds)]
 
 func memory_info_text(diff: GameManager.Difficulty) -> String:
 	var sessions: Array = GameManager.memory_mistakes[diff]
 	if len(sessions) == 0:
 		return no_data
 	var latest: Mistakes.MemoryMistake = sessions.back()
-	var minutes: int = int(latest.time_seconds) / 60
-	var seconds: int = int(latest.time_seconds) % 60
-	return "ERROS: %d • TEMPO: %02d:%02d" % [latest.wrong_matches, minutes, seconds]
+	return "ERROS: %d • TEMPO: %s" % [latest.wrong_matches, format_time(latest.time_seconds)]
 
 func quiz_info_text(diff: GameManager.Difficulty) -> String:
 	var first: int = 0

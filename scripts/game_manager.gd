@@ -88,6 +88,26 @@ var mistake_counts: Dictionary[String, Dictionary]:
 	get:
 		return _build_counts()
 
+var play_times: Dictionary[String, Dictionary]:
+	get:
+		var times: Dictionary[String, Dictionary] = {
+			classify = {
+				Difficulty.EASY: 0.0,
+				Difficulty.MEDIUM: 0.0,
+				Difficulty.HARD: 0.0,
+			},
+			typing = {
+				Difficulty.EASY: 0.0,
+				Difficulty.MEDIUM: 0.0,
+				Difficulty.HARD: 0.0,
+			},
+		}
+		for diff in [Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD]:
+			for round in rounds[diff]:
+				times.classify[diff] += round.classify_time_seconds
+				times.typing[diff] += round.typing_time_seconds
+		return times
+
 func _memory_score(diff: Difficulty) -> float:
 	var sessions: Array = memory_mistakes[diff]
 	if len(sessions) == 0:

@@ -10,6 +10,8 @@ signal player_choose_wrong
 @onready var wrong_panel = $WrongPanelContainer
 @onready var correct_panel = $CorrectPanelContainer
 
+var _start_time_ms: int = 0
+
 func reset_vboxes() -> void:
 	for child in negative_vbox.get_children():
 		negative_vbox.remove_child(child)
@@ -41,6 +43,7 @@ func reset_vboxes() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_start_time_ms = Time.get_ticks_msec()
 	var current_habit = GameManager.selected_habits[GameManager.current_round_index+1]
 	GameManager.new_round(current_habit.description)
 	habit_node.set_habit(current_habit)
@@ -84,6 +87,7 @@ func _on_habit_put_down() -> void:
 
 func _on_player_choose_right() -> void:
 	# correct_panel.show()
+	GameManager.current_round.classify_time_seconds = (Time.get_ticks_msec() - _start_time_ms)/1000.0
 	_on_continue_button_pressed()
 
 

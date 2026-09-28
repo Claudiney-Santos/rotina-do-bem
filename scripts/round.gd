@@ -5,6 +5,8 @@ class_name Round
 var word: String = ""
 
 var mistakes: Mistakes = Mistakes.new()
+var classify_time_seconds: float = 0.0
+var typing_time_seconds: float = 0.0
 
 func _init(word: String) -> void:
 	self.word = word
