@@ -118,7 +118,7 @@ layout_mode = 2
 
 [node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer" unique_id=1869285058]
 layout_mode = 2
-split_offsets = PackedInt32Array(23, 85)
+split_offsets = PackedInt32Array(23, 133, 243, 353)
 split_offset = 23
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer" unique_id=659658594]
@@ -149,6 +149,16 @@ label_settings = ExtResource("4_4lv02")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="EasyClassifyInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=1010000001]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer" unique_id=945802371]
 layout_mode = 2
 
@@ -174,12 +184,86 @@ label_settings = ExtResource("4_4lv02")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="EasyTypingInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1010000002]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer" unique_id=1010000003]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer3" unique_id=1010000004]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer3/VBoxContainer" unique_id=1010000005]
+layout_mode = 2
+text = "MEMÓRIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyMemoryStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer3/VBoxContainer" unique_id=1010000006]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyMemoryInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer3/VBoxContainer" unique_id=1010000007]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer" unique_id=1010000008]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer4" unique_id=1010000009]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer4/VBoxContainer" unique_id=1010000010]
+layout_mode = 2
+text = "TRÍVIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyQuizStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer4/VBoxContainer" unique_id=1010000011]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyQuizInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer4/VBoxContainer" unique_id=1010000012]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MediumPanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer" unique_id=1367804290]
 layout_mode = 2
 
 [node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer" unique_id=137758362]
 layout_mode = 2
-split_offsets = PackedInt32Array(23, 85)
+split_offsets = PackedInt32Array(23, 133, 243, 353)
 split_offset = 23
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer" unique_id=1723870622]
@@ -210,6 +294,16 @@ label_settings = ExtResource("4_4lv02")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MediumClassifyInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=1010000101]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer" unique_id=1926527610]
 layout_mode = 2
 
@@ -235,12 +329,86 @@ label_settings = ExtResource("4_4lv02")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MediumTypingInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1010000102]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer" unique_id=1010000103]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer3" unique_id=1010000104]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer3/VBoxContainer" unique_id=1010000105]
+layout_mode = 2
+text = "MEMÓRIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumMemoryStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer3/VBoxContainer" unique_id=1010000106]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumMemoryInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer3/VBoxContainer" unique_id=1010000107]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer" unique_id=1010000108]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer4" unique_id=1010000109]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer4/VBoxContainer" unique_id=1010000110]
+layout_mode = 2
+text = "TRÍVIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumQuizStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer4/VBoxContainer" unique_id=1010000111]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumQuizInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer4/VBoxContainer" unique_id=1010000112]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HardPanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer" unique_id=1893130527]
 layout_mode = 2
 
 [node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer" unique_id=631640060]
 layout_mode = 2
-split_offsets = PackedInt32Array(23, 85)
+split_offsets = PackedInt32Array(23, 133, 243, 353)
 split_offset = 23
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer" unique_id=698199009]
@@ -271,6 +439,16 @@ label_settings = ExtResource("4_4lv02")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HardClassifyInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=1010000201]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer" unique_id=447149805]
 layout_mode = 2
 
@@ -293,6 +471,80 @@ theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
 theme_override_font_sizes/font_size = 32
 text = "★★★★☆"
 label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardTypingInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1010000202]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer" unique_id=1010000203]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer3" unique_id=1010000204]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer3/VBoxContainer" unique_id=1010000205]
+layout_mode = 2
+text = "MEMÓRIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardMemoryStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer3/VBoxContainer" unique_id=1010000206]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardMemoryInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer3/VBoxContainer" unique_id=1010000207]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer" unique_id=1010000208]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer4" unique_id=1010000209]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer4/VBoxContainer" unique_id=1010000210]
+layout_mode = 2
+text = "TRÍVIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardQuizStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer4/VBoxContainer" unique_id=1010000211]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardQuizInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer4/VBoxContainer" unique_id=1010000212]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 

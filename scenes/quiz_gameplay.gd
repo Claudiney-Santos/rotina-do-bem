@@ -14,9 +14,11 @@ var _unhealthy_habits: Array[Dictionary] = []
 var _options: Array[Dictionary] = []
 var _habit = null
 var _current_round: int = 0
+var _attempts: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.reset_quiz_mistakes(GameManager.selected_difficulty)
 	for habit in GameManager.selected_habits:
 		if habit.get("is_healthy"):
 			_healthy_habits.push_back(habit)
@@ -26,6 +28,7 @@ func _ready() -> void:
 
 func load_current_round() -> void:
 	wrong_panel.hide()
+	_attempts = 0
 	for button in buttons:
 		button.disabled = false
 	_habit = GameManager.selected_habits[_current_round]
@@ -62,7 +65,14 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_quiz_answer(answer: int) -> void:
+	_attempts += 1
 	if _options[answer] == GameManager.selected_habits[_current_round]:
+		GameManager.push_quiz_mistake(Mistakes.QuizMistake.new(
+			_habit.get("description"),
+			_attempts,
+			GameManager.selected_difficulty,
+			_current_round
+		))
 		load_next_round()
 	else:
 		buttons[answer].disabled = true

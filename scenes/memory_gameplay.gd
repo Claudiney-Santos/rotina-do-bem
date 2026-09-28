@@ -8,9 +8,13 @@ signal win
 
 var _revealed_cards: Array = []
 var _correct_matches: Array = []
+var _wrong_matches: int = 0
+var _start_time_ms: int = 0
+var _win_recorded: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_start_time_ms = Time.get_ticks_msec()
 	var cards_qnt: int = GameManager.qnt_half_habits[GameManager.selected_difficulty]*4
 	var idx: Array = range(cards_qnt)
 	idx.shuffle()
@@ -50,8 +54,16 @@ func _on_timer_timeout() -> void:
 		_correct_matches.push_back(card1)
 		_correct_matches.push_back(card2)
 		if len(_correct_matches) >= 4*GameManager.qnt_half_habits[GameManager.selected_difficulty]:
+			if not _win_recorded:
+				_win_recorded = true
+				GameManager.push_memory_mistake(Mistakes.MemoryMistake.new(
+					_wrong_matches,
+					(Time.get_ticks_msec() - _start_time_ms)/1000.0,
+					GameManager.selected_difficulty
+				))
 			emit_signal("win")
 	else:
+		_wrong_matches += 1
 		card1.conceal()
 		card2.conceal()
 	
