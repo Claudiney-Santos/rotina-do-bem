@@ -18,3 +18,4 @@
 - [ ] Ao exportar para web, não é possível digitar acentos no Firefox (o Chromium funciona).
 - [X] Na web, caracteres de estrela não são exibidos corretamente.
 - [ ] Na web, o jogo exibe uma tela preta ao ser carregado uma segunda vez, mesmo que o jogo tenha sido carregado corretamente na primeira vez.
+- [ ] Na trivia, deixar os botões mais espaçados verticalmente
