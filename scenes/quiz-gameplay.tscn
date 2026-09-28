@@ -274,7 +274,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="WrongPanelContainer/VBoxContainer" unique_id=1266711656]
 layout_mode = 2
 size_flags_vertical = 0
-text = "RESPOSTA INCORRETA.
+text = "NÃO FOI DESSA VEZ.
 VAMOS TENTAR NOVAMENTE?"
 label_settings = ExtResource("3_ekrhd")
 horizontal_alignment = 1

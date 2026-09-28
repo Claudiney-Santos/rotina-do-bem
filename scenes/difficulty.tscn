@@ -309,7 +309,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_100ey")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h8aph")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ioc7c")
 disabled = true
-text = "TRIVIA"
+text = "TRÍVIA"
 
 [node name="MediumVBoxContainer" type="VBoxContainer" parent="PanelContainer/ButtonsVBoxContainer" unique_id=79963173]
 layout_mode = 2
@@ -368,7 +368,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_100ey")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h8aph")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ioc7c")
 disabled = true
-text = "TRIVIA"
+text = "TRÍVIA"
 
 [node name="HardVBoxContainer" type="VBoxContainer" parent="PanelContainer/ButtonsVBoxContainer" unique_id=2004030675]
 layout_mode = 2
@@ -427,7 +427,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_100ey")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h8aph")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ioc7c")
 disabled = true
-text = "TRIVIA"
+text = "TRÍVIA"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="PanelContainer/ButtonsVBoxContainer/EasyVBoxContainer/HBoxContainer/EasyClassifyButton" to="." method="_on_easy_classify_button_pressed"]
