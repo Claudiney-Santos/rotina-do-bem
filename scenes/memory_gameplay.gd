@@ -16,10 +16,14 @@ var _correct_matches: Array = []
 var _wrong_matches: int = 0
 var _start_time_ms: int = 0
 var _win_recorded: bool = false
+var hint_delay_seconds: float = 30.0
+var _last_match_time_ms: int = 0
+var _hinted_cards: Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_start_time_ms = Time.get_ticks_msec()
+	_last_match_time_ms = _start_time_ms
 	var cards_qnt: int = GameManager.qnt_half_habits[GameManager.selected_difficulty]*4
 	var idx: Array = range(cards_qnt)
 	idx.shuffle()
@@ -56,7 +60,41 @@ func _center_grid(cards_qnt: int) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if _win_recorded:
+		return
+	if Time.get_ticks_msec() - _last_match_time_ms >= int(hint_delay_seconds*1000.0):
+		_last_match_time_ms = Time.get_ticks_msec()
+		_show_hint()
+
+func _show_hint() -> void:
+	var groups: Dictionary = {}
+	for card in flow_container.get_children():
+		if not card.visible or card._is_revealed:
+			continue
+		if _correct_matches.has(card) or _hinted_cards.has(card):
+			continue
+		var desc: String = card.get_meta("description")
+		groups[desc] = groups.get(desc, []) + [card]
+	var candidates: Array = []
+	for desc in groups:
+		if len(groups[desc]) == 2:
+			candidates.push_back(groups[desc])
+	if candidates.is_empty():
+		return
+	candidates.shuffle()
+	for card in candidates[0]:
+		card.set_hint(true)
+		_hinted_cards.push_back(card)
+
+func _clear_hint_for(card: Node) -> void:
+	if _hinted_cards.has(card):
+		_hinted_cards.erase(card)
+		card.set_hint(false)
+
+func _clear_all_hints() -> void:
+	for card in _hinted_cards:
+		card.set_hint(false)
+	_hinted_cards = []
 
 
 func _on_memory_card_reveal_card(source) -> void:
@@ -76,6 +114,9 @@ func _on_timer_timeout() -> void:
 		card2.reveal(false, false)
 		_correct_matches.push_back(card1)
 		_correct_matches.push_back(card2)
+		_last_match_time_ms = Time.get_ticks_msec()
+		_clear_hint_for(card1)
+		_clear_hint_for(card2)
 		if len(_correct_matches) >= 4*GameManager.qnt_half_habits[GameManager.selected_difficulty]:
 			if not _win_recorded:
 				_win_recorded = true
@@ -99,4 +140,5 @@ func _on_continue_button_pressed() -> void:
 
 
 func _on_win() -> void:
+	_clear_all_hints()
 	correct_panel.show()
