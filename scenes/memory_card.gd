@@ -13,6 +13,8 @@ const DESCRIPTION_TEXT_WIDTH: float = 194.0
 @onready var image_texturerect = $Panel/TextureScrollContainer/TextureRect
 
 var _is_revealed = false
+var _bg_color: Color = Color("#69a0ba")
+var _hint: bool = false
 
 var is_image: bool:
 	get:
@@ -56,6 +58,18 @@ func _fit_description_font() -> void:
 			return
 	description_rich_label.add_theme_font_size_override("normal_font_size", MIN_DESCRIPTION_FONT_SIZE)
 
+func set_hint(on: bool) -> void:
+	if _hint == on:
+		return
+	_hint = on
+	_apply_style()
+
+func _apply_style() -> void:
+	var theme: StyleBox = panel.get_theme_stylebox("panel").duplicate()
+	theme.bg_color = _bg_color
+	theme.border_color = Color("#dda327") if _hint else theme.bg_color
+	panel.add_theme_stylebox_override("panel", theme)
+
 func conceal() -> void:
 	if _is_revealed:
 		emit_signal("conceal_card")
@@ -63,10 +77,8 @@ func conceal() -> void:
 	panel.mouse_default_cursor_shape = CURSOR_POINTING_HAND
 	image_texturerect.visible = false
 	description_rich_label.visible = false
-	var theme: StyleBox = panel.get_theme_stylebox("panel").duplicate()
-	theme.bg_color = Color("#69a0ba")
-	theme.border_color = theme.bg_color
-	panel.add_theme_stylebox_override("panel", theme)
+	_bg_color = Color("#69a0ba")
+	_apply_style()
 
 func reveal(colorize: bool = false, signalize: bool = true) -> void:
 	if not _is_revealed:
@@ -85,10 +97,8 @@ func reveal(colorize: bool = false, signalize: bool = true) -> void:
 		color = String.num_int64(hash([get_meta("description"), get_meta("image")]) & 0xFFFFFF, 16)
 	elif _is_revealed:
 		color = "#92d291"
-	var theme: StyleBox = panel.get_theme_stylebox("panel").duplicate()
-	theme.bg_color = Color(color)
-	theme.border_color = theme.bg_color
-	panel.add_theme_stylebox_override("panel", theme)
+	_bg_color = Color(color)
+	_apply_style()
 
 func _on_panel_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouse and event.is_pressed() and not _is_revealed:
