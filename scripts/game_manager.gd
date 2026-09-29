@@ -155,7 +155,8 @@ var score: Dictionary[String, Dictionary]:
 		for diff in [Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD]:
 			if len(rounds[diff]) > 0:
 				score.classify[diff] = ((count.classify[diff].total - count.classify[diff].mistakes) as float)/(count.classify[diff].total as float)
-				score.typing[diff] = (count.typing[diff].total - count.typing[diff].mistakes as float)/(count.typing[diff].total as float)
+				if count.typing[diff].total > 0:
+					score.typing[diff] = (count.typing[diff].total - count.typing[diff].mistakes as float)/(count.typing[diff].total as float)
 			score.memory[diff] = _memory_score(diff)
 			score.quiz[diff] = _quiz_score(diff)
 		return score

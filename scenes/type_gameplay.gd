@@ -49,7 +49,7 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 			var mistake: Mistakes.TypingMistake = Mistakes.TypingMistake.new(habit_description, written_len, GameManager.selected_difficulty, GameManager.current_round_index)
 			GameManager.current_round.push_typing_mistake(mistake)
 			
-			if answer[len(answer)-1] == remove_accents(habit_description)[len(answer)-1]:
+			if answer[written_len] == remove_accents(habit_description)[written_len]:
 				dead_key_mistake_counter += 1
 			if dead_key_mistake_counter >= 3:
 				emit_signal("dead_key_mistake")

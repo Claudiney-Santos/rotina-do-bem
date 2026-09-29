@@ -53,7 +53,7 @@ func load_next_round() -> void:
 	if _current_round == len(GameManager.selected_habits):
 		if GameManager.completed_activity == 2:
 			GameManager.unlock_next_activity()
-			get_tree().change_scene_to_file("res://scenes/difficulty.tscn")
+		get_tree().change_scene_to_file("res://scenes/difficulty.tscn")
 	else:
 		load_current_round()
 

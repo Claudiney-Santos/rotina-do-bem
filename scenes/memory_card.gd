@@ -94,7 +94,7 @@ func reveal(colorize: bool = false, signalize: bool = true) -> void:
 	panel.mouse_default_cursor_shape = CURSOR_ARROW
 	var color: String = "#69a0ba"
 	if colorize:
-		color = String.num_int64(hash([get_meta("description"), get_meta("image")]) & 0xFFFFFF, 16)
+		color = "#" + String.num_int64(hash([get_meta("description"), get_meta("image")]) & 0xFFFFFF, 16).pad_zeros(6)
 	elif _is_revealed:
 		color = "#92d291"
 	_bg_color = Color(color)

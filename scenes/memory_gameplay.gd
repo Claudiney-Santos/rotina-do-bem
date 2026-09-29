@@ -106,6 +106,8 @@ func _on_memory_card_reveal_card(source) -> void:
 		_on_timer_timeout()
 
 func _on_timer_timeout() -> void:
+	if len(_revealed_cards) < 2:
+		return
 	var card1 = _revealed_cards.pop_front()
 	var card2 = _revealed_cards.pop_front()
 
