@@ -32,32 +32,65 @@ var rounds: Dictionary[Difficulty, Array] = {
 	Difficulty.HARD: [],
 }
 
+var memory_mistakes: Dictionary[Difficulty, Array] = {
+	Difficulty.EASY: [],
+	Difficulty.MEDIUM: [],
+	Difficulty.HARD: [],
+}
+
 func new_round(word: String) -> void:
 	rounds[selected_difficulty].push_back(Round.new(word))
 
 func reset_rounds(diff: Difficulty) -> void:
 	rounds[diff] = []
 
-var score: Dictionary[String, Dictionary]:
-	get:
-		var count: Dictionary[String, Dictionary] = {
-			classify = {},
-			typing = {}
+func push_memory_mistake(m: Mistakes.MemoryMistake) -> void:
+	memory_mistakes[selected_difficulty].push_back(m)
+
+func push_quiz_mistake(qm: Mistakes.QuizMistake) -> void:
+	var diff_rounds: Array = rounds[selected_difficulty]
+	if qm.round < len(diff_rounds):
+		diff_rounds[qm.round].push_quiz_mistake(qm)
+
+func reset_quiz_mistakes(diff: Difficulty) -> void:
+	for round in rounds[diff]:
+		round.clear_quiz_mistakes()
+
+func _build_counts() -> Dictionary[String, Dictionary]:
+	var count: Dictionary[String, Dictionary] = {
+		classify = {},
+		typing = {}
+	}
+	for type in count:
+		count[type][Difficulty.EASY] = {
+			total = 0,
+			mistakes = 0,
 		}
-		for type in count:
-			count[type][Difficulty.EASY] = {
-				total = 0,
-				mistakes = 0,
-			}
-			count[type][Difficulty.MEDIUM] = {
-				total = 0,
-				mistakes = 0,
-			}
-			count[type][Difficulty.HARD] = {
-				total = 0,
-				mistakes = 0,
-			}
-		var score: Dictionary[String, Dictionary] = {
+		count[type][Difficulty.MEDIUM] = {
+			total = 0,
+			mistakes = 0,
+		}
+		count[type][Difficulty.HARD] = {
+			total = 0,
+			mistakes = 0,
+		}
+	for diff in [Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD]:
+		count.classify[diff].total = 2*qnt_half_habits[diff]
+		for round in rounds[diff]:
+			count.typing[diff].total += len(round.word)
+			for cm in round.mistakes.classify_mistakes:
+				count.classify[cm.difficulty].mistakes += 1
+			for tm in round.mistakes.typing_mistakes:
+				count.typing[tm.difficulty].mistakes += 1
+	return count
+
+var mistake_counts: Dictionary[String, Dictionary]:
+	get:
+		return _build_counts()
+
+var play_times: Dictionary[String, Dictionary]:
+	get:
+		var times: Dictionary[String, Dictionary] = {
 			classify = {
 				Difficulty.EASY: 0.0,
 				Difficulty.MEDIUM: 0.0,
@@ -70,25 +103,61 @@ var score: Dictionary[String, Dictionary]:
 			},
 		}
 		for diff in [Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD]:
-			count.classify[diff].total = 2*qnt_half_habits[diff]
 			for round in rounds[diff]:
-				count.typing[diff].total += len(round.word)
-				for cm in round.mistakes.classify:
-					count.classify[cm.difficulty].mistakes += 1
-				for tm in round.mistakes.typing:
-					count.typing[tm.difficulty].mistakes += 1
-			score.classify[diff] = ((count.classify[diff].total - count.classify[diff].mistakes) as float)/(count.classify[diff].total as float)
-			score.typing[diff] = (count.typing[diff].total - count.typing[diff].mistakes as float)/(count.typing[diff].total as float)
-		var completed_levels: int = 0
-		if completed_level < 3:
-			score.classify[Difficulty.HARD] = 0
-			score.typing[Difficulty.HARD] = 0
-			if completed_level < 2:
-				score.classify[Difficulty.MEDIUM] = 0
-				score.typing[Difficulty.MEDIUM] = 0
-				if completed_level < 1:
-					score.classify[Difficulty.EASY] = 0
-					score.typing[Difficulty.EASY] = 0
+				times.classify[diff] += round.classify_time_seconds
+				times.typing[diff] += round.typing_time_seconds
+		return times
+
+func _memory_score(diff: Difficulty) -> float:
+	var sessions: Array = memory_mistakes[diff]
+	if len(sessions) == 0:
+		return 0.0
+	var latest: Mistakes.MemoryMistake = sessions.back()
+	var total_pairs: int = 2*qnt_half_habits[diff]
+	return maxf(0.0, 1.0 - float(latest.wrong_matches)/float(2*total_pairs))
+
+func _quiz_score(diff: Difficulty) -> float:
+	var answered: int = 0
+	var extra_attempts: int = 0
+	for round in rounds[diff]:
+		for qm in round.mistakes.quiz_mistakes:
+			answered += 1
+			extra_attempts += qm.attempts - 1
+	if answered == 0:
+		return 0.0
+	return (2.0*answered - extra_attempts)/(2.0*answered)
+
+var score: Dictionary[String, Dictionary]:
+	get:
+		var count: Dictionary[String, Dictionary] = _build_counts()
+		var score: Dictionary[String, Dictionary] = {
+			classify = {
+				Difficulty.EASY: 0.0,
+				Difficulty.MEDIUM: 0.0,
+				Difficulty.HARD: 0.0,
+			},
+			typing = {
+				Difficulty.EASY: 0.0,
+				Difficulty.MEDIUM: 0.0,
+				Difficulty.HARD: 0.0,
+			},
+			memory = {
+				Difficulty.EASY: 0.0,
+				Difficulty.MEDIUM: 0.0,
+				Difficulty.HARD: 0.0,
+			},
+			quiz = {
+				Difficulty.EASY: 0.0,
+				Difficulty.MEDIUM: 0.0,
+				Difficulty.HARD: 0.0,
+			},
+		}
+		for diff in [Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD]:
+			if len(rounds[diff]) > 0:
+				score.classify[diff] = ((count.classify[diff].total - count.classify[diff].mistakes) as float)/(count.classify[diff].total as float)
+				score.typing[diff] = (count.typing[diff].total - count.typing[diff].mistakes as float)/(count.typing[diff].total as float)
+			score.memory[diff] = _memory_score(diff)
+			score.quiz[diff] = _quiz_score(diff)
 		return score
 
 func unlock_next_activity() -> bool:
@@ -115,8 +184,12 @@ func unlock_next_activity() -> bool:
 	return true
 
 func load_game(difficulty: Difficulty) -> void:
-	selected_difficulty = difficulty
+	load_habits(difficulty)
 	rounds[selected_difficulty] = []
+	memory_mistakes[selected_difficulty] = []
+
+func load_habits(difficulty: Difficulty) -> void:
+	selected_difficulty = difficulty
 	var diff: String = ""
 	match difficulty:
 		Difficulty.EASY:

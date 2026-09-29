@@ -3,6 +3,10 @@ extends Control
 signal reveal_card
 signal conceal_card
 
+const MAX_DESCRIPTION_FONT_SIZE: int = 40
+const MIN_DESCRIPTION_FONT_SIZE: int = 24
+const DESCRIPTION_TEXT_WIDTH: float = 194.0
+
 @onready var node: Control = $"."
 @onready var panel = $Panel
 @onready var description_rich_label = $Panel/LabelScrollContainer/RichTextLabel
@@ -36,6 +40,21 @@ func set_habit(habit: Dictionary, is_image: bool = false) -> void:
 	set_meta("is_healthy", habit.is_healthy)
 	set_meta("is_image", is_image)
 	self.load()
+	_fit_description_font()
+
+func _fit_description_font() -> void:
+	var font: Font = description_rich_label.get_theme_font("normal_font")
+	var words: PackedStringArray = description_rich_label.text.split(" ")
+	for size in range(MAX_DESCRIPTION_FONT_SIZE, MIN_DESCRIPTION_FONT_SIZE - 1, -1):
+		var fits: bool = true
+		for word in words:
+			if font.get_string_size(word, HORIZONTAL_ALIGNMENT_LEFT, -1, size).x > DESCRIPTION_TEXT_WIDTH:
+				fits = false
+				break
+		if fits:
+			description_rich_label.add_theme_font_size_override("normal_font_size", size)
+			return
+	description_rich_label.add_theme_font_size_override("normal_font_size", MIN_DESCRIPTION_FONT_SIZE)
 
 func conceal() -> void:
 	if _is_revealed:
@@ -64,7 +83,6 @@ func reveal(colorize: bool = false, signalize: bool = true) -> void:
 	var color: String = "#69a0ba"
 	if colorize:
 		color = String.num_int64(hash([get_meta("description"), get_meta("image")]) & 0xFFFFFF, 16)
-		print("colorize: ", color)
 	elif _is_revealed:
 		color = "#92d291"
 	var theme: StyleBox = panel.get_theme_stylebox("panel").duplicate()

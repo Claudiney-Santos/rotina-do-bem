@@ -199,15 +199,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -21.0
-offset_top = -103.0
+offset_top = -250.0
 offset_right = 679.0
-offset_bottom = 103.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+theme_override_constants/separation = 70
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=1113519659]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.15425095, 0.1414474, 0.3327431, 1)
@@ -222,7 +225,9 @@ text = "DESCRIÇÃO"
 autowrap_mode = 3
 
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=1199084473]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.15425095, 0.1414474, 0.3327431, 1)
@@ -237,7 +242,9 @@ text = "DESCRIÇÃO"
 autowrap_mode = 3
 
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=152869433]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.15425095, 0.1414474, 0.3327431, 1)
@@ -274,7 +281,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="WrongPanelContainer/VBoxContainer" unique_id=1266711656]
 layout_mode = 2
 size_flags_vertical = 0
-text = "RESPOSTA INCORRETA.
+text = "NÃO FOI DESSA VEZ.
 VAMOS TENTAR NOVAMENTE?"
 label_settings = ExtResource("3_ekrhd")
 horizontal_alignment = 1

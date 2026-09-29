@@ -9,7 +9,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_c2u58"]
 
 [node name="MemoryCard" type="Control" unique_id=1512986 node_paths=PackedStringArray("shortcut_context")]
-custom_minimum_size = Vector2(220, 220)
+custom_minimum_size = Vector2(208, 208)
 propagate_maximum_size = true
 clip_contents = true
 layout_mode = 3

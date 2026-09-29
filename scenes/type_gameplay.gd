@@ -13,9 +13,11 @@ var written_len: int = 0
 var habit_description: String = ""
 var dead_key_mistake_counter: int = 0
 var finished: bool = false
+var _start_time_ms: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_start_time_ms = Time.get_ticks_msec()
 	var current_habit = GameManager.selected_habits[GameManager.current_round_index]
 	habit_node.set_habit(current_habit, true)
 	habit_node.update_correct_typing(0)
@@ -69,8 +71,11 @@ func remove_accents(text: String) -> String:
 	return text
 
 func _on_finished_answer() -> void:
+	if finished:
+		return
 	finished = true
 	correct_panel.show()
+	GameManager.current_round.typing_time_seconds = (Time.get_ticks_msec() - _start_time_ms)/1000.0
 
 
 func _on_continue_button_pressed() -> void:

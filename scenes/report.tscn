@@ -36,11 +36,26 @@ corner_radius_bottom_left = 16
 [sub_resource type="Theme" id="Theme_yvsl5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjlyb"]
+content_margin_left = 24.0
+content_margin_top = 20.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
 bg_color = Color(0.4117647, 0.627451, 0.7294118, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="ReportCellStyle"]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+bg_color = Color(0.1490196, 0.18431373, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Report" type="Control" unique_id=629113566]
 layout_mode = 3
@@ -81,7 +96,7 @@ text = " VOLTAR "
 icon = ExtResource("1_smm52")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1055738525]
-custom_minimum_size = Vector2(700, 600)
+custom_minimum_size = Vector2(760, 700)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -112,34 +127,37 @@ custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_vertical = 6
 alignment = 1
+theme_override_constants/h_separation = 20
 
 [node name="EasyPanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer" unique_id=694653683]
 layout_mode = 2
 
-[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer" unique_id=1869285058]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer" unique_id=1869285058]
 layout_mode = 2
-split_offsets = PackedInt32Array(23, 85)
-split_offset = 23
+theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer" unique_id=659658594]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer" unique_id=659658594]
 layout_mode = 2
 text = "NÍVEL FÁCIL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer" unique_id=1405023654]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer" unique_id=1405023654]
+custom_minimum_size = Vector2(220, 130)
 layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer" unique_id=1793623476]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer" unique_id=1793623476]
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=1859022346]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1859022346]
 layout_mode = 2
 text = "CLICAR-E-ARRASTAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EasyClassifyStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=1132820217]
+[node name="EasyClassifyStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1132820217]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
@@ -149,58 +167,150 @@ label_settings = ExtResource("4_4lv02")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer" unique_id=945802371]
+[node name="EasyClassifyInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1010000001]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer2" unique_id=816875363]
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer" unique_id=945802371]
+custom_minimum_size = Vector2(220, 130)
 layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer2/PanelContainer" unique_id=642116614]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer2" unique_id=642116614]
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=680210200]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=680210200]
 layout_mode = 2
 text = "DIGITAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EasyTypingStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=879647662]
+[node name="EasyTypingStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=879647662]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
 theme_override_font_sizes/font_size = 32
 text = "★★★★☆"
 label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyTypingInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1010000002]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer" unique_id=1010000003]
+custom_minimum_size = Vector2(220, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer3" unique_id=1010000004]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer3/VBoxContainer" unique_id=1010000005]
+layout_mode = 2
+text = "MEMÓRIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyMemoryStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer3/VBoxContainer" unique_id=1010000006]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyMemoryInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer3/VBoxContainer" unique_id=1010000007]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer" unique_id=1010000008]
+custom_minimum_size = Vector2(220, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer4" unique_id=1010000009]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer4/VBoxContainer" unique_id=1010000010]
+layout_mode = 2
+text = "TRÍVIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyQuizStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer4/VBoxContainer" unique_id=1010000011]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyQuizInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/EasyPanelContainer/VBoxContainer/PanelContainer4/VBoxContainer" unique_id=1010000012]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MediumPanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer" unique_id=1367804290]
 layout_mode = 2
 
-[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer" unique_id=137758362]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer" unique_id=137758362]
 layout_mode = 2
-split_offsets = PackedInt32Array(23, 85)
-split_offset = 23
+theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer" unique_id=1723870622]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer" unique_id=1723870622]
 layout_mode = 2
 text = "NÍVEL MÉDIO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer" unique_id=349724338]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer" unique_id=349724338]
+custom_minimum_size = Vector2(220, 130)
 layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer" unique_id=421768667]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer" unique_id=421768667]
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=2036871702]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=2036871702]
 layout_mode = 2
 text = "CLICAR-E-ARRASTAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MediumClassifyStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=832913358]
+[node name="MediumClassifyStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=832913358]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
@@ -210,58 +320,150 @@ label_settings = ExtResource("4_4lv02")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer" unique_id=1926527610]
+[node name="MediumClassifyInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1010000101]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer2" unique_id=420775300]
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer" unique_id=1926527610]
+custom_minimum_size = Vector2(220, 130)
 layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer2/PanelContainer" unique_id=1352748223]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer2" unique_id=1352748223]
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1124478906]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1124478906]
 layout_mode = 2
 text = "DIGITAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MediumTypingStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1598330995]
+[node name="MediumTypingStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1598330995]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
 theme_override_font_sizes/font_size = 32
 text = "★★★★☆"
 label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumTypingInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1010000102]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer" unique_id=1010000103]
+custom_minimum_size = Vector2(220, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer3" unique_id=1010000104]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer3/VBoxContainer" unique_id=1010000105]
+layout_mode = 2
+text = "MEMÓRIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumMemoryStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer3/VBoxContainer" unique_id=1010000106]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumMemoryInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer3/VBoxContainer" unique_id=1010000107]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer" unique_id=1010000108]
+custom_minimum_size = Vector2(220, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer4" unique_id=1010000109]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer4/VBoxContainer" unique_id=1010000110]
+layout_mode = 2
+text = "TRÍVIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumQuizStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer4/VBoxContainer" unique_id=1010000111]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MediumQuizInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/MediumPanelContainer/VBoxContainer/PanelContainer4/VBoxContainer" unique_id=1010000112]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HardPanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer" unique_id=1893130527]
 layout_mode = 2
 
-[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer" unique_id=631640060]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer" unique_id=631640060]
 layout_mode = 2
-split_offsets = PackedInt32Array(23, 85)
-split_offset = 23
+theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer" unique_id=698199009]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer" unique_id=698199009]
 layout_mode = 2
 text = "NÍVEL DIFÍCIL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer" unique_id=135546633]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer" unique_id=135546633]
+custom_minimum_size = Vector2(220, 130)
 layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer" unique_id=1022411178]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer" unique_id=1022411178]
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=208158395]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=208158395]
 layout_mode = 2
 text = "CLICAR-E-ARRASTAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HardClassifyStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer/VBoxContainer" unique_id=2073233113]
+[node name="HardClassifyStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=2073233113]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
@@ -271,28 +473,118 @@ label_settings = ExtResource("4_4lv02")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer" unique_id=447149805]
+[node name="HardClassifyInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1010000201]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer2" unique_id=1401284394]
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer" unique_id=447149805]
+custom_minimum_size = Vector2(220, 130)
 layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer2/PanelContainer" unique_id=1186015970]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer2" unique_id=1186015970]
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1023096844]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1023096844]
 layout_mode = 2
 text = "DIGITAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HardTypingStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VSplitContainer/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1057848020]
+[node name="HardTypingStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1057848020]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
 theme_override_font_sizes/font_size = 32
 text = "★★★★☆"
 label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardTypingInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1010000202]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer" unique_id=1010000203]
+custom_minimum_size = Vector2(220, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer3" unique_id=1010000204]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer3/VBoxContainer" unique_id=1010000205]
+layout_mode = 2
+text = "MEMÓRIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardMemoryStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer3/VBoxContainer" unique_id=1010000206]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardMemoryInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer3/VBoxContainer" unique_id=1010000207]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer" unique_id=1010000208]
+custom_minimum_size = Vector2(220, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("ReportCellStyle")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer4" unique_id=1010000209]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer4/VBoxContainer" unique_id=1010000210]
+layout_mode = 2
+text = "TRÍVIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardQuizStars" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer4/VBoxContainer" unique_id=1010000211]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 32
+text = "★★★★☆"
+label_settings = ExtResource("4_4lv02")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardQuizInfo" type="Label" parent="PanelContainer/VBoxContainer/HFlowContainer/HardPanelContainer/VBoxContainer/PanelContainer4/VBoxContainer" unique_id=1010000212]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.972549, 0.5294118, 1)
+theme_override_font_sizes/font_size = 18
+text = "—"
+autowrap_mode = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 
