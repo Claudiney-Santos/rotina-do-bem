@@ -25,6 +25,9 @@ func _ready() -> void:
 	idx.shuffle()
 	var cards: Array[Node] = flow_container.get_children()
 	var habits: Array = GameManager.selected_habits
+	if len(habits) != cards_qnt/2:
+		GameManager.load_habits(GameManager.selected_difficulty)
+		habits = GameManager.selected_habits
 
 	for i in range(len(habits)):
 		var card1 = cards[idx[2*i]]

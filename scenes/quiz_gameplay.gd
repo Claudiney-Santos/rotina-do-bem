@@ -19,6 +19,8 @@ var _attempts: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.reset_quiz_mistakes(GameManager.selected_difficulty)
+	if len(GameManager.selected_habits) != 2*GameManager.qnt_half_habits[GameManager.selected_difficulty]:
+		GameManager.load_habits(GameManager.selected_difficulty)
 	for habit in GameManager.selected_habits:
 		if habit.get("is_healthy"):
 			_healthy_habits.push_back(habit)

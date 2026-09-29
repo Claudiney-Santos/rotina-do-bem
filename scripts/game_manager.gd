@@ -184,9 +184,12 @@ func unlock_next_activity() -> bool:
 	return true
 
 func load_game(difficulty: Difficulty) -> void:
-	selected_difficulty = difficulty
+	load_habits(difficulty)
 	rounds[selected_difficulty] = []
 	memory_mistakes[selected_difficulty] = []
+
+func load_habits(difficulty: Difficulty) -> void:
+	selected_difficulty = difficulty
 	var diff: String = ""
 	match difficulty:
 		Difficulty.EASY:
