@@ -54,6 +54,8 @@ func _ready() -> void:
 		typing_info[i].text = activity_info(counts.typing[diff].mistakes, times.typing[diff], has_rounds)
 		memory_info[i].text = memory_info_text(diff)
 		quiz_info[i].text = quiz_info_text(diff)
+	for info in classify_info + typing_info + memory_info + quiz_info:
+		info.custom_minimum_size.y = 44
 
 func set_stars(label: Label, number: int) -> void:
 	label.text = star_text(number)
@@ -69,14 +71,14 @@ func format_time(time_seconds: float) -> String:
 func activity_info(mistakes: int, time_seconds: float, has_data: bool) -> String:
 	if not has_data:
 		return no_data
-	return "ERROS: %d • TEMPO: %s" % [mistakes, format_time(time_seconds)]
+	return "ERROS: %d\nTEMPO: %s" % [mistakes, format_time(time_seconds)]
 
 func memory_info_text(diff: GameManager.Difficulty) -> String:
 	var sessions: Array = GameManager.memory_mistakes[diff]
 	if len(sessions) == 0:
 		return no_data
 	var latest: Mistakes.MemoryMistake = sessions.back()
-	return "ERROS: %d • TEMPO: %s" % [latest.wrong_matches, format_time(latest.time_seconds)]
+	return "ERROS: %d\nTEMPO: %s" % [latest.wrong_matches, format_time(latest.time_seconds)]
 
 func quiz_info_text(diff: GameManager.Difficulty) -> String:
 	var first: int = 0
