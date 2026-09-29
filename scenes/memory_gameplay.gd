@@ -2,6 +2,11 @@ extends Control
 
 signal win
 
+const MEMORY_CARD_HEIGHT: float = 208.0
+const TITLE_BOTTOM_Y: float = 138.0
+const GRID_TITLE_GAP: float = 16.0
+const GRID_BOTTOM_MARGIN: float = 24.0
+
 @onready var memory_card = $FlowContainer/MemoryCard
 @onready var flow_container = $FlowContainer
 @onready var correct_panel = $CorrectPanelContainer
@@ -30,6 +35,21 @@ func _ready() -> void:
 		card2.show()
 		#card1.reveal()
 		#card2.reveal()
+	_center_grid(cards_qnt)
+
+func _center_grid(cards_qnt: int) -> void:
+	var view: Rect2 = get_viewport_rect()
+	var rows: int = ceili(cards_qnt/4.0)
+	var vsep: int = flow_container.get_theme_constant("v_separation")
+	var grid_height: float = rows*MEMORY_CARD_HEIGHT + (rows-1)*vsep
+	var top_limit: float = TITLE_BOTTOM_Y + GRID_TITLE_GAP
+	var available: float = view.size.y - GRID_BOTTOM_MARGIN - top_limit
+	var grid_top: float = top_limit
+	if grid_height < available:
+		grid_top += (available - grid_height)/2.0
+	var center_y: float = view.size.y/2.0
+	flow_container.offset_top = grid_top - center_y
+	flow_container.offset_bottom = flow_container.offset_top + grid_height
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
