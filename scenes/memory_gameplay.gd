@@ -102,7 +102,7 @@ func _on_memory_card_reveal_card(source) -> void:
 		return
 	_revealed_cards.push_back(source)
 	if len(_revealed_cards) > 0 and len(_revealed_cards) % 2 == 0:
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(2.0).timeout
 		_on_timer_timeout()
 
 func _on_timer_timeout() -> void:
