@@ -6,6 +6,7 @@ signal conceal_card
 const MAX_DESCRIPTION_FONT_SIZE: int = 40
 const MIN_DESCRIPTION_FONT_SIZE: int = 24
 const DESCRIPTION_TEXT_WIDTH: float = 194.0
+const HINT_FLASH_PERIOD_SECONDS: float = 1.0
 
 @onready var node: Control = $"."
 @onready var panel = $Panel
@@ -14,7 +15,10 @@ const DESCRIPTION_TEXT_WIDTH: float = 194.0
 
 var _is_revealed = false
 var _bg_color: Color = Color("#69a0ba")
+var _bg_random_color: Color = Color("#69a0ba")
 var _hint: bool = false
+var _flashing_coeficient = 0.0
+var _flash_lerp: float = 0.0
 
 var is_image: bool:
 	get:
@@ -27,11 +31,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if not _hint:
+		return
+	_flashing_coeficient += delta * TAU / HINT_FLASH_PERIOD_SECONDS
+	_flash_lerp = (sin(_flashing_coeficient) + 1.0) / 2.0
+	_apply_style()
 
 func load() -> void:
 	if node.has_meta("image"):
 		image_texturerect.texture = node.get_meta("image")
+		_bg_random_color = Color("#" + String.num_int64(hash([get_meta("description"), get_meta("image")]) & 0xFFFFFF, 16).pad_zeros(6))
 	description_rich_label.text = node.get_meta("description")
 	image_texturerect.visible = false
 	description_rich_label.visible = false
@@ -67,7 +76,10 @@ func set_hint(on: bool) -> void:
 func _apply_style() -> void:
 	var theme: StyleBox = panel.get_theme_stylebox("panel").duplicate()
 	theme.bg_color = _bg_color
-	theme.border_color = Color("#dda327") if _hint else theme.bg_color
+	var border: Color = theme.bg_color
+	if _hint:
+		border = theme.bg_color.lerp(_bg_random_color, _flash_lerp)
+	theme.border_color = border
 	panel.add_theme_stylebox_override("panel", theme)
 
 func conceal() -> void:
@@ -92,12 +104,12 @@ func reveal(colorize: bool = false, signalize: bool = true) -> void:
 		image_texturerect.visible = false
 		description_rich_label.visible = true
 	panel.mouse_default_cursor_shape = CURSOR_ARROW
-	var color: String = "#69a0ba"
+	var color: Color = Color("#69a0ba")
 	if colorize:
-		color = "#" + String.num_int64(hash([get_meta("description"), get_meta("image")]) & 0xFFFFFF, 16).pad_zeros(6)
+		color = _bg_random_color
 	elif _is_revealed:
-		color = "#92d291"
-	_bg_color = Color(color)
+		color = Color("#92d291")
+	_bg_color = color
 	_apply_style()
 
 func _on_panel_gui_input(event: InputEvent) -> void:
